@@ -13,15 +13,15 @@ export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="md:w-2xl w-xs rounded-2xl flex flex-col justify-center items-start md:px-7 px-3 md:py-5 py-3 gap-2 bg-[#51149C]">
+        <div className="md:w-2xl w-xs rounded-2xl flex flex-col justify-center items-start md:px-7 px-3 md:py-5 py-4 gap-2 bg-[#51149C]">
             <div
                 className="w-full flex justify-between items-center text-left cursor-pointer"
                 onClick={onClick}
                  aria-expanded={isOpen}
             >
-                <h4 className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm">{que}</h4>
+                <h4 className="text-white lg:text-xl md:text-lg sm:text-base text-sm">{que}</h4>
                 <span
-                    className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base text-center">
+                    className="text-white lg:text-2xl md:text-xl sm:text-lg text-base text-center">
                     {isOpen ? <CiCircleMinus /> : <CiCirclePlus />}
                 </span>
             </div>
