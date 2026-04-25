@@ -12,7 +12,7 @@ export default function FeatureCard({ icon, title, desc }: CardProps) {
             <span className="text-white lg:text-3xl md:text-2xl sm:text-xl text-lg text-center">{icon}</span>
             <div className="flex flex-col justify-start items-start gap-2.5">
                 <h4 className="text-white lg:text-xl md:text-lg sm:text-base text-sm">{title}</h4>
-                <p className="text-gray-400 lg:text-lg md:text-base sm:text-sm text-xs">{desc}</p>
+                <p className="text-gray-300 lg:text-lg md:text-base sm:text-sm text-xs">{desc}</p>
             </div>
         </div>
     )
