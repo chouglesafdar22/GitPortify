@@ -14,7 +14,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
                 } items-center justify-between md:py-12 py-6 px-6 md:px-16 md:gap-10 gap-5`}
         >
             <div className="w-full md:w-3/4 lg:w-4/5 flex justify-center">
-                <div className="relative w-full max-w-xl">
+                <div className="relative w-full max-w-none">
                     <div className="absolute inset-0 bg-purple-600/20 blur-2xl rounded-2xl"></div>
                     <div className="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
                         <video
