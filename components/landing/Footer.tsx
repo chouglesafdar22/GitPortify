@@ -18,7 +18,7 @@ export default function Footer() {
                                 className="object-cover"
                             />
                         </div>
-                        <h1 className="text-white lg:text-3xl md:text-2xl sm:text-xl text-lg">
+                        <h1 className="text-white lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">
                             GitPortify
                         </h1>
                     </a>
@@ -30,7 +30,7 @@ export default function Footer() {
                         target="_blank"
                         className="inline-flex items-center justify-center w-8 h-8 border border-white rounded-md hover:bg-neutral-800 transition"
                     >
-                        <FaLinkedin className="lg:text-lg md:text-base sm:text-sm text-xs text-white" />
+                        <FaLinkedin className="lg:text-xl md:text-lg sm:text-base text-sm text-white" />
                     </Link>
                 </div>
 
@@ -47,16 +47,16 @@ export default function Footer() {
                 <div>
                     <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm font-medium mb-3">Company</h3>
                     <ul className="space-y-2 lg:text-base md:text-sm sm:text-xs text-[10px] text-muted-foreground">
-                        <li><Link href="/privacy" className="hover:text-white">Privacy Policy</Link></li>
-                        <li><Link href="/terms" className="hover:text-white">Terms & Conditions</Link></li>
+                        <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+                        <li><Link href="/terms-and-conditions" className="hover:text-white">Terms&Conditions</Link></li>
                     </ul>
                 </div>
             </div>
 
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
-                <div className=" lg:text-sm md:text-xs sm:text-[12px] text-[10px] text-muted-foreground text-left font-light">
-                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. <Link className="hover:text-foreground hover:underline" href={"https://safdarchougle.vercel.app"}>Safdar Chougle</Link>
+                <div className=" lg:text-xs md:text-[12px] sm:text-[10px] text-[8px] text-muted-foreground text-left font-light">
+                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Develop By <Link className="hover:text-foreground hover:underline" href={"https://safdarchougle.vercel.app"}>Safdar Chougle</Link>
                 </div>
             </div>
         </footer>

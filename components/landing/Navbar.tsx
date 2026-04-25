@@ -16,7 +16,7 @@ export default function Navbar() {
                         className="object-cover"
                     />
                 </div>
-                <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg">
+                <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">
                     GitPortify
                 </h1>
             </a>

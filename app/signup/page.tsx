@@ -3,6 +3,7 @@ import Button from "@/components/landing/Button";
 import { IoLogoGithub } from "react-icons/io";
 import { signIn } from "next-auth/react";
 import Footer from "@/components/dashboard/Footer";
+import Link from "next/link";
 
 export default function SignupPage() {
     return (
@@ -33,7 +34,7 @@ export default function SignupPage() {
                         <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-xs text-center text-muted-foreground">
-                        By continuing, you agree to our Terms & Privacy Policy
+                        By continuing, you agree to our <Link href={"/term-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy Policy</Link>
                     </p>
                 </div>
             </div>
