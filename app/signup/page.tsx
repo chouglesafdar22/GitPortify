@@ -1,0 +1,43 @@
+"use client";
+import Button from "@/components/landing/Button";
+import { IoLogoGithub } from "react-icons/io";
+import { signIn } from "next-auth/react";
+import Footer from "@/components/dashboard/Footer";
+
+export default function SignupPage() {
+    return (
+        <>
+            <div className="relative min-h-dvh flex items-center justify-center px-5">
+                <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
+                <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl p-6 space-y-4 shadow-md">
+                    <div className="text-center space-y-1">
+                        <h1 className="text-xl font-semibold">
+                            Welcome to Gitportify
+                        </h1>
+                        <p className="text-sm text-muted-foreground">
+                            Build your developer portfolio instantly
+                        </p>
+                    </div>
+                    <div className="flex justify-center items-center w-full">
+                        <Button
+                            icon={<IoLogoGithub />}
+                            text="Continue with GitHub"
+                            onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+                            reverse
+                            className="w-full"
+                        />
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                        <div className="flex-1 h-px bg-border" />
+                        <span>GitHub Required</span>
+                        <div className="flex-1 h-px bg-border" />
+                    </div>
+                    <p className="text-xs text-center text-muted-foreground">
+                        By continuing, you agree to our Terms & Privacy Policy
+                    </p>
+                </div>
+            </div>
+            <Footer />
+        </>
+    )
+}

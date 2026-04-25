@@ -1,0 +1,1 @@
+export type TemplateType = | "github-pro" | "product-landing" | "terminal-dev"
