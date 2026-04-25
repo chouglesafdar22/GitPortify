@@ -20,7 +20,7 @@ export default function Hero() {
                 </div>
             </div>
             <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-xl">
+                <div className="relative w-full max-w-none">
                     <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-2xl"></div>
                     <div className="relative cursor-pointer rounded-3xl overflow-hidden border border-white/10 bg-black shadow-xl">
                         <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border-b border-white/10">
@@ -34,7 +34,7 @@ export default function Hero() {
                             loop
                             muted
                             playsInline
-                            className="w-full h-55 sm:h-70 md:h-87.5 lg:h-100 object-cover"
+                            className="w-full h-55 sm:h-70 md:h-87.5 lg:h-100 object-contain bg-black"
                         />
 
                     </div>
