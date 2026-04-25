@@ -29,7 +29,7 @@ export default function Hero() {
                             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                         </div>
                         <video
-                            src="/videos/gitportify.mp4"
+                            src="https://res.cloudinary.com/dsioiddoz/video/upload/v1777121512/gitportify_ymxvyt.mp4"
                             autoPlay
                             loop
                             muted
