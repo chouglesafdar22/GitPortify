@@ -11,6 +11,13 @@ export default function SettingPage() {
     const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState("");
     const { theme, setTheme } = useTheme();
+    const [url, setUrl] = useState("");
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setUrl(`${window.location.origin}/portfolio/${username}`);
+        }
+    }, [username]);
 
     useEffect(() => {
         const savedUsername = localStorage.getItem("gitportify-username");
@@ -29,9 +36,7 @@ export default function SettingPage() {
         if (!confirmLogout) return;
         setLoading(true);
         await signOut({ callbackUrl: "/signup" });
-    }
-
-    const url = `${window.location.origin}/portfolio/${username}`
+    };
 
     return (
         <>
