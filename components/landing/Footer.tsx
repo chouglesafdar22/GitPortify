@@ -30,7 +30,7 @@ export default function Footer() {
                         target="_blank"
                         className="inline-flex items-center justify-center w-8 h-8 border border-white rounded-md hover:bg-neutral-800 transition"
                     >
-                        <FaLinkedin className="lg:text-lg md:text-base sm:text-sm text-xs" />
+                        <FaLinkedin className="lg:text-lg md:text-base sm:text-sm text-xs text-white" />
                     </Link>
                 </div>
 
