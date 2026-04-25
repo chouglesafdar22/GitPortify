@@ -13,7 +13,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
             className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""
                 } items-center justify-between md:py-12 py-6 px-6 md:px-16 md:gap-10 gap-5`}
         >
-            <div className="w-full md:w-2/3 flex justify-center">
+            <div className="w-full md:w-3/4 lg:w-4/5 flex justify-center">
                 <div className="relative w-full max-w-xl">
                     <div className="absolute inset-0 bg-purple-600/20 blur-2xl rounded-2xl"></div>
                     <div className="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
@@ -23,7 +23,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
                             loop
                             muted
                             playsInline
-                            className="w-full h-auto object-cover"
+                            className="w-full h-62.5 sm:h-75 md:h-87.5 lg:h-100 object-cover"
                         />
                     </div>
                 </div>
@@ -38,4 +38,4 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
             </div>
         </div>
     );
-}
+};
