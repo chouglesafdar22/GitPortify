@@ -4,9 +4,9 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center md:pt-16 pt-10 md:pb-24 pb-18 md:px-16 px-10 md:gap-3.5 gap-5">
-            <div className="flex flex-col justify-start md:gap-5 gap-4">
-                <div className="flex flex-col justify-start items-start gap-4">
+        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center md:pt-16 pt-10 md:pb-24 pb-18 md:px-13 px-7 md:gap-4 gap-6">
+            <div className="flex flex-col justify-start md:gap-5 gap-3">
+                <div className="flex flex-col justify-start items-start gap-2.5">
                     <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">Build your developer portfolio in minutes - powered by GitHub</h1>
                     <p className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base font-normal">Import yours projects, customize your design, and publish instantly. No setup, no hassle.</p>
                 </div>
@@ -34,7 +34,7 @@ export default function Hero() {
                             loop
                             muted
                             playsInline
-                            className="w-full object-cover"
+                            className="w-full h-55 sm:h-70 md:h-87.5 lg:h-100 object-cover"
                         />
 
                     </div>
