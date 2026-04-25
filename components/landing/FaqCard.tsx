@@ -26,7 +26,7 @@ export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
                 </span>
             </div>
             <div className={`${isOpen ? "block" : "hidden"} flex overflow-hidden transition-all duration-300 justify-start items-start text-left`}>
-                <p className="text-muted-foreground lg:text-lg md:text-base sm:text-sm text-xs text-left">{ans}</p>
+                <p className="text-gray-400 lg:text-lg md:text-base sm:text-sm text-xs text-left">{ans}</p>
             </div>
         </div>
     )
