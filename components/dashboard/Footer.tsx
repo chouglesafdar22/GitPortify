@@ -6,7 +6,7 @@ export default function Footer() {
 
     return (
         <footer className="flex bottom-0 relative w-full py-5 px-5 justify-center items-center text-center">
-            <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-center gap-px'>
                 <p className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground">&copy;{currentYear} All Rights Reserved GitPortify.</p>
                 <div className="flex items-center gap-2">
                     <Link href="/privacy-policy" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground hover:text-foreground transition">
