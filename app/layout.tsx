@@ -18,6 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GitPortify",
   description: "Modern developer portfolio SaaS",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -43,4 +50,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
