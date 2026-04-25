@@ -23,7 +23,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
                             loop
                             muted
                             playsInline
-                            className="w-full h-62.5 sm:h-75 md:h-87.5 lg:h-100 object-cover"
+                            className="w-full h-55 sm:h-70 md:h-87.5 lg:h-100 object-cover"
                         />
                     </div>
                 </div>
