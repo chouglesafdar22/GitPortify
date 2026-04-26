@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Button from "@/components/landing/Button";
 import { IoLogoGithub } from "react-icons/io";
 import { signIn } from "next-auth/react";
@@ -6,6 +7,8 @@ import Footer from "@/components/dashboard/Footer";
 import Link from "next/link";
 
 export default function SignupPage() {
+    const [loading, setLoading] = useState(false);
+
     return (
         <>
             <div className="relative min-h-dvh flex items-center justify-center px-5">
@@ -21,9 +24,12 @@ export default function SignupPage() {
                     </div>
                     <div className="flex justify-center items-center w-full">
                         <Button
-                            icon={<IoLogoGithub />}
-                            text="Continue with GitHub"
-                            onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+                            icon={!loading && <IoLogoGithub />}
+                            text={loading ? "Continuing with GitHub..." : "Continue with GitHub"}
+                            onClick={() => {
+                                setLoading(true);
+                                signIn("github", { callbackUrl: "/dashboard" });
+                            }}
                             reverse
                             className="w-full"
                         />
@@ -34,11 +40,11 @@ export default function SignupPage() {
                         <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-xs text-center text-muted-foreground">
-                        By continuing, you agree to our <Link href={"/term-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy Policy</Link>
+                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy Policy</Link>
                     </p>
                 </div>
             </div>
             <Footer />
         </>
     )
-}
+};

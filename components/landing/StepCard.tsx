@@ -11,7 +11,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
     return (
         <div
             className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""
-                } items-center justify-between md:py-12 py-6 px-2 md:px-16 md:gap-10 gap-5`}
+                } items-center justify-between md:py-12 py-6 px-2.5 md:px-16 md:gap-10 gap-5`}
         >
             <div className="w-full flex justify-center">
                 <div className="relative w-full max-w-none">
@@ -28,7 +28,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
                     </div>
                 </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-2 text-left">
+            <div className="w-full md:w-1/2 flex flex-col gap-1 text-left">
                 <h4 className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm">
                     {title}
                 </h4>
