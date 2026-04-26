@@ -53,7 +53,7 @@ export default function SettingPage() {
             />
 
             <div className="py-8 px-8 md:px-20 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
-                <h1 className="text-lg sm:text-xl lg:text-2xl px-2 font-semibold">
+                <h1 className="text-lg sm:text-xl lg:text-2xl px-16 font-semibold">
                     Settings
                 </h1>
                 <div className="space-y-2 border rounded-xl p-4">
