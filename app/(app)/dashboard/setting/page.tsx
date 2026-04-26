@@ -52,7 +52,7 @@ export default function SettingPage() {
                 theme="colored"
             />
 
-            <div className="py-8 px-16 md:px-20 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
+            <div className="py-8 px-8 md:px-20 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-2 font-semibold">
                     Settings
                 </h1>
@@ -93,7 +93,7 @@ export default function SettingPage() {
                         Theme
                     </h3>
                     <div className="grid grid-cols-3 gap-3">
-                        {["systme", "dark", "light"].map((t) => (
+                        {["system", "dark", "light"].map((t) => (
                             <button
                                 key={t}
                                 onClick={() => {

@@ -41,7 +41,7 @@ export default function Faq() {
     ];
 
     return (
-        <section id="faq" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-14 px-1.5 md:py-10 py-5 md:gap-3.5 gap-2">
+        <section id="faq" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-14 px-1 md:py-10 py-5 md:gap-3.5 gap-2">
             <div className="flex flex-col justify-center items-center md:gap-3 gap-1.5">
                 <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center font-semibold">FAQ</h2>
                 <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base text-center font-medium">Common Questions</h3>
