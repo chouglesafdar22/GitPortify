@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
 
                 </div>
 
-                <div className="border-t mt-10 pt-4 flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="border-t mt-10 pt-4 flex items-center gap-3 text-xs text-muted-foreground">
 
                     <Link href="/terms-and-conditions" className="hover:text-foreground transition">
                       Terms & Conditions

@@ -91,7 +91,7 @@ export default function TermsAndConditionsPage() {
                 </div>
 
                 {/* Footer Links */}
-                <div className="border-t mt-10 pt-4 flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="border-t mt-10 pt-4 flex items-center gap-3 text-xs text-muted-foreground">
 
                     <Link href="/privacy-policy" className="hover:text-foreground transition">
                         Privacy Policy
