@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip"
 import ThemeProvider from "@/components/providers/theme-provider";
-import Providers from "@/components/providers/Providers"
+import Providers from "@/components/providers/Providers";
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
             </TooltipProvider>
           </ThemeProvider>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
