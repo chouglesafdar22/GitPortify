@@ -283,7 +283,7 @@ export default function DashboardClient() {
     return (
         <>
             <div className="flex flex-col lg:flex-row relative h-fit overflow-hidden">
-                <div className="fixed lg:absolute top-5 right-5 z-10">
+                <div className="fixed lg:absolute top-5 right-5 z-40">
                     <Button
                         variant={"secondary"}
                         onClick={handlePublish}

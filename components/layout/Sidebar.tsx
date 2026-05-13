@@ -21,7 +21,7 @@ export default function Sidebar() {
         <>
             <Button
                 variant={"secondary"}
-                className="fixed top-5 left-5 z-10 cursor-w-resize text-sm text-foreground sm:text-base md:text-lg lg:text-xl xl:text-2xl p-0"
+                className="fixed top-5 left-5 z-40 cursor-w-resize text-sm text-foreground sm:text-base md:text-lg lg:text-xl xl:text-2xl p-0"
                 onClick={() => setOpen(prev => !prev)}
             >
                 <GoSidebarCollapse />
