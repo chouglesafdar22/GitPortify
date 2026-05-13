@@ -103,8 +103,8 @@ export default function NeoDevTemplate({
 
                 <nav
                     className={`w-full max-w-5xl rounded-full border backdrop-blur-xl px-6 py-3 transition-colors duration-300 ${isDark
-                            ? "bg-white/[0.03] border-white/10"
-                            : "bg-black/[0.03] border-black/10"
+                            ? "bg-white/3 border-white/10"
+                            : "bg-black/3 border-black/10"
                         }`}
                 >
 

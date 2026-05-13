@@ -404,7 +404,7 @@ export default function GithubProTemplate({
                                 <div
                                     key={`exp-${index}`}
                                     className={`rounded-2xl border p-5 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 ${isDark
-                                            ? "border-white/10 bg-white/[0.03]"
+                                            ? "border-white/10 bg-white/3"
                                             : "border-black/10 bg-white/70"
                                         }`}
                                 >

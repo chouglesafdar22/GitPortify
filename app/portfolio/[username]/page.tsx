@@ -2,21 +2,13 @@
 import { useEffect, useState } from "react";
 import TemplateRenderer from "@/components/templates/TemplateRenderer";
 import PreviewPanel from "@/components/dashboard/PreviewPanel";
-import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useTheme } from "next-themes";
-import { CiSun } from "react-icons/ci";
-import { AiOutlineMoon } from "react-icons/ai";
-import { templateConfigs } from "@/components/templates/template-configs";
-import Navbar from "@/components/templates/Navbar";
 
 export default function PortfolioPage() {
     const params = useParams();
     const username = params?.username as string;
     const [data, setData] = useState<any>(null);
-    const currentYear = new Date().getFullYear();
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -66,17 +58,9 @@ export default function PortfolioPage() {
                 loading={true}
             />
         );
-    }
-
-    // const config = templateConfigs[data.template as keyof typeof templateConfigs] ??
-    // {
-    //     allowThemeToggle: false,
-    //     showNavbar: false
-    // };
+    };
 
     return (
-        // <PreviewPanel {...data} loading={loading} />
-
         <TemplateRenderer
             key={data.template}
             template={data.template}
