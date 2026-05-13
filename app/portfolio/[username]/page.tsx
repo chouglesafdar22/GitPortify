@@ -74,38 +74,6 @@ export default function PortfolioPage() {
     // };
 
     return (
-        <div className="relative min-h-dvh transition-colors duration-500 ease-linear">
-            {/* {config.allowThemeToggle && (
-                <div className="absolute top-20 right-4 sm:top-20 sm:right-6 lg:right-8 z-20">
-                    <button
-                        onClick={() => {
-                            setTheme(theme === "dark" ? "light" : "dark")
-                        }}
-                        className="text-lg border text-foreground cursor-pointer rounded-full px-3 py-1 hover:bg-muted"
-                        aria-label="Toggle Theme"
-                    >
-                        {theme === "dark" ? <CiSun /> : <AiOutlineMoon />}
-                    </button>
-                </div>
-            )}
-            {config.showNavbar && (
-                <Navbar name={data.name} contactLinks={data.contactLinks} />
-            )} */}
-            <PreviewPanel {...data} loading={loading} />
-            <footer className="flex w-full p-5 justify-center items-center text-center">
-                <div className='flex items-center justify-center'>
-                    <p className="text-[10px] md:text-[11px] xl:text-xs text-muted-foreground">
-                        &copy;{currentYear} All Rights Reserved {data.name}. Created with {" "}
-                        <Link
-                            href={"/"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:underline hover:text-violet-600"
-                        >
-                            GitPortify
-                        </Link></p>
-                </div>
-            </footer>
-        </div>
+        <PreviewPanel {...data} loading={loading} />
     );
 };

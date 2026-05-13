@@ -7,6 +7,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import Footer from "../portfolio/Footer";
 
 interface Props {
     name: string;
@@ -332,7 +333,7 @@ export default function NeoDevTemplate({
                             <motion.div
                                 whileHover={{ y: -5 }}
                                 key={project.id}
-                                className="group rounded-3xl border border-white/10 bg-white/3 overflow-hidden hover:border-purple-500/30 transition-all"
+                                className="group rounded-3xl border border-purple-400/20 bg-white/3 overflow-hidden hover:border-purple-500/30 transition-all"
                             >
 
                                 <div className="h-52 bg-zinc-900 overflow-hidden">
@@ -407,7 +408,7 @@ export default function NeoDevTemplate({
                         {techSkills.map((group) => (
                             <div
                                 key={group.id}
-                                className="rounded-3xl border border-white/10 bg-white/3 p-6"
+                                className="rounded-3xl border border-purple-500/20 hover:border-purple-500/30 bg-white/3 p-6"
                             >
 
                                 <h3 className="text-lg font-semibold mb-4">
@@ -447,7 +448,7 @@ export default function NeoDevTemplate({
                         {experiences.map((exp) => (
                             <div
                                 key={exp.id}
-                                className="relative pl-8 border-l border-white/10"
+                                className="relative pl-8 border-l border-purple-500/20 hover:border-purple-500/30"
                             >
 
                                 <div className="absolute -left-1.75 top-2 w-3 h-3 rounded-full bg-purple-500"></div>
@@ -481,7 +482,6 @@ export default function NeoDevTemplate({
                                 </div>
                             </div>
                         ))}
-
                     </div>
                 </section>
 
@@ -499,7 +499,7 @@ export default function NeoDevTemplate({
                         {education.map((edu) => (
                             <div
                                 key={edu.id}
-                                className="rounded-2xl border border-white/10 bg-white/3 p-6"
+                                className="rounded-2xl border border-purple-500/20 hover:border-purple-500/30 bg-white/3 p-6"
                             >
 
                                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
@@ -540,7 +540,7 @@ export default function NeoDevTemplate({
                         {contactLinks.email && (
                             <Link
                                 href={`mailto:${contactLinks.email}`}
-                                className="px-5 py-3 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/6 transition flex items-center gap-3"
+                                className="px-5 py-3 rounded-2xl border border-purple-500/20 bg-white/3 hover:border-purple-500/30 transition flex items-center gap-3"
                             >
                                 <MdOutlineMailOutline />
                                 Email
@@ -584,6 +584,8 @@ export default function NeoDevTemplate({
                 </section>
 
             </div>
+
+            <Footer name={name}/>
         </div>
     );
 };
