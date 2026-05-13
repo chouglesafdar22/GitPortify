@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import TemplateRenderer from "@/components/templates/TemplateRenderer";
 import PreviewPanel from "@/components/dashboard/PreviewPanel";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -74,6 +75,19 @@ export default function PortfolioPage() {
     // };
 
     return (
-        <PreviewPanel {...data} loading={loading} />
+        // <PreviewPanel {...data} loading={loading} />
+
+        <TemplateRenderer
+            key={data.template}
+            template={data.template}
+            name={data.name}
+            bio={data.bio}
+            avatar={data.avatar}
+            projects={data.projects}
+            education={data.education}
+            experiences={data.experiences}
+            techSkills={data.techSkills}
+            contactLinks={data.contactLinks}
+        />
     );
 };

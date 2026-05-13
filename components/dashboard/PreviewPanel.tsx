@@ -102,18 +102,22 @@ export default function PreviewPanel({
 
     return (
         <>
-            <TemplateRenderer
-                key={template}
-                template={template}
-                name={name}
-                bio={bio}
-                avatar={avatar}
-                projects={projects}
-                education={education}
-                experiences={experiences}
-                techSkills={techSkills}
-                contactLinks={contactLinks}
-            />
+            <section className="w-dvw lg:w-full lg:flex-1 border-r p-4 sm:p-6">
+                <div className="h-full rounded-xl p-6 transition-all duration-300">
+                    <TemplateRenderer
+                        key={template}
+                        template={template}
+                        name={name}
+                        bio={bio}
+                        avatar={avatar}
+                        projects={projects}
+                        education={education}
+                        experiences={experiences}
+                        techSkills={techSkills}
+                        contactLinks={contactLinks}
+                    />
+                </div>
+            </section>
         </>
     );
 }
