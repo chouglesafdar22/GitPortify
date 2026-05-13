@@ -34,16 +34,18 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-36 sm:w-40 lg:w-44 border-r flex flex-col z-40 items-center py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-40 sm:w-42 lg:w-44 border-r flex flex-col z-40 items-center py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
-                    className="flex justify-between items-center w-full text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-semibold text-foreground px-0.5">
+                    className="flex justify-between items-center w-full text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[19px] font-semibold text-foreground px-0.5">
                     <span>GitPortify</span>
                     <span
                         onClick={() => setOpen(false)}
                         className="hover:bg-muted p-1 rounded cursor-w-resize"
-                    ><GoSidebarExpand /></span>
+                    >
+                        <GoSidebarExpand />
+                    </span>
                 </div>
                 <nav className="flex flex-col gap-2">
                     {navLinks.map((link) => {
@@ -54,8 +56,8 @@ export default function Sidebar() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        onClick={()=>setOpen(false)}
-                                        className={`text-[8px] sm:text-[10px] md:text-xs lg:text-sm xl:text-base px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center
+                                        onClick={() => setOpen(false)}
+                                        className={`text-[10px] sm:text-xs md:text-sm lg:text-md xl:text-lg px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"
