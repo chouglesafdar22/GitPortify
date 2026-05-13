@@ -102,8 +102,8 @@ export default function PreviewPanel({
 
     return (
         <>
-            <section className="w-dvw lg:w-full lg:flex-1 border-r p-4 sm:p-6">
-                <div className="h-full rounded-xl p-6 transition-all duration-300">
+            <section className="w-dvw lg:w-full lg:flex-1 border-r p-4 md:p-6">
+                <div className="h-full rounded-xl md:p-6 p-0  transition-all duration-300">
                     <TemplateRenderer
                         key={template}
                         template={template}
