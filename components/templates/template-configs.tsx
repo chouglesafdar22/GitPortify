@@ -22,5 +22,10 @@ export const templateConfigs: Record<
         showNavbar: false,
         showContactLinks: true,
         allowThemeToggle: false
+    },
+    "neo-dev": {
+        showNavbar: false,
+        showContactLinks: true,
+        allowThemeToggle: true
     }
 };

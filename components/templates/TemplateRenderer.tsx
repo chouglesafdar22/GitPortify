@@ -2,6 +2,7 @@
 import GithubProTemplate from "./GithubProTemplate";
 import ProductLandingTemplate from "./ProductLandingTemplate";
 import TerminalDevTemplate from "./TerminalDevTemplate";
+import NeoDevTemplate from "./NeoDevTemplate";
 import type { TemplateType } from "@/types/template";
 
 interface TemplateRendererProps {
@@ -60,6 +61,9 @@ export default function TemplateRenderer(props: TemplateRendererProps) {
 
         case "terminal-dev":
             return <TerminalDevTemplate {...props} />;
+
+        case "neo-dev":
+            return <NeoDevTemplate {...props} />;
 
         default:
             return <GithubProTemplate {...props} />;

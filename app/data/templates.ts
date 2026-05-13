@@ -2,6 +2,7 @@ export type TemplateType =
     | "github-pro"
     | "product-landing"
     | "terminal-dev"
+    | "neo-dev"
 
 export interface Template {
     id: TemplateType;
@@ -27,6 +28,12 @@ export const templates: Template[] = [
         id: "terminal-dev",
         name: "Terminal-Dev",
         description: "Terminal style Hacker Portfolio",
+        preview: "/templates/terminal-dev.png"
+    },
+    {
+        id: "neo-dev",
+        name: "Neo-Dev",
+        description: "A modern glassmorphism-inspired developer portfolio",
         preview: "/templates/terminal-dev.png"
     }
 ]

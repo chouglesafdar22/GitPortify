@@ -152,6 +152,7 @@ export default function EditPanel({
                         <option value="github-pro">GitHub Pro</option>
                         <option value="product-landing">Product Landing</option>
                         <option value="terminal-dev">Terminal Dev</option>
+                         <option value="neo-dev">Neo Dev</option>
                     </select>
                 </div>
 
