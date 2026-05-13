@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 interface Props {
     name: string;
@@ -66,13 +68,44 @@ export default function NeoDevTemplate({
     education,
     contactLinks,
 }: Props) {
-    return (
-        <div className="min-h-screen bg-[#09090b] text-white">
 
-            {/* NAVBAR */}
+    const [theme, setTheme] = useState<"dark" | "light">("dark");
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("neodev-theme") as "dark" | "light";
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        }
+    }, []);
+
+    const toggleTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+
+        setTheme(newTheme);
+
+        localStorage.setItem("neodev-theme", newTheme);
+    };
+
+    const isDark = theme === "dark";
+
+    return (
+        <div
+            className={`min-h-screen transition-colors duration-300 ${isDark
+                ? "bg-[#09090b] text-white"
+                : "bg-[#f5f5f5] text-black"
+                }`}
+        >
+
             <header className="sticky top-5 z-50 flex justify-center px-4">
 
-                <nav className="w-full max-w-4xl rounded-full border border-white/10 bg-white/3 backdrop-blur-xl px-6 py-3">
+                <nav
+                    className={`w-full max-w-5xl rounded-full border backdrop-blur-xl px-6 py-3 transition-colors duration-300 ${isDark
+                            ? "bg-white/[0.03] border-white/10"
+                            : "bg-black/[0.03] border-black/10"
+                        }`}
+                >
 
                     <div className="flex items-center justify-between">
 
@@ -84,41 +117,97 @@ export default function NeoDevTemplate({
                             {name || "Portfolio"}
                         </Link>
 
-                        {/* LINKS */}
-                        <div className="hidden md:flex items-center gap-6 text-sm text-zinc-400">
-                            <a
-                                href="#projects"
-                                className="hover:text-white transition"
-                            >
+                        {/* DESKTOP NAV */}
+                        <div
+                            className={`hidden md:flex items-center gap-6 text-sm ${isDark ? "text-zinc-400" : "text-zinc-600"
+                                }`}
+                        >
+
+                            <a href="#projects" className="hover:text-purple-500 transition">
                                 Projects
                             </a>
-                            <a
-                                href="#skills"
-                                className="hover:text-white transition"
-                            >
+
+                            <a href="#skills" className="hover:text-purple-500 transition">
                                 Skills
                             </a>
-                            <a
-                                href="#experience"
-                                className="hover:text-white transition"
-                            >
+
+                            <a href="#experience" className="hover:text-purple-500 transition">
                                 Experience
                             </a>
-                            <a
-                                href="#education"
-                                className="hover:text-white transition"
-                            >
+
+                            <a href="#education" className="hover:text-purple-500 transition">
                                 Education
                             </a>
-                            <a
-                                href="#contact"
-                                className="hover:text-white transition"
-                            >
+
+                            <a href="#contact" className="hover:text-purple-500 transition">
                                 Contact
                             </a>
+
+                            {/* THEME */}
+                            <button
+                                onClick={toggleTheme}
+                                className={`p-2 rounded-full border transition cursor-pointer ${isDark
+                                        ? "border-white/10 bg-white/3 hover:bg-white/6"
+                                        : "border-black/10 bg-black/3 hover:bg-black/6"
+                                    }`}
+                            >
+                                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                            </button>
+
                         </div>
+
+                        {/* MOBILE BUTTON */}
+                        <button
+                            onClick={() => setOpen(!open)}
+                            className="md:hidden"
+                        >
+                            {open ? <X size={20} /> : <Menu size={20} />}
+                        </button>
+
                     </div>
+
+                    {/* MOBILE MENU */}
+                    {open && (
+                        <div
+                            className={`md:hidden mt-5 rounded-2xl border p-5 flex flex-col gap-4 ${isDark
+                                    ? "bg-black/40 border-white/10"
+                                    : "bg-white border-black/10"
+                                }`}
+                        >
+
+                            <a href="#projects" onClick={() => setOpen(false)}>
+                                Projects
+                            </a>
+
+                            <a href="#skills" onClick={() => setOpen(false)}>
+                                Skills
+                            </a>
+
+                            <a href="#experience" onClick={() => setOpen(false)}>
+                                Experience
+                            </a>
+
+                            <a href="#education" onClick={() => setOpen(false)}>
+                                Education
+                            </a>
+
+                            <a href="#contact" onClick={() => setOpen(false)}>
+                                Contact
+                            </a>
+
+                            <button
+                                onClick={toggleTheme}
+                                className="flex items-center gap-2"
+                            >
+                                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                                Change Theme
+                            </button>
+
+                        </div>
+                    )}
+
                 </nav>
+
             </header>
 
             <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-20">
@@ -497,4 +586,4 @@ export default function NeoDevTemplate({
             </div>
         </div>
     );
-}
+};

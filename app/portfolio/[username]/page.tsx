@@ -67,15 +67,15 @@ export default function PortfolioPage() {
         );
     }
 
-    const config = templateConfigs[data.template as keyof typeof templateConfigs] ??
-    {
-        allowThemeToggle: false,
-        showNavbar: false
-    };
+    // const config = templateConfigs[data.template as keyof typeof templateConfigs] ??
+    // {
+    //     allowThemeToggle: false,
+    //     showNavbar: false
+    // };
 
     return (
         <div className="relative min-h-dvh transition-colors duration-500 ease-linear">
-            {config.allowThemeToggle && (
+            {/* {config.allowThemeToggle && (
                 <div className="absolute top-20 right-4 sm:top-20 sm:right-6 lg:right-8 z-20">
                     <button
                         onClick={() => {
@@ -90,7 +90,7 @@ export default function PortfolioPage() {
             )}
             {config.showNavbar && (
                 <Navbar name={data.name} contactLinks={data.contactLinks} />
-            )}
+            )} */}
             <PreviewPanel {...data} loading={loading} />
             <footer className="flex w-full p-5 justify-center items-center text-center">
                 <div className='flex items-center justify-center'>
