@@ -110,7 +110,7 @@ export default function TerminalDevTemplate({
                             className={`text-sm md:text-base font-semibold tracking-wide ${isDark ? "text-green-400" : "text-black"
                                 }`}
                         >
-                            terminal.dev
+                             {name || "Portfolio"}
                         </Link>
 
                         {/* DESKTOP NAV */}
