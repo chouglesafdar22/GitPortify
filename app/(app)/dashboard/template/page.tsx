@@ -18,7 +18,7 @@ export default function TemplatesPage() {
 
     return (
         <>
-            <div className="p-7 space-y-10 lg:h-dvh animate-in fade-in duration-500">
+            <div className="p-7 space-y-10 h-dvh animate-in fade-in duration-500">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-16 font-semibold">
                     Templates
                 </h1>

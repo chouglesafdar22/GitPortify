@@ -78,7 +78,7 @@ export default function NeoDevTemplate({
 
                         {/* LOGO */}
                         <Link
-                            href="#"
+                            href="#home"
                             className="text-sm md:text-base font-semibold tracking-wide"
                         >
                             {name || "Portfolio"}
@@ -124,7 +124,7 @@ export default function NeoDevTemplate({
             <div className="max-w-6xl mx-auto px-4 md:px-8 py-10 space-y-20">
 
                 {/* HERO */}
-                <section className="grid md:grid-cols-2 gap-10 items-center">
+                <section id="home" className="grid md:grid-cols-2 gap-10 items-center">
 
                     {/* LEFT */}
                     <motion.div
