@@ -310,7 +310,7 @@ export default function ProductLandingTemplate({
                                         }`}
                                 >
 
-                                    <div className="h-48 bg-muted flex items-center justify-center text-xs overflow-hidden">
+                                    <div className="h-48 bg-muted flex items-center justify-center text-xs text-muted-foreground overflow-hidden">
 
                                         {p.imageUrl ? (
                                             <img
@@ -432,7 +432,7 @@ export default function ProductLandingTemplate({
                                                 {exp.role}
                                             </h3>
 
-                                            <span className="text-[10px] px-3 py-1 rounded-full bg-muted whitespace-nowrap">
+                                            <span className="text-[10px] px-3 py-1 rounded-full bg-muted text-muted-foreground whitespace-nowrap">
                                                 {exp.startDate} – {exp.current ? "Present" : exp.endDate}
                                             </span>
 
