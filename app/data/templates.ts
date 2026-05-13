@@ -34,6 +34,6 @@ export const templates: Template[] = [
         id: "neo-dev",
         name: "Neo-Dev",
         description: "A modern glassmorphism-inspired developer portfolio",
-        preview: "/templates/terminal-dev.png"
+        preview: "/templates/neo-dev.png"
     }
 ]
