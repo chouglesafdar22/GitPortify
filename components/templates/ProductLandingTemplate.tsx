@@ -514,7 +514,7 @@ export default function ProductLandingTemplate({
                                                 {edu.degree}
                                             </h3>
 
-                                            <span className="text-[10px] px-3 py-1 rounded-full bg-muted whitespace-nowrap">
+                                            <span className="text-[10px] px-3 py-1 rounded-full bg-muted text-muted-foreground whitespace-nowrap">
                                                 {edu.startYear} – {edu.endYear}
                                             </span>
 
