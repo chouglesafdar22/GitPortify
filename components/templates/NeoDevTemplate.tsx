@@ -99,7 +99,7 @@ export default function NeoDevTemplate({
                 }`}
         >
 
-            <header className="sticky top-5 z-50 flex justify-center px-4">
+            <header className="sticky top-5 z-40 flex justify-center px-4">
 
                 <nav
                     className={`w-full max-w-5xl rounded-full border backdrop-blur-xl px-6 py-3 transition-colors duration-300 ${isDark
