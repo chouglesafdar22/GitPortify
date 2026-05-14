@@ -34,11 +34,11 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-40 sm:w-42 lg:w-44 border-r flex flex-col z-40 items-center py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-46 sm:w-48 lg:w-50 border-r flex flex-col z-40 items-center py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
-                    className="flex justify-between items-center w-full text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[19px] font-semibold text-foreground px-0.5">
+                    className="flex justify-between items-center w-full text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-foreground px-0.5">
                     <span>GitPortify</span>
                     <span
                         onClick={() => setOpen(false)}
@@ -57,7 +57,7 @@ export default function Sidebar() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        className={`text-[10px] sm:text-xs md:text-sm lg:text-md xl:text-lg px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center
+                                        className={`text-[10px] sm:text-xs md:text-sm lg:text-md xl:text-lg px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-start
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"
@@ -78,4 +78,4 @@ export default function Sidebar() {
             </aside>
         </>
     )
-}
+};
