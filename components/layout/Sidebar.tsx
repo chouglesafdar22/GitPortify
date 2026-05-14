@@ -57,7 +57,7 @@ export default function Sidebar() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-start
+                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"
