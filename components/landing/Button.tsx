@@ -7,24 +7,26 @@ interface ButtonProps {
     icon?: React.ReactNode;
     onClick?: () => void;
     href?: string;
-    className?: string;
+    contentClassName?: string;
     reverse?: boolean;
-}
+    className?: string;
+};
 
 export default function Button({
     text,
     icon,
     onClick,
     href,
+    contentClassName = "",
+    reverse,
     className = "",
-    reverse
 }: ButtonProps) {
     const content = (
         <motion.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", duration: 0.3 }}
-            className={`${reverse ? "flex-row-reverse" : ""} flex flex-row md:py-2.5 py-1.5 md:px-4 px-3 md:gap-2.5 gap-1.5 rounded-3xl lg:text-base md:text-sm sm:text-xs text-[12px] text-white bg-[#51149C] hover:bg-[#6D28D9] justify-center items-center cursor-pointer w-fit ${className}`}
+            className={`${reverse ? "flex-row-reverse" : ""} flex flex-row md:py-2.5 py-1.5 md:px-4 px-3 md:gap-2.5 gap-1.5 rounded-3xl lg:text-base md:text-sm sm:text-xs text-[12px] text-white bg-[#51149C] hover:bg-[#6D28D9] justify-center items-center cursor-pointer w-fit ${contentClassName}`}
         >
             <span>{text}</span>
             {icon && <span>{icon}</span>}
@@ -33,14 +35,14 @@ export default function Button({
 
     if (href) {
         return (
-            <Link href={href} className="w-full">
+            <Link href={href} className={`${className}`}>
                 {content}
             </Link>
         );
     }
 
     return (
-        <button onClick={onClick} className="w-full">
+        <button onClick={onClick} className={`${className}`}>
             {content}
         </button>
     );
