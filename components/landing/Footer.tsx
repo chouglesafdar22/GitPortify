@@ -55,7 +55,7 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
-                <div className=" lg:text-xs md:text-[12px] sm:text-[10px] text-[8px] text-muted-foreground text-left font-light">
+                <div className=" lg:text-[13px] md:text-[14px] sm:text-[12px] text-[10px] text-muted-foreground text-left font-light">
                     &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Develop By <Link className="hover:text-foreground hover:underline" href={"https://safdarchougle.vercel.app"}>Safdar Chougle</Link>
                 </div>
             </div>
