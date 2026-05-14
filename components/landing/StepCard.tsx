@@ -33,7 +33,7 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
                     </div>
                 </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-1 text-left">
+            <div className="w-full justify-center md:w-1/2 flex flex-col gap-1 text-left">
                 <h4 className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm">
                     {title}
                 </h4>
