@@ -16,14 +16,19 @@ export default function StepCard({ video, title, desc, reverse }: StepProps) {
             <div className="w-full flex justify-center">
                 <div className="relative w-full max-w-none">
                     <div className="absolute inset-0 bg-purple-600/20 blur-2xl rounded-2xl"></div>
-                    <div className="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer">
+                    <div className="relative cursor-pointer rounded-3xl overflow-hidden border border-white/10 bg-black shadow-xl">
+                        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border-b border-white/10">
+                            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
                         <video
                             src={video}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="w-full h-55 sm:h-70 md:h-87.5 lg:h-100 object-contain bg-black"
+                            className="w-full max-h-175 object-contain bg-black"
                         />
                     </div>
                 </div>
