@@ -25,7 +25,7 @@ export default function Navbar() {
                     Features
                 </a>
                 <a href="#steps" className="hover:text-[#8550c7] transition">
-                    Steps
+                    How It Works
                 </a>
                 <a href="#faq" className="hover:text-[#8550c7] transition">
                     FAQ

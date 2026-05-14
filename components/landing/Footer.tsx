@@ -39,7 +39,7 @@ export default function Footer() {
                     <ul className="space-y-2 lg:text-base md:text-sm sm:text-xs text-[10px] text-muted-foreground">
                         <li><Link href="#home" className="hover:text-white">Home</Link></li>
                         <li><Link href="#features" className="hover:text-white">Features</Link></li>
-                        <li><Link href="#steps" className="hover:text-white">Steps</Link></li>
+                        <li><Link href="#steps" className="hover:text-white">How It Works</Link></li>
                         <li><Link href="#faq" className="hover:text-white">FAQ</Link></li>
                     </ul>
                 </div>
