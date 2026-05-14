@@ -15,7 +15,7 @@ export default function Hero() {
                         href="/signup"
                         text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}
-                        contentClassName="lg:text-lg md:text-base sm:text-sm text-xs md:py-4 py-3 md:px-5 px-3.5"
+                        contentClassName="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs md:py-4 py-3 md:px-5 px-3.5"
                         className="w-full"
                     />
                 </div>
