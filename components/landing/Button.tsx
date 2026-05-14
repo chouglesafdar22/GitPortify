@@ -32,8 +32,16 @@ export default function Button({
     );
 
     if (href) {
-        return <Link href={href}>{content}</Link>;
+        return (
+            <Link href={href} className="w-full">
+                {content}
+            </Link>
+        );
     }
 
-    return <button onClick={onClick}>{content}</button>;
+    return (
+        <button onClick={onClick} className="w-full">
+            {content}
+        </button>
+    );
 };
