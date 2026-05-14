@@ -13,7 +13,7 @@ export default function Hero() {
                 <div className="flex justify-start items-start">
                     <Button
                         href="/signup"
-                        text="Start with Free"
+                        text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}
                         className="lg:text-lg md:text-base sm:text-sm text-xs"
                     />
