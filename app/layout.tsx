@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GitPortify",
+  title: "GitPortify - GitHub Powered Portfolio Builder Platform",
   description: "Modern developer portfolio SaaS",
   robots: {
     index: true,
