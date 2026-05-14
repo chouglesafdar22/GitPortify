@@ -46,7 +46,7 @@ export default function Faq() {
                 <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center font-semibold">FAQ</h2>
                 <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base text-center font-medium">Common Questions</h3>
             </div>
-            <div className="flex flex-col justify-center items-center md:px-24 px-4 md:py-16 py-6 md:gap-8 gap-4">
+            <div className="flex flex-col justify-center items-center md:px-16 px-3 md:py-14 py-5 md:gap-8 gap-3.5">
                 {faqs.map((faq, index) => (
                     <FaqCard
                         key={index}
