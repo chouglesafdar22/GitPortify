@@ -31,7 +31,7 @@ export default function SignupPage() {
                                 signIn("github", { callbackUrl: "/dashboard" });
                             }}
                             reverse
-                            className="w-full"
+                            className="min-w-full lg:text-lg md:text-base sm:text-sm text-xs md:py-4 py-3 md:px-5 px-3.5"
                         />
                     </div>
                     <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
