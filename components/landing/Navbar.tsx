@@ -33,8 +33,7 @@ export default function Navbar() {
             </div>
             <Button
                 href="/signup"
-                text="Create Portfolio Free"
-                icon={<FaLongArrowAltRight />}
+                text="SignUp"
             />
         </nav>
     );

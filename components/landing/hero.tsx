@@ -4,9 +4,9 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center md:pt-16 pt-12 md:pb-24 pb-18 md:px-13 px-5 md:gap-4 gap-6">
-            <div className="flex flex-col justify-start md:gap-5 gap-3">
-                <div className="flex flex-col justify-start items-start gap-2.5">
+        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center md:pt-16 pt-12 md:pb-24 pb-18 md:px-13 px-5 md:gap-6 gap-4">
+            <div className="flex flex-col justify-start md:gap-5 gap-2.5">
+                <div className="flex flex-col justify-start items-start gap-2">
                     <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">Build your developer portfolio in minutes - powered by GitHub</h1>
                     <p className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base font-normal">Import yours projects, customize your design, and publish instantly. No setup, no hassle.</p>
                 </div>
@@ -15,7 +15,7 @@ export default function Hero() {
                         href="/signup"
                         text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}
-                        className="lg:text-lg md:text-base sm:text-sm text-xs"
+                        className="lg:text-lg md:text-base sm:text-sm text-xs md:p-4 p-2.5"
                     />
                 </div>
             </div>
