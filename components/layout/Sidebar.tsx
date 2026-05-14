@@ -34,7 +34,7 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-46 sm:w-48 lg:w-50 border-r flex flex-col z-40 items-center py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-46 sm:w-48 lg:w-50 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
@@ -57,14 +57,14 @@ export default function Sidebar() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        className={`text-[10px] sm:text-xs md:text-sm lg:text-md xl:text-lg px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-start
+                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-start
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"
                                             }
                             `}
                                     >
-                                        {link.icon}
+                                        <span>{link.icon}</span>
                                         <span>{link.name}</span>
                                     </Link>
                                 </TooltipTrigger>
