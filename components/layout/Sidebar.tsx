@@ -41,13 +41,13 @@ export default function Sidebar() {
                     className="flex justify-between items-center w-full px-0.5">
                     <div className="flex flex-col cursor-pointer leading-none select-none">
                         <div className="flex justify-center gap-1 items-center">
-                            <span className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                            <span className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
                                 {"</"}
                             </span>
-                            <h1 className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                            <h1 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                                 gitportify
                             </h1>
-                            <span className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                            <span className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
                                 {">"}
                             </span>
                         </div>
@@ -59,7 +59,7 @@ export default function Sidebar() {
                     </div>
                     <span
                         onClick={() => setOpen(false)}
-                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold text-foreground cursor-w-resize"
+                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold text-foreground cursor-w-resize text-center"
                     >
                         <GoSidebarExpand />
                     </span>
