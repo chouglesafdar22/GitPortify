@@ -100,7 +100,7 @@ export default function TermsAndConditionsPage() {
                     <span>|</span>
 
                     <Link href="/signup" className="hover:text-foreground fira-sans-light transition">
-                        Back to Sign Up
+                        Sign Up
                     </Link>
 
                 </div>
