@@ -46,7 +46,7 @@ export default function StepCard({
             </div>
 
             {/* Content */}
-            <div className="flex flex-col justify-center items-start gap-4">
+            <div className="flex flex-col justify-center items-start md:gap-4 gap-2.5">
                 <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-[10px] sm:text-xs fira-sans-medium">
                     {steps}
                 </span>
