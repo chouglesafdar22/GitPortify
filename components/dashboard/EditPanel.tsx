@@ -129,7 +129,7 @@ export default function EditPanel({
                 theme="colored"
             />
 
-            <aside className="w-screen sticky top-0 h-screen overflow-y-auto lg:w-80 sm:p-6 p-4 border-t lg:border-t-0 space-y-6">
+            <aside className="w-screen sticky top-0 h-screen lg:w-80 sm:p-6 p-4 border-t lg:border-t-0 space-y-6">
                 <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold mb-4">
                     Edit Profile
                 </h2>
