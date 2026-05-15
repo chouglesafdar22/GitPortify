@@ -4,7 +4,7 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center md:pt-16 pt-14 md:pb-24 pb-18 md:px-13 px-5 md:gap-6 gap-5.5">
+        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center pt-18 md:pb-24 pb-18 md:px-13 px-5 md:gap-6 gap-5.5">
             <div className="flex flex-col justify-start md:gap-5 gap-2.5">
                 <div className="flex flex-col justify-start items-start gap-2">
                     <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold">Build your developer portfolio in minutes - powered by GitHub</h1>

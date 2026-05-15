@@ -88,7 +88,7 @@ export default function Navbar() {
                         href="/signup"
                         text="SignUp"
                         className="w-full"
-                        contentClassName="w-full sm:text-base text-sm"
+                        contentClassName="w-full xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm"
                     />
 
                 </div>
