@@ -6,21 +6,25 @@ import Button from "./Button";
 export default function Navbar() {
     return (
         <nav className="fixed top-0 z-40 w-full flex justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
-            <a href="#home" className="flex gap-2 items-center">
-                <div className="flex justify-center items-center bg-white md:w-8 w-5 md:h-8 h-5 rounded-full overflow-hidden">
-                    <Image
-                        src="/logo/GitPortify-Logo2.png"
-                        alt="GitPortify Logo"
-                        width={36}
-                        height={36}
-                        className="object-cover"
-                    />
+            <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
+                <div className="flex justify-center gap-1 items-center">
+                    <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                        {"</"}
+                    </span>
+                    <h1 className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                        gitportify
+                    </h1>
+                    <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                        {">"}
+                    </span>
                 </div>
-                <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">
-                    GitPortify
-                </h1>
+                <p
+                    className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground fira-sans-medium text-center mt-1"
+                >
+                    Develop your portfolio in minutes
+                </p>
             </a>
-            <div className="hidden md:flex gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+            <div className="hidden fira-sans-regular md:flex gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
                 <a href="#features" className="hover:text-[#8550c7] transition">
                     Features
                 </a>

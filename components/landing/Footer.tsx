@@ -8,21 +8,25 @@ export default function Footer() {
         <footer className="w-full bg-[#2E2E2E] px-5 md:px-10 md:py-9 py-5 gap-50">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 gap-5">
                 <div className="space-y-2">
-                    <a href="#home" className="flex gap-2 items-center">
-                        <div className="flex justify-center items-center bg-white md:w-8 w-5 md:h-8 h-5 rounded-full overflow-hidden">
-                            <Image
-                                src="/logo/GitPortify-Logo2.png"
-                                alt="GitPortify Logo"
-                                width={36}
-                                height={36}
-                                className="object-cover"
-                            />
+                    <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
+                        <div className="flex justify-center gap-1 items-center">
+                            <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                                {"</"}
+                            </span>
+                            <h1 className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                                gitportify
+                            </h1>
+                            <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                                {">"}
+                            </span>
                         </div>
-                        <h1 className="text-white lg:text-3xl md:text-2xl sm:text-xl text-lg font-bold">
-                            GitPortify
-                        </h1>
+                        <p
+                            className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground fira-sans-medium text-center mt-1"
+                        >
+                            Develop your portfolio in minutes
+                        </p>
                     </a>
-                    <p className="lg:text-lg md:text-base sm:text-sm text-xs text-muted-foreground max-w-xs">
+                    <p className="lg:text-lg md:text-base sm:text-sm text-xs fira-sans-medium text-muted-foreground max-w-xs">
                         Develop your portfolio in minutes — powered by GitHub
                     </p>
                     <Link
@@ -30,13 +34,13 @@ export default function Footer() {
                         target="_blank"
                         className="inline-flex items-center justify-center w-8 h-8 border border-white rounded-md hover:bg-neutral-800 transition"
                     >
-                        <FaLinkedin className="lg:text-xl md:text-lg sm:text-base text-sm text-white" />
+                        <FaLinkedin className="lg:text-xl md:text-lg sm:text-base text-sm text-white fira-sans-regular" />
                     </Link>
                 </div>
 
                 <div>
-                    <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm font-medium mb-3">Links</h3>
-                    <ul className="space-y-2 lg:text-base md:text-sm sm:text-xs text-[10px] text-muted-foreground">
+                    <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium mb-3">Links</h3>
+                    <ul className="space-y-1.5 lg:text-base md:text-sm sm:text-xs text-[10px] fira-sans-regular text-muted-foreground">
                         <li><Link href="#home" className="hover:text-white">Home</Link></li>
                         <li><Link href="#features" className="hover:text-white">Features</Link></li>
                         <li><Link href="#how-it-works" className="hover:text-white">How It Works</Link></li>
@@ -45,8 +49,8 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm font-medium mb-3">Legal</h3>
-                    <ul className="space-y-2 lg:text-base md:text-sm sm:text-xs text-[10px] text-muted-foreground">
+                    <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium mb-3">Legal</h3>
+                    <ul className="space-y-1.5 lg:text-base md:text-sm sm:text-xs text-[10px] fira-sans-regular text-muted-foreground">
                         <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
                         <li><Link href="/terms-and-conditions" className="hover:text-white">Terms&Conditions</Link></li>
                     </ul>
@@ -55,7 +59,7 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
-                <div className=" lg:text-[13px] md:text-[14px] sm:text-[12px] text-[10px] text-muted-foreground text-left font-light">
+                <div className=" lg:text-[13px] md:text-[14px] sm:text-[12px] text-[10px] text-muted-foreground text-left fira-sans-light">
                     &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Develop By <Link className="hover:text-foreground hover:underline" href={"https://safdarchougle.vercel.app"}>Safdar Chougle</Link>
                 </div>
             </div>

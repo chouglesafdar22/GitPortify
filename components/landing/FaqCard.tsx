@@ -19,14 +19,14 @@ export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
                 onClick={onClick}
                  aria-expanded={isOpen}
             >
-                <h4 className="text-white lg:text-xl md:text-lg sm:text-base text-sm">{que}</h4>
+                <h4 className="text-white lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium">{que}</h4>
                 <span
-                    className="text-white lg:text-2xl md:text-xl sm:text-lg text-base text-center">
+                    className="text-white lg:text-2xl md:text-xl sm:text-lg text-base text-center fira-sans-medium">
                     {isOpen ? <CiCircleMinus /> : <CiCirclePlus />}
                 </span>
             </div>
             <div className={`${isOpen ? "block" : "hidden"} flex overflow-hidden transition-all duration-300 justify-start items-start text-left`}>
-                <p className="text-gray-400 lg:text-lg md:text-base sm:text-sm text-xs text-left">{ans}</p>
+                <p className="text-gray-400 lg:text-lg md:text-base sm:text-sm text-xs text-left fira-sans-regular">{ans}</p>
             </div>
         </div>
     )
