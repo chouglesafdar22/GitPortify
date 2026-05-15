@@ -19,7 +19,7 @@ export default function Navbar() {
                     </span>
                 </div>
                 <p
-                    className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground fira-sans-medium text-center mt-1"
+                    className="text-[5px] sm:text-[6px] md:text-[8px] lg:text-[10px] text-muted-foreground fira-sans-medium text-center mt-0.5 tracking-wide"
                 >
                     Develop your portfolio in minutes
                 </p>

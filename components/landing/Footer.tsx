@@ -9,19 +9,19 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 gap-5">
                 <div className="space-y-2">
                     <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
-                        <div className="flex justify-center gap-1 items-center">
-                            <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                        <div className="flex justify-center gap-1 items-start">
+                            <span className="text-[oklch(0.985_0_0)] xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
                                 {"</"}
                             </span>
-                            <h1 className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                            <h1 className="text-[oklch(0.985 0 0)] xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                                 gitportify
                             </h1>
-                            <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                            <span className="text-[oklch(0.985 0 0)] xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
                                 {">"}
                             </span>
                         </div>
                         <p
-                            className="text-[8px] sm:text-[10px] md:text-xs lg:text-sm text-muted-foreground fira-sans-medium text-center mt-1"
+                            className="text-[5px] sm:text-[6px] md:text-[8px] lg:text-[10px] text-muted-foreground fira-sans-medium text-center mt-0.5 tracking-wide"
                         >
                             Develop your portfolio in minutes
                         </p>
