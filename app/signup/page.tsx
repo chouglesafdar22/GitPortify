@@ -1,13 +1,23 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "@/components/landing/Button";
 import { IoLogoGithub } from "react-icons/io";
 import { signIn } from "next-auth/react";
 import Footer from "@/components/dashboard/Footer";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function SignupPage() {
     const [loading, setLoading] = useState(false);
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (session) {
+            router.push("/dashboard");
+        }
+    }, [session, router]);
 
     return (
         <>
