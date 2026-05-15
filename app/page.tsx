@@ -11,8 +11,8 @@ export default function HomePage() {
     return (
         <>
             <Navbar />
-            <Template />
             <Hero />
+            <Template />
             <Feature />
             <Step />
             <Faq />
