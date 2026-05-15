@@ -34,15 +34,32 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-46 sm:w-48 lg:w-50 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-52 sm:w-54 lg:w-56 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
-                    className="flex justify-between items-center w-full text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-foreground px-0.5">
-                    <span>GitPortify</span>
+                    className="flex justify-between items-center w-full px-0.5">
+                    <div className="flex flex-col cursor-pointer leading-none select-none">
+                        <div className="flex justify-center gap-1 items-center">
+                            <span className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                                {"</"}
+                            </span>
+                            <h1 className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                                gitportify
+                            </h1>
+                            <span className="text-foreground xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                                {">"}
+                            </span>
+                        </div>
+                        <p
+                            className="text-[4px] sm:text-[5px] md:text-[7px] lg:text-[8px] text-muted-foreground fira-sans-medium text-center mt-0.5 tracking-wide"
+                        >
+                            Develop your portfolio in minutes
+                        </p>
+                    </div>
                     <span
                         onClick={() => setOpen(false)}
-                        className="hover:bg-muted p-1 rounded cursor-w-resize"
+                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold text-foreground cursor-w-resize"
                     >
                         <GoSidebarExpand />
                     </span>
@@ -57,7 +74,7 @@ export default function Sidebar() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center
+                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center fira-sans-medium
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"

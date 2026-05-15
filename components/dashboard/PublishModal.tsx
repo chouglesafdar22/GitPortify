@@ -74,17 +74,17 @@ export default function PublishModal({
                     >
                         <div className="flex items-center justify-between gap-4">
                             <div>
-                                <h2 className="text-xl font-semibold text-foreground">
+                                <h2 className="text-xl fira-sans-semibold text-foreground">
                                     Portfolio Published
                                 </h2>
-                                <p className="mt-1 text-sm text-muted-foreground">
+                                <p className="mt-1 text-sm fira-sans-medium text-muted-foreground">
                                     Your portfolio is ready
                                 </p>
                             </div>
                             <Button
                                 variant={"outline"}
                                 onClick={onClose}
-                                className="text-sm cursor-pointer"
+                                className="text-sm cursor-pointer fira-sans-regular"
                             >
                                 X
                             </Button>
@@ -92,14 +92,14 @@ export default function PublishModal({
                         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <Button
                                 onClick={handleCopy}
-                                className="cursor-pointer"
+                                className="cursor-pointer fira-sans-regular"
                             >
                                 Copy Link
                             </Button>
                             <Button
                                 variant={"secondary"}
                                 onClick={handleShare}
-                                className="cursor-pointer"
+                                className="cursor-pointer fira-sans-regular"
                             >
                                 Share
                             </Button>
@@ -115,7 +115,7 @@ export default function PublishModal({
                             href={portfolioUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted cursor-pointer w-full mt-2.5"
+                            className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm fira-sans-regular hover:bg-muted cursor-pointer w-full mt-2.5"
                         >
                             Open Portfolio
                         </Link>

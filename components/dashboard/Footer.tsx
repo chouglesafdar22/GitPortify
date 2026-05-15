@@ -10,7 +10,7 @@ export default function Footer() {
                 <p className="text-[9px] md:text-[10px] xl:text-[11px] fira-snas-light text-muted-foreground">&copy;{currentYear} All Rights Reserved GitPortify.</p>
                 <div className="flex items-center gap-1.5">
                     <Link href="/privacy-policy" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition">
-                        Privacy Policy
+                        PrivacyPolicy
                     </Link>
 
                     <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light">|</span>
