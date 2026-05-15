@@ -14,9 +14,9 @@ export default function Template() {
             </div>
             <div className="relative w-full">
                 {/* Left Fade */}
-                <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-linear-to-r from-background to-transparent" />
+                <div className="pointer-events-none absolute left-0 top-0 z-10 h-full md:w-12 w-6 bg-linear-to-r from-background to-transparent" />
                 {/* Right Fade */}
-                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-linear-to-l from-background to-transparent" />
+                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full md:w-12 w-6 bg-linear-to-l from-background to-transparent" />
                 {/* Scroll Container */}
                 <div
                     className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
@@ -27,7 +27,6 @@ export default function Template() {
                             title="Neo-Dev"
                             description="A modern glassmorphism-inspired developer portfolio"
                             href="/preview/demo-neo-dev"
-                            featured
                         />
                     </div>
 
