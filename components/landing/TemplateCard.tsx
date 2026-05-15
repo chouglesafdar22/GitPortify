@@ -20,7 +20,7 @@ export default function TemplateCard({
 }: TemplateCardProps) {
     return (
         <div
-            className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(109,40,217,0.18)]
+            className={`group relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(109,40,217,0.18)]
                 ${featured
                     ? "md:col-span-2"
                     : ""
