@@ -34,20 +34,20 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-54 sm:w-56 lg:w-60 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-54 sm:w-56 lg:w-60 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-5 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
                     className="flex justify-between items-center w-full px-0.5">
                     <div className="flex flex-col cursor-pointer leading-none select-none">
                         <div className="flex justify-center gap-1 items-center">
-                            <span className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                            <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
                                 {"</"}
                             </span>
-                            <h1 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                            <h1 className="text-foreground lg:text-xl md:text-lg sm:text-base text-smfira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                                 gitportify
                             </h1>
-                            <span className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-semibold tracking-tight">
+                            <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
                                 {">"}
                             </span>
                         </div>
@@ -64,7 +64,7 @@ export default function Sidebar() {
                         <GoSidebarExpand />
                     </span>
                 </div>
-                <nav className="flex flex-col gap-2">
+                <nav className="flex flex-col gap-2 space-y-2.5">
                     {navLinks.map((link) => {
                         const active = pathname === link.href;
                         return (
