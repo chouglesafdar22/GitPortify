@@ -36,6 +36,7 @@ export default function Footer() {
                 <div>
                     <h3 className="text-white lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium mb-3">Links</h3>
                     <ul className="space-y-1.5 lg:text-base md:text-sm sm:text-xs text-[10px] fira-sans-regular text-muted-foreground">
+                        <li><Link href="/signup" className="hover:text-white">SignUp</Link></li>
                         <li><Link href="#home" className="hover:text-white">Home</Link></li>
                         <li><Link href="#features" className="hover:text-white">Features</Link></li>
                         <li><Link href="#how-it-works" className="hover:text-white">How It Works</Link></li>
