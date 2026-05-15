@@ -15,10 +15,10 @@ export default function SignupPage() {
                 <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
                 <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl p-6 space-y-4 shadow-md">
                     <div className="text-center space-y-1">
-                        <h1 className="text-xl font-semibold">
+                        <h1 className="text-xl fira-sans-semibold">
                             Welcome to Gitportify
                         </h1>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground fira-sans-medium">
                             Build your developer portfolio instantly
                         </p>
                     </div>
@@ -37,10 +37,10 @@ export default function SignupPage() {
                     </div>
                     <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                         <div className="flex-1 h-px bg-border" />
-                        <span>GitHub Required</span>
+                        <span className="fira-sans-regular">GitHub Required</span>
                         <div className="flex-1 h-px bg-border" />
                     </div>
-                    <p className="text-xs text-center text-muted-foreground">
+                    <p className="text-xs text-center fira-sans-light text-muted-foreground">
                         By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy Policy</Link>
                     </p>
                 </div>
