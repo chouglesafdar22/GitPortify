@@ -64,7 +64,7 @@ export default function Sidebar() {
                         <GoSidebarExpand />
                     </span>
                 </div>
-                <nav className="flex flex-col gap-2 space-y-2.5">
+                <nav className="flex flex-col gap-2">
                     {navLinks.map((link) => {
                         const active = pathname === link.href;
                         return (
