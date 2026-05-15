@@ -12,14 +12,14 @@ export default function Template() {
                    Modern portfolio templates designed for developers
                 </h3>
             </div>
-            <div className="relative w-full">
+            <div className="w-full">
                 {/* Left Fade */}
                 {/* <div className="pointer-events-none absolute left-0 top-0 z-10 h-full md:w-5 w-1.5 bg-linear-to-r from-background to-transparent" /> */}
                 {/* Right Fade */}
                 {/* <div className="pointer-events-none absolute right-0 top-0 z-10 h-full md:w-5 w-1.5 bg-linear-to-l from-background to-transparent" /> */}
                 {/* Scroll Container */}
                 <div
-                    className="flex gap-6 overflow-x-auto xl:justify-center items-center scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 overflow-x-auto xl:justify-center justify-start items-center scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
                 >
                     <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                         <TemplateCard
