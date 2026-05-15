@@ -52,17 +52,17 @@ export default function SettingPage() {
                 theme="colored"
             />
 
-            <div className="py-8 px-8 md:px-20 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
-                <h1 className="text-lg sm:text-xl lg:text-2xl px-16 font-semibold">
+            <div className="p-7 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
+                <h1 className="text-lg sm:text-xl lg:text-2xl px-16 fira-sans-semibold">
                     Settings
                 </h1>
                 <div className="space-y-2 border rounded-xl p-4">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl fira-sans-medium">
                         Profile
                     </h3>
                     <div className="space-y-2">
                         <label
-                            className="text-sm sm:text-base lg:text-xl text-muted-foreground"
+                            className="text-sm sm:text-base lg:text-xl fira-sans-regular text-muted-foreground"
                         >
                             Username
                         </label>
@@ -70,14 +70,14 @@ export default function SettingPage() {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             placeholder="your-name"
-                            className="w-full border rounded-md px-3 py-2 bg-background text-sm"
+                            className="w-full border rounded-md px-3 py-2 bg-background fira-sans-regular text-sm"
                         />
-                        <p className="text-xs text-muted-foreground">
+                        <p className="text-xs text-muted-foreground fira-sans-light">
                             Your Portfolio URL: {url}
                         </p>
                     </div>
                     <Button
-                        className="cursor-pointer text-sm"
+                        className="cursor-pointer text-sm fira-sans-regular"
                         variant={"secondary"}
                         onClick={() => {
                             localStorage.setItem("gitportify-username", username);
@@ -89,7 +89,7 @@ export default function SettingPage() {
                 </div>
 
                 <div className="space-y-2 border rounded-xl p-4">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl fira-sans-medium">
                         Theme
                     </h3>
                     <div className="grid grid-cols-3 gap-3">
@@ -102,8 +102,8 @@ export default function SettingPage() {
                                     toast.success("Theme Changed successfully");
                                 }}
                                 className={`text-sm px-3 py-2 rounded-md border capitalize transition cursor-pointer ${theme === t
-                                    ? "bg-violet-600 text-white border-violet-600"
-                                    : "hover:bg-muted"
+                                    ? "bg-violet-600 text-white border-violet-600 fira-sans-regular"
+                                    : "hover:bg-muted fira-sans-light"
                                     }`}
                             >
                                 {t}
@@ -113,15 +113,15 @@ export default function SettingPage() {
                 </div>
 
                 <div className="space-y-2 border border-red-500/40 rounded-xl p-4">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl text-red-500 font-medium">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl text-red-500 fira-sans-medium">
                         Danger Zone
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm fira-sans-regular text-muted-foreground">
                         This will Logout your account from GitPortify
                     </p>
                     <button
                         onClick={handleLogout}
-                        className="text-sm cursor-pointer px-4 py-2 rounded-md border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition"
+                        className="text-sm cursor-pointer px-4 py-2 rounded-md border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition fira-sans-regular"
                     >
                         {loading ? "Logout..." : "Logout"}
                     </button>
