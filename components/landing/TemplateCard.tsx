@@ -34,7 +34,7 @@ export default function TemplateCard({
 
                 <div className="absolute top-4 left-4 z-10 flex items-center gap-1 rounded-full border border-green-500/20 bg-black/60 px-2 py-1 backdrop-blur-md">
                     <div className="h-2 w-2 rounded-full bg-green-500" />
-                    <span className="text-[10px] text-green-400 fira-sans-medium">
+                    <span className="text-[10px] text-green-400 fira-sans-regular">
                         Live Preview
                     </span>
                 </div>
@@ -62,7 +62,7 @@ export default function TemplateCard({
 
                 <div className="space-y-1">
 
-                    <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-bold">
+                    <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-medium">
                         {title}
                     </h3>
 
