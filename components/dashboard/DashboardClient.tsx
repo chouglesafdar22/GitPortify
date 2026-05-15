@@ -287,7 +287,7 @@ export default function DashboardClient() {
                     <Button
                         variant={"secondary"}
                         onClick={handlePublish}
-                        className="text-xs border px-4 py-2 fira-sans-regular rounded-md cursor-pointer"
+                        className="text-xs border px-4 py-2 fira-sans-medium rounded-md cursor-pointer"
                     >
                         Publish
                     </Button>

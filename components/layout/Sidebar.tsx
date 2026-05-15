@@ -21,7 +21,7 @@ export default function Sidebar() {
         <>
             <Button
                 variant={"secondary"}
-                className="fixed top-5 left-5 z-40 cursor-w-resize text-sm text-foreground sm:text-base md:text-lg lg:text-xl xl:text-2xl p-0"
+                className={`fixed top-5 left-5 z-40 cursor-w-resize  text-sm text-foreground sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-medium p-0 ${open ? "hidden" : ""}`}
                 onClick={() => setOpen(prev => !prev)}
             >
                 <GoSidebarCollapse />
@@ -59,7 +59,7 @@ export default function Sidebar() {
                     </div>
                     <span
                         onClick={() => setOpen(false)}
-                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold text-foreground cursor-w-resize text-center"
+                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-medium text-foreground cursor-w-resize text-center"
                     >
                         <GoSidebarExpand />
                     </span>
