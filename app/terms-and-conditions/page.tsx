@@ -12,7 +12,7 @@ export default function TermsAndConditionsPage() {
                     <h1 className="text-2xl md:text-3xl fira-sans-bold tracking-tight">
                         Terms & Conditions
                     </h1>
-                    <p className="text-sm fira-sans-light text-muted-foreground mt-2">
+                    <p className="text-sm fira-sans-regular text-muted-foreground mt-2">
                         Last updated: 26 April 2026
                     </p>
                 </div>
@@ -94,7 +94,7 @@ export default function TermsAndConditionsPage() {
                 <div className="border-t mt-10 pt-4 flex items-center gap-3 text-xs text-muted-foreground">
 
                     <Link href="/privacy-policy" className="hover:text-foreground fira-sans-light transition">
-                        Privacy Policy
+                        PrivacyPolicy
                     </Link>
 
                     <span>|</span>

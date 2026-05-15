@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
                     <h1 className="text-2xl md:text-3xl fira-sans-bold tracking-tight">
                         Privacy Policy
                     </h1>
-                    <p className="text-sm fira-sans-light text-muted-foreground mt-2">
+                    <p className="text-sm fira-sans-regular text-muted-foreground mt-2">
                         Last updated: 26 April 2026
                     </p>
                 </div>
@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
                 <div className="border-t mt-10 pt-4 flex items-center gap-3 text-xs text-muted-foreground">
 
                     <Link href="/terms-and-conditions" className="hover:text-foreground transition fira-sans-light">
-                      Terms & Conditions
+                      Terms&Conditions
                     </Link>
 
                     <span>|</span>
