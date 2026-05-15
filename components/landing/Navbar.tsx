@@ -45,7 +45,7 @@ export default function Navbar() {
 
             <button
                 onClick={() => setOpen(!open)}
-                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground sm:text-xl text-lg"
+                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground sm:text-2xl text-xl"
             >
                 {open ? <HiX /> : <HiMenu />}
             </button>
@@ -58,7 +58,7 @@ export default function Navbar() {
                         : "max-h-0 opacity-0 -translate-y-5 pointer-events-none"
                     }`}
             >
-                <div className="flex flex-col items-center py-6 px-5 gap-5 fira-sans-regular lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+                <div className="flex flex-col items-center py-6 px-5 gap-5 fira-sans-regular sm:text-base text-sm text-foreground">
 
                     <a
                         href="#features"
