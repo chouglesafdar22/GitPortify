@@ -36,9 +36,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-6">
-
-                <div className="fira-sans-regular flex gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+                <div className="fira-sans-regular md:hidden flex gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
                     <a href="#features" className="hover:text-[#8550c7] transition">
                         Features
                     </a>
@@ -55,9 +53,8 @@ export default function Navbar() {
                 <Button
                     href="/signup"
                     text="SignUp"
+                    className="md:hidden"
                 />
-
-            </div>
 
             {/* Mobile Menu Button */}
             <button
