@@ -51,10 +51,15 @@ export default function Navbar() {
             </button>
 
             {/* Mobile Menu */}
-            <div className={`absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-t border-border transition-all duration-300 md:hidden
-                ${open ? "opacity-100 visible" : "opacity-0 invisible"}
-            `}>
-                <div className="flex flex-col items-center py-6 gap-5 fira-sans-regular lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+            <div
+                className={`absolute top-full left-0 w-full bg-background/30 backdrop-blur-md border-t border-border md:hidden overflow-hidden transition-all duration-300 ease-in-out
+    ${open
+                        ? "max-h-96 opacity-100 translate-y-0"
+                        : "max-h-0 opacity-0 -translate-y-5 pointer-events-none"
+                    }
+    `}
+            >
+                <div className="flex flex-col items-center py-6 px-5 gap-5 fira-sans-regular lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
 
                     <a
                         href="#features"
