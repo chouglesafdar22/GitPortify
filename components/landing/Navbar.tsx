@@ -53,11 +53,10 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <div
                 className={`absolute top-full left-0 w-full bg-background/30 backdrop-blur-md border-t border-border md:hidden overflow-hidden transition-all duration-300 ease-in-out
-    ${open
+                    ${open
                         ? "max-h-96 opacity-100 translate-y-0"
                         : "max-h-0 opacity-0 -translate-y-5 pointer-events-none"
-                    }
-    `}
+                    }`}
             >
                 <div className="flex flex-col items-center py-6 px-5 gap-5 fira-sans-regular lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
 
