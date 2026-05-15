@@ -34,7 +34,7 @@ export default function Sidebar() {
                 />
             )}
 
-            <aside className={`fixed top-0 left-0 h-screen w-52 sm:w-54 lg:w-56 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
+            <aside className={`fixed top-0 left-0 h-screen w-54 sm:w-56 lg:w-60 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-4 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
                 <div
