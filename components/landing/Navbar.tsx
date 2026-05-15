@@ -96,6 +96,8 @@ export default function Navbar() {
                     <Button
                         href="/signup"
                         text="SignUp"
+                        className="w-full"
+                        contentClassName="w-full"
                     />
 
                 </div>
