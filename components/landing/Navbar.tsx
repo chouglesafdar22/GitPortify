@@ -1,9 +1,11 @@
 "use client";
-import Image from "next/image";
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 import Button from "./Button";
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false);
+
     return (
         <nav className="fixed top-0 z-40 w-full flex justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
@@ -40,6 +42,53 @@ export default function Navbar() {
                 text="SignUp"
                 className="hidden md:flex"
             />
+
+            <button
+                onClick={() => setOpen(!open)}
+                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground sm:text-xl text-lg"
+            >
+                {open ? <HiX /> : <HiMenu />}
+            </button>
+
+            {/* Mobile Menu */}
+            <div className={`absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-t border-border transition-all duration-300 md:hidden
+                ${open ? "opacity-100 visible" : "opacity-0 invisible"}
+            `}>
+                <div className="flex flex-col items-center py-6 gap-5 fira-sans-regular lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+
+                    <a
+                        href="#features"
+                        onClick={() => setOpen(false)}
+                        className="hover:text-[#8550c7] transition"
+                    >
+                        Features
+                    </a>
+
+                    <a
+                        href="#how-it-works"
+                        onClick={() => setOpen(false)}
+                        className="hover:text-[#8550c7] transition"
+                    >
+                        How It Works
+                    </a>
+
+                    <a
+                        href="#faq"
+                        onClick={() => setOpen(false)}
+                        className="hover:text-[#8550c7] transition"
+                    >
+                        FAQ
+                    </a>
+
+                    <Button
+                        href="/signup"
+                        text="SignUp"
+                        className="w-full"
+                        contentClassName="w-full"
+                    />
+
+                </div>
+            </div>
         </nav>
     );
 };
