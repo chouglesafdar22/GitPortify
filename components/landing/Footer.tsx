@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className="w-full bg-[#2E2E2E] px-5 md:px-10 md:py-9 py-5 gap-50">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 gap-5">
                 <div className="space-y-2 justify-start items-start">
-                    <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
+                    <a href="#home" className="flex cursor-pointer leading-none select-none">
                         <div className="flex justify-start gap-1 items-start">
                             <span className="text-[oklch(0.985_0_0)] xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
                                 {"</"}
@@ -20,11 +20,6 @@ export default function Footer() {
                                 {">"}
                             </span>
                         </div>
-                        <p
-                            className="text-[5px] sm:text-[6px] md:text-[8px] lg:text-[10px] text-muted-foreground fira-sans-medium text-center mt-0.5 tracking-wide"
-                        >
-                            Develop your portfolio in minutes
-                        </p>
                     </a>
                     <p className="lg:text-lg md:text-base sm:text-sm text-xs fira-sans-medium text-muted-foreground max-w-xs">
                         Develop your portfolio in minutes — powered by GitHub
