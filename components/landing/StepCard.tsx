@@ -7,40 +7,54 @@ interface StepProps {
     reverse?: boolean;
 }
 
-export default function StepCard({ video, title, desc, reverse }: StepProps) {
+export default function StepCard({
+    video,
+    title,
+    desc,
+    reverse,
+}: StepProps) {
     return (
         <div
-            className={`flex flex-col md:flex-row ${reverse ? "md:flex-row-reverse" : ""
-                } items-center justify-between md:py-12 py-6 px-2.5 md:px-16 md:gap-10 gap-5`}
+            className={`grid md:grid-cols-2 grid-cols-1 items-center md:gap-14 gap-8 md:py-16 py-8
+            ${reverse ? "md:[&>*:first-child]:order-2" : ""}
+            `}
         >
-            <div className="w-full flex justify-center">
-                <div className="relative w-full max-w-none">
-                    <div className="absolute inset-0 bg-purple-600/20 blur-2xl rounded-2xl"></div>
-                    <div className="relative cursor-pointer rounded-xl overflow-hidden border border-white/10 bg-black shadow-xl">
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border-b border-white/10">
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-red-500 rounded-full"></div>
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-yellow-500 rounded-full"></div>
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-green-500 rounded-full"></div>
-                        </div>
-                        <video
-                            src={video}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full max-h-175 object-contain bg-black"
-                        />
+            {/* Video */}
+            <div className="relative w-full">
+                {/* Glow */}
+                <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
+                {/* Window */}
+                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-[0_0_40px_rgba(109,40,217,0.12)]">
+                    {/* Browser Top */}
+                    <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/5">
+                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-red-500" />
+                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-yellow-500" />
+                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-green-500" />
                     </div>
+                    {/* Video */}
+                    <video
+                        src={video}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full object-cover"
+                    />
                 </div>
             </div>
-            <div className="w-full justify-center md:w-1/2 flex flex-col gap-1 text-left">
-                <h4 className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium">
+
+            {/* Content */}
+            <div className="flex flex-col justify-center items-start gap-4">
+                <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-[10px] sm:text-xs fira-sans-medium">
+                    How It Works
+                </span>
+                <h4 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg leading-tight fira-sans-semibold">
                     {title}
                 </h4>
-                <p className="text-muted-foreground lg:text-lg md:text-base sm:text-sm text-xs fira-sans-regular max-w-md">
+                <p className="text-muted-foreground lg:text-lg md:text-base sm:text-sm text-xs leading-relaxed max-w-lg fira-sans-regular">
                     {desc}
                 </p>
-            </div>
+          </div>
         </div>
     );
-};
+}
