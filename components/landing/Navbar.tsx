@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <nav className="fixed top-0 z-40 w-full flex justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col cursor-pointer leading-none select-none">
-                <div className="flex justify-center gap-1 items-center">
+                <div className="flex justify-center gap-0.5 items-center">
                     <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
                         {"</"}
                     </span>

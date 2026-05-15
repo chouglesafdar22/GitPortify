@@ -40,7 +40,7 @@ export default function Sidebar() {
                 <div
                     className="flex justify-between items-center w-full px-0.5">
                     <div className="flex flex-col cursor-pointer leading-none select-none">
-                        <div className="flex justify-center gap-1 items-center">
+                        <div className="flex justify-center gap-0.5 items-center">
                             <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
                                 {"</"}
                             </span>

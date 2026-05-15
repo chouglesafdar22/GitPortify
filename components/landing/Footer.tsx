@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 gap-5">
                 <div className="space-y-2 justify-start items-start">
                     <div className="flex cursor-pointer leading-none select-none">
-                        <div className="flex justify-start gap-1 items-start">
+                        <div className="flex justify-start gap-0.5 items-start">
                             <span className="text-[oklch(0.985_0_0)] xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
                                 {"</"}
                             </span>
