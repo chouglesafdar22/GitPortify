@@ -38,6 +38,7 @@ export default function Footer() {
                     <ul className="space-y-1.5 lg:text-base md:text-sm sm:text-xs text-[10px] fira-sans-regular text-muted-foreground">
                         <li><Link href="/signup" className="hover:text-white">SignUp</Link></li>
                         <li><Link href="#home" className="hover:text-white">Home</Link></li>
+                        <li><Link href="#templates" className="hover:text-white">Templates</Link></li>
                         <li><Link href="#features" className="hover:text-white">Features</Link></li>
                         <li><Link href="#how-it-works" className="hover:text-white">How It Works</Link></li>
                         <li><Link href="#faq" className="hover:text-white">FAQ</Link></li>

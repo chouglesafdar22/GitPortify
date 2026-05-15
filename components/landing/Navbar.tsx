@@ -22,6 +22,9 @@ export default function Navbar() {
                 </div>
             </a>
             <div className="hidden fira-sans-regular md:flex justify-center items-center gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
+                 <a href="#templates" className="hover:text-[#8550c7] transition">
+                    Templates
+                </a>
                 <a href="#features" className="hover:text-[#8550c7] transition">
                     Features
                 </a>
@@ -54,6 +57,13 @@ export default function Navbar() {
                     }`}
             >
                 <div className="flex flex-col justify-center items-center py-6 px-5 gap-5 fira-sans-regular sm:text-base text-sm text-foreground">
+                    <a
+                        href="#templates"
+                        onClick={() => setOpen(false)}
+                        className="hover:text-[#8550c7] transition"
+                    >
+                       Templates
+                    </a>
 
                     <a
                         href="#features"
