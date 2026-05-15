@@ -5,6 +5,7 @@ interface StepProps {
     title: string;
     desc: string;
     reverse?: boolean;
+    steps:string;
 }
 
 export default function StepCard({
@@ -12,6 +13,7 @@ export default function StepCard({
     title,
     desc,
     reverse,
+    steps,
 }: StepProps) {
     return (
         <div
@@ -46,7 +48,7 @@ export default function StepCard({
             {/* Content */}
             <div className="flex flex-col justify-center items-start gap-4">
                 <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-[10px] sm:text-xs fira-sans-medium">
-                    How It Works
+                    {steps}
                 </span>
                 <h4 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg leading-tight fira-sans-semibold">
                     {title}
