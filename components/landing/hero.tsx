@@ -26,7 +26,7 @@ export default function Hero() {
                 <div className="relative w-full max-w-none">
                     <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-2xl"></div>
                     <div className="relative cursor-pointer rounded-xl overflow-hidden border border-white/10 bg-black shadow-xl">
-                        <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border-b border-white/10">
+                        <div className="flex items-center gap-2 px-4 py-2 bg-foreground/5 border-b border-foreground/10">
                             <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-red-500 rounded-full"></div>
                             <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-yellow-500 rounded-full"></div>
                             <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-green-500 rounded-full"></div>
