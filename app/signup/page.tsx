@@ -41,7 +41,7 @@ export default function SignupPage() {
                         <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="text-xs text-center fira-sans-light text-muted-foreground">
-                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy Policy</Link>
+                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">PrivacyPolicy</Link>
                     </p>
                 </div>
             </div>
