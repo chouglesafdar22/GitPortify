@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { HiMenu3, HiX } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 import Button from "./Button";
 
 export default function Navbar() {
@@ -64,7 +64,7 @@ export default function Navbar() {
                 onClick={() => setOpen(!open)}
                 className="md:hidden flex text-foreground fira-sans-medium text-2xl"
             >
-                {open ? <HiX /> : <HiMenu3 />}
+                {open ? <HiX /> : <HiMenu />}
             </button>
 
             {/* Mobile Menu */}
