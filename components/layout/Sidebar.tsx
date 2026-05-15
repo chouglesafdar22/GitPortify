@@ -37,8 +37,7 @@ export default function Sidebar() {
             <aside className={`fixed top-0 left-0 h-screen w-54 sm:w-56 lg:w-60 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-7 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
-                <div
-                    className="flex justify-between items-center w-full px-0.5">
+                <div className="flex justify-between items-center w-full px-0.5">
                     <div className="flex flex-col cursor-pointer leading-none select-none">
                         <div className="flex justify-center gap-0.5 items-center">
                             <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
@@ -51,11 +50,6 @@ export default function Sidebar() {
                                 {">"}
                             </span>
                         </div>
-                        <p
-                            className="text-[4px] sm:text-[5px] md:text-[7px] lg:text-[8px] text-muted-foreground fira-sans-medium text-center mt-0.5 tracking-wide"
-                        >
-                            Develop your portfolio in minutes
-                        </p>
                     </div>
                     <span
                         onClick={() => setOpen(false)}
