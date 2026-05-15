@@ -32,7 +32,7 @@ export default function Hero() {
                             <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-green-500 rounded-full"></div>
                         </div>
                         <video
-                            src="https://res.cloudinary.com/dsioiddoz/video/upload/v1777121512/gitportify_ymxvyt.mp4"
+                            src="https://res.cloudinary.com/dsioiddoz/video/upload/v1778865265/Screen_Recording_2026-05-15_224110_miyqft.mp4"
                             autoPlay
                             loop
                             muted
