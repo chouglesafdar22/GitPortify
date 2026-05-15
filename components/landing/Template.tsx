@@ -3,7 +3,7 @@ import TemplateCard from "./TemplateCard";
 
 export default function Template() {
     return (
-        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-12 px-3.5 md:py-10 py-5 md:gap-7 gap-6">
+        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-12 px-3.5 md:py-10 py-5 gap-7">
             <div className="flex flex-col justify-center items-center md:gap-3 gap-1.5">
                 <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center fira-sans-semibold">
                     Templates
@@ -14,9 +14,9 @@ export default function Template() {
             </div>
             <div className="relative w-full">
                 {/* Left Fade */}
-                <div className="pointer-events-none absolute left-0 top-0 z-10 h-full md:w-8 w-2.5 bg-linear-to-r from-background to-transparent" />
+                <div className="pointer-events-none absolute left-0 top-0 z-10 h-full md:w-5 w-1.5 bg-linear-to-r from-background to-transparent" />
                 {/* Right Fade */}
-                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full md:w-8 w-2.5 bg-linear-to-l from-background to-transparent" />
+                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full md:w-5 w-1.5 bg-linear-to-l from-background to-transparent" />
                 {/* Scroll Container */}
                 <div
                     className="flex gap-6 overflow-x-auto xl:justify-center items-center scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
