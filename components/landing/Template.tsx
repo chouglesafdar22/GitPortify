@@ -3,13 +3,13 @@ import TemplateCard from "./TemplateCard";
 
 export default function Template() {
     return (
-        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-10 px-3 md:py-10 py-5 gap-7 md:pb-22 pb-18">
-            <div className="flex flex-col justify-center items-center md:gap-3 gap-1.5">
+        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-10 px-3 md:py-10 py-5 gap-7 md:pb-26 pb-21">
+            <div className="flex flex-col justify-center items-center md:gap-3.5 gap-2">
                 <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center fira-sans-semibold">
                     Templates
                 </h2>
                 <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base text-center fira-sans-medium">
-                   Modern portfolio templates designed for developers
+                    Modern portfolio templates designed for developers
                 </h3>
             </div>
             <div className="w-full">
