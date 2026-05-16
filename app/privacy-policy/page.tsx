@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
                     <span>|</span>
 
                     <Link href="/signup" className="hover:text-foreground transition fira-sans-light">
-                        Sign Up
+                        SignUp
                     </Link>
 
                 </div>
