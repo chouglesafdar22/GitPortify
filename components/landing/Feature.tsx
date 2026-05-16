@@ -7,7 +7,7 @@ import { FaRegEdit } from "react-icons/fa";
 
 export default function Feature() {
     return (
-        <section id="features" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-14 px-5 md:py-10 py-5 md:gap-8 gap-6 md:pb-26 pb-21">
+        <section id="features" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-14 px-5 md:py-10 py-5 md:gap-8 gap-7 pb-26">
             <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center fira-sans-semibold">Features</h2>
             <div className="grid md:grid-cols-2 grid-cols-1 justify-center items-center md:px-3.5 px-2 md:py-11 py-5 md:gap-8 gap-6">
                 <FeatureCard
