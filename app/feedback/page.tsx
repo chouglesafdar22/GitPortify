@@ -15,7 +15,7 @@ export default function FeedbackPage() {
         try {
             setLoading(true);
 
-            const form=e.currentTarget
+            const form = e.currentTarget
 
             const formData = new FormData(form);
 
@@ -49,7 +49,7 @@ export default function FeedbackPage() {
             setLoading(false);
         }
     };
-    
+
     return (
         <>
             <ToastContainer
@@ -72,8 +72,18 @@ export default function FeedbackPage() {
                                 GitPortify Feedback
                             </span>
                         </div>
-                        <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
-                            Help us improve GitPortify
+                        <h1 className="flex justify-center items-center gap-2.5 text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
+                            Help us improve <div className="flex justify-center gap-0.5 items-center">
+                                <span className=" tracking-tight">
+                                    {"</"}
+                                </span>
+                                <h1 className=" tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                                    gitportify
+                                </h1>
+                                <span className=" tracking-tight">
+                                    {">"}
+                                </span>
+                            </div>
                         </h1>
                         <p className="max-w-xl text-muted-foreground xl:text-xl md:text-lg text-base fira-sans-regular leading-relaxed">
                             Share your experience, report bugs, or suggest new features.
@@ -82,7 +92,7 @@ export default function FeedbackPage() {
                     </div>
                     <div className="rounded-3xl border border-foreground/10 bg-foreground/5 backdrop-blur-xl p-6 md:p-8 shadow-[0_0_40px_rgba(109,40,217,0.12)]">
                         <form
-                        onSubmit={handleSubmit}
+                            onSubmit={handleSubmit}
                             className="flex flex-col gap-5"
                         >
                             <div className="flex flex-col gap-2">
