@@ -23,7 +23,7 @@ export default function FeatureCard({
             </span>
             {/* Content */}
             <div className="relative flex flex-col justify-start items-start gap-1.5">
-                <h4 className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-semibold">
+                <h4 className="text-foreground xl:text-xl md:text-lg text-sm fira-sans-semibold">
                     {title}
                 </h4>
                 <p className="text-muted-foreground xl:text-lg md:text-base text-sm leading-relaxed fira-sans-regular">

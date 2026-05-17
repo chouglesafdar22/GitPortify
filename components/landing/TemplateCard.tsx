@@ -62,7 +62,7 @@ export default function TemplateCard({
 
                 <div className="space-y-1">
 
-                    <h3 className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-medium">
+                    <h3 className="text-foreground xl:text-xl md:text-lg text-sm fira-sans-medium">
                         {title}
                     </h3>
 

@@ -51,7 +51,7 @@ export default function StepCard({
                     {steps}
                 </span>
                 <div className="flex flex-col">
-                    <h4 className="text-foreground xl:text-2xl md:text-xl text-lg leading-tight fira-sans-semibold">
+                    <h4 className="text-foreground xl:text-xl md:text-lg text-sm leading-tight fira-sans-semibold">
                         {title}
                     </h4>
                     <p className="text-muted-foreground xl:text-lg md:text-base text-sm leading-relaxed max-w-lg fira-sans-regular">
