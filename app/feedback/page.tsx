@@ -72,7 +72,7 @@ export default function FeedbackPage() {
                                 GitPortify Feedback
                             </span>
                         </div>
-                        <h1 className="flex justify-center items-center gap-2.5 text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
+                        <h1 className="flex justify-center items-center gap-2 text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
                             Help us improve <div className="flex justify-center gap-0.5 items-center">
                                 <span className=" tracking-tight">
                                     {"</"}
