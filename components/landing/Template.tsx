@@ -34,7 +34,7 @@ export default function Template() {
                         <TemplateCard
                             image={"/templates/terminal-dev.png"}
                             title="Terminal-Dev"
-                            description="Terminal style hacker portfolio"
+                            description="Terminal style hacker portfolio page"
                             href="/preview/demo-terminal-dev"
                         />
                     </div>
