@@ -103,7 +103,7 @@ export default function PreviewPanel({
     return (
         <>
             <section className="w-dvw lg:w-full lg:flex-1 border-r p-4 md:p-6">
-                <div className="sticky h-screen overflow-y-auto rounded-xl md:p-3 p-0  transition-all duration-300">
+                <div className="lg:sticky lg:h-screen lg:overflow-y-auto rounded-xl md:p-3 p-0 transition-all duration-300">
                     <TemplateRenderer
                         key={template}
                         template={template}
