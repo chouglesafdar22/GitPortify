@@ -123,7 +123,7 @@ export default function FeedbackPage() {
                                 <input
                                     name="email"
                                     type="email"
-                                    placeholder="Enter your email"
+                                    placeholder="Enter your email (optional)"
                                     className="w-full rounded-2xl border border-foreground/10 bg-background/30 px-4 py-3 xl:text-base md:text-sm text-xs text-foreground outline-none transition-all duration-300 hover:border-purple-500/20 focus:border-purple-500/40"
                                 />
                             </div>
