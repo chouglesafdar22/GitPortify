@@ -26,9 +26,9 @@ export default function StepCard({
                 {/* Glow */}
                 <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
                 {/* Window */}
-                <div className="relative overflow-hidden rounded-xl border border-foreground/10 bg-foreground/40 backdrop-blur-xl shadow-[0_0_40px_rgba(109,40,217,0.12)] cursor-pointer">
+                <div className="relative overflow-hidden rounded-xl border border-background/10 bg-background/40 backdrop-blur-xl shadow-[0_0_40px_rgba(109,40,217,0.12)] cursor-pointer">
                     {/* Browser Top */}
-                    <div className="flex items-center gap-2 px-4 py-3 border-b border-foreground/10 bg-foreground/5">
+                    <div className="flex items-center gap-2 px-4 py-2 border-b border-foreground/10 bg-foreground/5">
                         <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-red-500" />
                         <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-yellow-500" />
                         <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-green-500" />

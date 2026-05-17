@@ -31,6 +31,7 @@ export default function DashboardClient() {
     const [isPublishModalOpen, setIsPublishModal] = useState(false);
     const [publishedUrl, setPublishedUrl] = useState("");
     const [loading, setLoading] = useState(true);
+    const [publishLoading, setPublishLoading] = useState(false);
 
     const fetchGithubProjects = async () => {
         if (!session?.accessToken) {
@@ -247,6 +248,7 @@ export default function DashboardClient() {
         }
 
         try {
+            setPublishLoading(true);
             const res = await fetch("/api/portfolio", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -289,7 +291,7 @@ export default function DashboardClient() {
                         onClick={handlePublish}
                         className="text-xs border px-4 py-2 fira-sans-medium rounded-md cursor-pointer"
                     >
-                        Publish
+                        {publishLoading ? "Publishing..." : "Publish"}
                     </Button>
                 </div>
 

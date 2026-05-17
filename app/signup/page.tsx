@@ -21,7 +21,7 @@ export default function SignupPage() {
 
     return (
         <>
-            <div className="relative min-h-dvh flex items-center justify-center px-5">
+            <div className="relative min-h-screen flex items-center justify-center px-5">
                 <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
                 <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl p-6 space-y-4 shadow-md">
                     <div className="text-center space-y-1">

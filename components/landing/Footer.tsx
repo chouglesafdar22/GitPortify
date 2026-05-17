@@ -34,7 +34,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h3 className="text-white xl:text-xl md:text-lg text-base fira-sans-medium mb-3">Links</h3>
+                    <h3 className="text-white xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Links</h3>
                     <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
                         <li><Link href="/signup" className="hover:text-white">SignUp</Link></li>
                         <li><Link href="#home" className="hover:text-white">Home</Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h3 className="text-white xl:text-xl md:text-lg text-base fira-sans-medium mb-3">Legal</h3>
+                    <h3 className="text-white xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Legal</h3>
                     <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
                         <li><Link href="/privacy-policy" className="hover:text-white">PrivacyPolicy</Link></li>
                         <li><Link href="/terms-and-conditions" className="hover:text-white">Terms&Conditions</Link></li>
@@ -57,8 +57,8 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
-                <div className=" xl:text-base md:text-sm text-xs text-muted-foreground text-left fira-sans-light">
-                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Develop By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>Safdar Chougle</Link>
+                <div className=" xl:text-sm md:text-xs text-[10px] text-muted-foreground text-left fira-sans-light">
+                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Developed By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>Safdar Chougle</Link>
                 </div>
             </div>
         </footer>

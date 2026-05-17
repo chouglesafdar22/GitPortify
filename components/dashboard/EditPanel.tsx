@@ -130,7 +130,7 @@ export default function EditPanel({
             />
 
             <aside className="w-screen lg:w-80 sm:p-6 p-4 border-t lg:border-t-0 space-y-6">
-                <h2 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-semibold mb-4">
+                <h2 className="xl:text-2xl md:text-xl text-lg fira-sans-semibold mb-4">
                     Edit Profile
                 </h2>
 
