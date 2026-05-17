@@ -158,7 +158,7 @@ export default function FeedbackPage() {
                         </form>
                         {
                             success && (
-                                <div className="mt-5 rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 xl:text-base md:text-sm text-xs text-green-400 fira-sans-medium">
+                                <div className="mt-5 rounded-2xl border border-green-500/20 bg-green-500/10 px-4 py-3 xl:text-base md:text-sm text-xs text-green-500 fira-sans-medium">
                                     Thanks for your feedback ❤️
                                 </div>
                             )
