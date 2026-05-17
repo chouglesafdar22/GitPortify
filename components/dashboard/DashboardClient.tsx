@@ -279,6 +279,8 @@ export default function DashboardClient() {
             toast.success("Portfolio published 🚀");
         } catch (err) {
             toast.error("Something went wrong");
+        } finally {
+            setPublishLoading(false);
         }
     };
 

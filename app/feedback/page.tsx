@@ -142,7 +142,7 @@ export default function FeedbackPage() {
                             <button
                                 type="submit"
                                 disabled={loading}
-                                className="flex items-center justify-center gap-2 rounded-2xl bg-[#51149C] px-5 py-3 xl:text-base md:text-sm text-xs cursor-pointer text-foreground transition hover:bg-[#6D28D9] disabled:opacity-60"
+                                className="flex items-center justify-center gap-2 rounded-2xl bg-[#51149C] px-5 py-3 xl:text-base md:text-sm text-xs cursor-pointer text-white transition hover:bg-[#6D28D9] disabled:opacity-60"
                             >
                                 {loading
                                     ? "Submitting..."
