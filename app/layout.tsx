@@ -19,9 +19,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GitPortify - Developer Portfolio Builder Platform Powered by GitHub",
   description: "Build and publish modern developer portfolios instantly using GitHub.",
-  verification: {
-    google: "CmKds10cZMZYH-iisKQPsLzG9KgAGEq8aQxA0ru8q1I"
-  },
   keywords: [
     "developer portfolio",
     "portfolio builder",
