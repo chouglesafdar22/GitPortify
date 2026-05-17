@@ -17,9 +17,9 @@ export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
                 onClick={onClick}
                 aria-expanded={isOpen}
             >
-                <h4 className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-medium">{que}</h4>
+                <h4 className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-medium">{que}</h4>
                 <span
-                    className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base text-center fira-sans-medium">
+                    className="text-foreground xl:text-3xl md:text-2xl text-xl text-center fira-sans-medium">
                     {isOpen ? <CiCircleMinus /> : <CiCirclePlus />}
                 </span>
             </div>
@@ -31,7 +31,7 @@ export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
                     }`}
             >
                 <div className="overflow-hidden">
-                    <p className="text-muted-foreground lg:text-lg md:text-base sm:text-sm text-xs text-left fira-sans-regular">{ans}</p>
+                    <p className="text-muted-foreground xl:text-lg md:text-base text-sm text-left fira-sans-regular">{ans}</p>
                 </div>
             </div>
         </div>

@@ -3,9 +3,9 @@ import StepCard from "./StepCard";
 
 export default function Step() {
     return (
-        <section id="how-it-works" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:py-9 py-5 md:px-16 px-2.5 md:gap-10 gap-8 pb-26">
-            <h2 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg text-center fira-sans-semibold">How it Works</h2>
-            <div className="flex flex-col justify-center items-center md:py-5 py-2.5 md:px-20 px-1.5 md:gap-7 gap-6">
+        <section id="how-it-works" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:py-9 py-5 md:px-16 px-3.5 gap-10 pb-30">
+            <h2 className="text-foreground xl:text-3xl md:text-2xl text-xl md:text-center text-left fira-sans-semibold">How it Works</h2>
+            <div className="flex flex-col justify-center md:items-center items-start md:py-5 py-2.5 md:px-20 px-2.5 md:gap-7 gap-6">
                 <StepCard
                     steps="Step 1"
                     video="/videos/gitportify_v1.mp4"

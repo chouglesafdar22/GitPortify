@@ -5,7 +5,7 @@ interface StepProps {
     title: string;
     desc: string;
     reverse?: boolean;
-    steps:string;
+    steps: string;
 }
 
 export default function StepCard({
@@ -47,16 +47,18 @@ export default function StepCard({
 
             {/* Content */}
             <div className="flex flex-col justify-center items-start md:gap-4 gap-2.5">
-                <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 text-[10px] sm:text-xs fira-sans-medium">
+                <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 xl:text-base md:text-sm text-xs fira-sans-medium">
                     {steps}
                 </span>
-                <h4 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg leading-tight fira-sans-semibold">
-                    {title}
-                </h4>
-                <p className="text-muted-foreground lg:text-lg md:text-base sm:text-sm text-xs leading-relaxed max-w-lg fira-sans-regular">
-                    {desc}
-                </p>
-          </div>
+                <div className="flex flex-col">
+                    <h4 className="text-foreground xl:text-2xl md:text-xl text-lg leading-tight fira-sans-semibold">
+                        {title}
+                    </h4>
+                    <p className="text-muted-foreground xl:text-lg md:text-base text-sm leading-relaxed max-w-lg fira-sans-regular">
+                        {desc}
+                    </p>
+                </div>
+            </div>
         </div>
     );
 }

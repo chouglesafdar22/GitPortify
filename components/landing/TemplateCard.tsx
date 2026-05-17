@@ -62,11 +62,11 @@ export default function TemplateCard({
 
                 <div className="space-y-1">
 
-                    <h3 className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-medium">
+                    <h3 className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-medium">
                         {title}
                     </h3>
 
-                    <p className="text-muted-foreground lg:text-base md:text-sm text-xs fira-sans-regular leading-relaxed">
+                    <p className="text-muted-foreground xl:text-lg md:text-base text-sm fira-sans-regular leading-relaxed">
                         {description}
                     </p>
 
@@ -76,7 +76,7 @@ export default function TemplateCard({
                     href={href}
                     text="Preview Template"
                     icon={<FaLongArrowAltRight />}
-                    contentClassName="w-full"
+                    contentClassName="w-full xl:text-lg md:text-base text-sm"
                     className="w-full"
                 />
 

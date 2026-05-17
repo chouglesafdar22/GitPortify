@@ -5,19 +5,19 @@ import Badge from "./Badge";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center pt-18 pb-26 md:px-13 px-5 gap-6">
-            <div className="flex flex-col justify-start md:gap-5 gap-2.5">
+        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center pt-18 pb-30 md:px-13 px-5 gap-7">
+            <div className="flex flex-col justify-start md:gap-5 gap-3">
                 <Badge />
-                <div className="flex flex-col justify-start items-start gap-2">
-                    <h1 className="text-foreground lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold">Build your developer portfolio in minutes - powered by GitHub</h1>
-                    <p className="text-foreground lg:text-2xl md:text-xl sm:text-lg text-base fira-sans-regular">Import your projects, customize your design, and publish instantly. No setup, no hassle.</p>
+                <div className="flex flex-col justify-start items-start gap-2.5">
+                    <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold">Build your developer portfolio in minutes - powered by GitHub</h1>
+                    <p className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-regular">Import your projects, customize your design, and publish instantly. No setup, no hassle.</p>
                 </div>
                 <div className="flex justify-start items-start">
                     <Button
                         href="/signup"
                         text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}
-                        contentClassName="xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs md:py-4 py-3 md:px-5 px-3.5"
+                        contentClassName="xl:text-xl md:text-lg text-base md:py-4 py-3 md:px-5 px-3.5"
                         className="w-full"
                     />
                 </div>

@@ -10,19 +10,19 @@ export default function Navbar() {
         <nav className="fixed top-0 z-40 w-full flex justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
                 <div className="flex justify-center gap-0.5 items-center">
-                    <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                    <span className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight">
                         {"</"}
                     </span>
-                    <h1 className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                    <h1 className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                         gitportify
                     </h1>
-                    <span className="text-foreground xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-lg fira-sans-bold tracking-tight">
+                    <span className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight">
                         {">"}
                     </span>
                 </div>
             </a>
-            <div className="hidden fira-sans-regular md:flex justify-center items-center gap-6 lg:text-lg md:text-base sm:text-sm text-xs text-foreground">
-                 <a href="#templates" className="hover:text-[#8550c7] transition">
+            <div className="hidden fira-sans-regular md:flex justify-center items-center gap-6 xl:text-lg md:text-base text-sm text-foreground">
+                <a href="#templates" className="hover:text-[#8550c7] transition">
                     Templates
                 </a>
                 <a href="#features" className="hover:text-[#8550c7] transition">
@@ -39,11 +39,12 @@ export default function Navbar() {
                 href="/signup"
                 text="SignUp"
                 className="hidden md:flex"
+                contentClassName="xl:text-lg md:text-base text-sm"
             />
 
             <button
                 onClick={() => setOpen(!open)}
-                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground sm:text-2xl text-xl"
+                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground text-3xl"
             >
                 {open ? <HiX /> : <HiMenu />}
             </button>
@@ -56,13 +57,13 @@ export default function Navbar() {
                         : "max-h-0 opacity-0 -translate-y-5 pointer-events-none"
                     }`}
             >
-                <div className="flex flex-col justify-center items-center py-6 px-5 gap-5 fira-sans-regular sm:text-base text-sm text-foreground">
+                <div className="flex flex-col justify-center items-center py-6 px-5 gap-5 fira-sans-regular text-base text-foreground">
                     <a
                         href="#templates"
                         onClick={() => setOpen(false)}
                         className="hover:text-[#8550c7] transition"
                     >
-                       Templates
+                        Templates
                     </a>
 
                     <a
@@ -93,7 +94,7 @@ export default function Navbar() {
                         href="/signup"
                         text="SignUp"
                         className="w-full"
-                        contentClassName="w-full xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm"
+                        contentClassName="w-full text-base"
                     />
 
                 </div>
