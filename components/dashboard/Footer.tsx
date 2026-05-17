@@ -9,14 +9,20 @@ export default function Footer() {
             <div className='flex items-center justify-center gap-1'>
                 <p className="text-[9px] md:text-[10px] xl:text-[11px] fira-snas-light text-muted-foreground">&copy;{currentYear} All Rights Reserved GitPortify.</p>
                 <div className="flex justify-center items-center gap-1.5">
-                    <Link href="/privacy-policy" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition">
+                    <Link href="/privacy-policy" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition text-center">
                         PrivacyPolicy
                     </Link>
 
-                    <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light">|</span>
+                    <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light text-center">|</span>
 
-                    <Link href="/terms-and-conditions" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition">
+                    <Link href="/terms-and-conditions" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition text-center">
                         Terms&Conditions
+                    </Link>
+
+                    <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light text-center">|</span>
+
+                    <Link href="/feedback" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition text-center">
+                        Feedback
                     </Link>
                 </div>
             </div>

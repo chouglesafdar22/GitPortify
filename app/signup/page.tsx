@@ -25,12 +25,12 @@ export default function SignupPage() {
                 <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
                 <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl p-6 space-y-4 shadow-md">
                     <div className="text-center space-y-1">
-                        <h1 className="text-xl fira-sans-semibold">
+                        <h2 className="xl:text-3xl md:text-2xl text-xl fira-sans-semibold">
                             Welcome to Gitportify
-                        </h1>
-                        <p className="text-sm text-muted-foreground fira-sans-medium">
+                        </h2>
+                        <h5 className="xl:text-2xl md:text-xl text-lg text-muted-foreground fira-sans-medium">
                             Build your developer portfolio instantly
-                        </p>
+                        </h5>
                     </div>
                     <div className="flex justify-center items-center w-full">
                         <Button
@@ -41,17 +41,17 @@ export default function SignupPage() {
                                 signIn("github", { callbackUrl: "/dashboard" });
                             }}
                             reverse
-                            contentClassName="w-full xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs md:py-4 py-3 md:px-5 px-3.5"
+                            contentClassName="w-full xl:text-lg md:text-base text-sm md:py-4 py-3 md:px-5 px-3.5"
                             className="w-full"
                         />
                     </div>
                     <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                         <div className="flex-1 h-px bg-border" />
-                        <span className="fira-sans-regular">GitHub Required</span>
+                        <span className="fira-sans-regular xl:text-base md:text-sm text-xs">GitHub Required</span>
                         <div className="flex-1 h-px bg-border" />
                     </div>
-                    <p className="text-xs text-center fira-sans-light text-muted-foreground">
-                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> & <Link href={"/privacy-policy"} className="hover:text-foreground transition">PrivacyPolicy</Link>
+                    <p className="xl:text-base md:text-sm text-xs text-center fira-sans-light text-muted-foreground">
+                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> and <Link href={"/privacy-policy"} className="hover:text-foreground transition">PrivacyPolicy</Link>
                     </p>
                 </div>
             </div>

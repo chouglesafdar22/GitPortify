@@ -5,7 +5,7 @@ import Badge from "./Badge";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-29 md:mt-24 sm:mt-14 mt-10 grid md:grid-cols-2 grid-cols-1 justify-center pt-18 pb-30 md:px-13 px-5 gap-7">
+        <section id="home" className="lg:mt-32 md:mt-28 sm:mt-18 mt-14 grid md:grid-cols-2 grid-cols-1 justify-center pt-20 pb-30 md:px-13 px-5 gap-7">
             <div className="flex flex-col justify-start md:gap-5 gap-3">
                 <Badge />
                 <div className="flex flex-col justify-start items-start gap-2.5">
