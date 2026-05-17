@@ -61,6 +61,61 @@ export default function DashboardClient() {
         }
     };
 
+    const fetchPortfolio = async () => {
+        try {
+            const response = await fetch("/api/portfolio");
+            const data = await response.json();
+            const portfolio=data.portfolio
+
+            if (portfolio.education) {
+                setEducation(portfolio.education);
+                localStorage.setItem("gitportify-education", JSON.stringify(portfolio.education));
+            };
+
+            if (portfolio.experiences) {
+                setExperiences(portfolio.experiences);
+                localStorage.setItem(
+                    "gitportify-experiences",
+                    JSON.stringify(portfolio.experiences)
+                );
+            };
+
+            if (portfolio.techSkills) {
+                setTechSkills(portfolio.techSkills);
+                localStorage.setItem(
+                    "gitportify-techSkills",
+                    JSON.stringify(portfolio.techSkills)
+                );
+            };
+
+            if (portfolio.contactLinks) {
+                setContactLinks(portfolio.contactLinks);
+                localStorage.setItem(
+                    "gitportify-contactLinks",
+                    JSON.stringify(portfolio.contactLinks)
+                );
+            };
+
+            if (portfolio.template) {
+                setTemplate(portfolio.template);
+                localStorage.setItem(
+                    "gitportify-template",
+                    portfolio.template
+                );
+            };
+
+            if (portfolio.username) {
+                setUsername(portfolio.username);
+                localStorage.setItem(
+                    "gitportify-username",
+                    portfolio.username
+                );
+            };
+        } catch (err) {
+            console.error("GitHub fetch failed", err);
+        }
+    };
+
     useEffect(() => {
         if (!session) return;
 
@@ -93,6 +148,7 @@ export default function DashboardClient() {
             if (savedContactLinks) setContactLinks(JSON.parse(savedContactLinks));
 
             await fetchGithubProjects();
+            await fetchPortfolio();
             setLoading(false);
         };
 

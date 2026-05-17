@@ -103,8 +103,8 @@ export default function NeoDevTemplate({
 
                 <nav
                     className={`w-full max-w-5xl rounded-full border backdrop-blur-xl px-6 py-3 transition-colors duration-300 ${isDark
-                            ? "bg-white/3 border-white/10"
-                            : "bg-black/3 border-black/10"
+                        ? "bg-white/3 border-white/10"
+                        : "bg-black/3 border-black/10"
                         }`}
                 >
 
@@ -148,8 +148,8 @@ export default function NeoDevTemplate({
                             <button
                                 onClick={toggleTheme}
                                 className={`p-2 rounded-full border transition cursor-pointer ${isDark
-                                        ? "border-white/10 bg-white/3 hover:bg-white/6"
-                                        : "border-black/10 bg-black/3 hover:bg-black/6"
+                                    ? "border-white/10 bg-white/3 hover:bg-white/6"
+                                    : "border-black/10 bg-black/3 hover:bg-black/6"
                                     }`}
                             >
                                 {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -171,8 +171,8 @@ export default function NeoDevTemplate({
                     {open && (
                         <div
                             className={`md:hidden mt-5 rounded-2xl border p-5 flex flex-col gap-4 ${isDark
-                                    ? "bg-black/40 border-white/10"
-                                    : "bg-white border-black/10"
+                                ? "bg-black/40 border-white/10"
+                                : "bg-white border-black/10"
                                 }`}
                         >
 
@@ -405,9 +405,9 @@ export default function NeoDevTemplate({
 
                     <div className="flex flex-col gap-6">
 
-                        {techSkills.map((group) => (
+                        {techSkills.map((group, index) => (
                             <div
-                                key={group.id}
+                                key={`${group.id}-${index}`}
                                 className="rounded-3xl border border-purple-500/20 hover:border-purple-500/30 bg-white/3 p-6"
                             >
 
@@ -445,9 +445,9 @@ export default function NeoDevTemplate({
 
                     <div className="space-y-6">
 
-                        {experiences.map((exp) => (
+                        {experiences.map((exp, index) => (
                             <div
-                                key={exp.id}
+                                key={`${exp.id}-${index}`}
                                 className="relative pl-8 border-l border-purple-500/20 hover:border-purple-500/30"
                             >
 
@@ -496,9 +496,9 @@ export default function NeoDevTemplate({
 
                     <div className="space-y-6">
 
-                        {education.map((edu) => (
+                        {education.map((edu, index) => (
                             <div
-                                key={edu.id}
+                                key={`${edu.id}-${index}`}
                                 className="rounded-2xl border border-purple-500/20 hover:border-purple-500/30 bg-white/3 p-6"
                             >
 
@@ -585,7 +585,7 @@ export default function NeoDevTemplate({
 
             </div>
 
-            <Footer name={name}/>
+            <Footer name={name} />
         </div>
     );
 };

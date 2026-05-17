@@ -5,6 +5,62 @@ import User from "@/app/models/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/lib/auth";
 
+export async function GET(req: Request) {
+    try {
+        await connectDB();
+
+        const session = await getServerSession(authOptions);
+
+        if (!session) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        };
+
+        const user = await User.findOne({
+            email: session.user?.email,
+        });
+
+        if (!user) {
+            return NextResponse.json(
+                { error: "User not found" },
+                { status: 404 }
+            );
+        };
+
+        const portfolio = await Portfolio.findOne({
+            userId: user._id,
+        });
+
+        if (!portfolio) {
+            return NextResponse.json(
+                {
+                    success: true,
+                    portfolio: null,
+                },
+                { status: 200 }
+            );
+        }
+
+        return NextResponse.json(
+            {
+                success: true,
+                portfolio,
+            },
+            { status: 200 }
+        );
+
+    } catch (error) {
+        console.error("GET Portfolio Error:", error);
+
+        return NextResponse.json(
+            {
+                success: false,
+                message: "Failed to fetch portfolio",
+            },
+            { status: 500 }
+        );
+    }
+}
+
 export async function POST(req: Request) {
     try {
         await connectDB();

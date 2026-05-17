@@ -321,10 +321,10 @@ export default function EditPanel({
                         + Add Education
                     </Button>
                     <div className="space-y-2">
-                        {education.map((edu) => {
+                        {education.map((edu,index) => {
                             const isOpen = educationId === edu.id;
                             return (
-                                <div key={edu.id} className="border rounded-md">
+                                <div key={`${edu.id}-${index}`} className="border rounded-md">
                                     <button
                                         onClick={() => setEducationId(isOpen ? null : edu.id)}
                                         className="w-full cursor-pointer flex items-center justify-between px-3 py-2 text-sm hover:bg-muted fira-sans-regular"
@@ -397,10 +397,10 @@ export default function EditPanel({
                         + Add Experience
                     </Button>
                     <div className="space-y-2">
-                        {experiences.map((exp) => {
+                        {experiences.map((exp,index) => {
                             const isOpen = experienceId === exp.id;
                             return (
-                                <div key={exp.id} className="border rounded-md">
+                                <div key={`${exp.id}-${index}`} className="border rounded-md">
                                     <button
                                         onClick={() => setExperienceId(isOpen ? null : exp.id)}
                                         className="w-full cursor-pointer flex items-center justify-between px-3 py-2 text-sm hover:bg-muted fira-sans-regular"
@@ -512,10 +512,10 @@ export default function EditPanel({
                         + Add Skill Group
                     </Button>
                     <div className="space-y-2">
-                        {techSkills.map((group) => {
+                        {techSkills.map((group,index) => {
                             const isOpen = techSkillId === group.id;
                             return (
-                                <div key={group.id} className="border rounded-md">
+                                <div key={`${group.id}-${index}`} className="border rounded-md">
                                     <button
                                         onClick={() => setTechSkillId(isOpen ? null : group.id)}
                                         className="w-full cursor-pointer flex items-center justify-between px-3 py-2 text-sm hover:bg-muted fira-sans-regular"

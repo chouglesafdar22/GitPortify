@@ -21,7 +21,7 @@ export default function Sidebar() {
         <>
             <Button
                 variant={"secondary"}
-                className={`fixed top-5 left-5 z-40 cursor-w-resize  text-sm text-foreground sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-medium p-0 ${open ? "hidden" : ""}`}
+                className={`fixed top-5 left-5 z-40 cursor-w-resize text-foreground text-lg mdtext-xl xl:text-2xl fira-sans-medium p-0 ${open ? "hidden" : ""}`}
                 onClick={() => setOpen(prev => !prev)}
             >
                 <GoSidebarCollapse />
@@ -40,20 +40,20 @@ export default function Sidebar() {
                 <div className="flex justify-between items-center w-full px-0.5">
                     <div className="flex flex-col cursor-pointer leading-none select-none">
                         <div className="flex justify-center gap-0.5 items-center">
-                            <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
+                            <span className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight">
                                 {"</"}
                             </span>
-                            <h1 className="text-foreground lg:text-xl md:text-lg sm:text-base text-smfira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
+                            <h1 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
                                 gitportify
                             </h1>
-                            <span className="text-foreground lg:text-xl md:text-lg sm:text-base text-sm fira-sans-semibold tracking-tight">
+                            <span className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight">
                                 {">"}
                             </span>
                         </div>
                     </div>
                     <span
                         onClick={() => setOpen(false)}
-                        className="hover:bg-muted p-1 rounded text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl fira-sans-medium text-foreground cursor-w-resize text-center"
+                        className="hover:bg-muted p-1 rounded text-lg mdtext-xl xl:text-2xl fira-sans-medium text-foreground cursor-w-resize text-center"
                     >
                         <GoSidebarExpand />
                     </span>
@@ -68,7 +68,7 @@ export default function Sidebar() {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setOpen(false)}
-                                        className={`text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center fira-sans-medium
+                                        className={`text-base md:text-lg xl:text-xl px-3 py-2 rounded-md transition-colors flex justify-start gap-2.5 items-center fira-sans-medium
                                         ${active
                                                 ? "bg-muted text-foreground"
                                                 : "text-muted-foreground hover:bg-muted"

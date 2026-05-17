@@ -11,8 +11,6 @@ export async function GET(req: Request) {
 
         const username = pathname.split("/").pop();
 
-        console.log("username", username)
-
         const portfolio = await Portfolio.findOne({
             username: username
         }).lean();
