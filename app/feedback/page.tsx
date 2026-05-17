@@ -103,7 +103,7 @@ export default function FeedbackPage() {
                                 </label>
                                 <select
                                     name="type"
-                                    className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 xl:text-base md:text-sm text-xs text-foreground outline-none transition-all duration-300 hover:border-purple-500/20 focus:border-purple-500/40"
+                                    className="w-full rounded-2xl border border-foreground/10 bg-background/30 px-4 py-3 xl:text-base md:text-sm text-xs text-foreground outline-none transition-all duration-300 hover:border-purple-500/20 focus:border-purple-500/40"
                                 >
                                     <option value="general" className="bg-background">
                                         General Feedback
