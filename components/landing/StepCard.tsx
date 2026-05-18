@@ -40,7 +40,7 @@ export default function StepCard({
                         muted
                         loop
                         playsInline
-                        className="w-full object-cover"
+                        className="w-full max-h-175 object-contain bg-black"
                     />
                 </div>
             </div>
