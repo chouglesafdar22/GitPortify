@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
 
                         <ul className="list-disc ml-5 space-y-1 text-muted-foreground fira-sans-regular">
                             <li>GitHub profile information (name, username, email address, avatar)</li>
-                            <li>Portfolio information you create (bio, projects, links)</li>
+                            <li>Portfolio information you create (bio, projects, educations, experiences, links)</li>
                             <li>Usage information necessary to improve GitPortify's performance and reliability</li>
                         </ul>
                     </div>
