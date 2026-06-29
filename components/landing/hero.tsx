@@ -32,7 +32,7 @@ export default function Hero() {
                 </div>
 
                 {/* Dashboard Image */}
-                <div className="mt-16 relative">
+                <div className="mt-10 relative">
                     <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
                     <div className="relative overflow-hidden rounded-2xl border border-background/10 shadow-2xl">
                         <Image
@@ -41,7 +41,7 @@ export default function Hero() {
                             width={1200}
                             height={800}
                             priority
-                            className="w-full h-full rounded-2xl border border-background/10 shadow-2xl"
+                            className="w-full h-auto rounded-2xl"
                         />
                     </div>
                 </div>
