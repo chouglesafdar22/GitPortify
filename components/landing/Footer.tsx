@@ -83,7 +83,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2.5 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
                 <div className="xl:text-[15px] md:text-[13px] text-[11px] text-muted-foreground text-left fira-sans-light">
-                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Developed By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>Safdar Chougle</Link>
+                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Developed By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>SC</Link>
                 </div>
             </div>
         </footer>
