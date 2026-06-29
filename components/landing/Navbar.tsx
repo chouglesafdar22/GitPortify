@@ -12,7 +12,7 @@ export default function Navbar() {
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
                 <div className="flex items-center gap-1.5 justify-center">
                     <Image
-                        src="/logo/Gitportify-Logo(dark).png"
+                        src="/logo/GitPortify-Logo(dark).png"
                         alt="GitPortify Logo"
                         width={44}
                         height={44}
