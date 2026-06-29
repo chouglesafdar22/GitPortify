@@ -8,7 +8,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 z-40 w-full flex justify-evenly items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
+        <nav className="fixed top-0 z-40 w-full flex md:justify-evenly justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
                 <div className="flex items-center gap-1.5 justify-center">
                     <Image
