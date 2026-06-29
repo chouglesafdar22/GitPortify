@@ -11,7 +11,7 @@ export default function Footer() {
                     <div className="flex cursor-pointer leading-none select-none">
                         <div className="flex items-center gap-1.5 justify-center">
                             <Image
-                                src="/logo/Gitportify - Logo(dark).png"
+                                src="/logo/Gitportify-Logo(dark).png"
                                 alt="GitPortify Logo"
                                 width={44}
                                 height={44}
