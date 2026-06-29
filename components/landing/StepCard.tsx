@@ -17,48 +17,63 @@ export default function StepCard({
 }: StepProps) {
     return (
         <div
-            className={`grid md:grid-cols-2 grid-cols-1 items-center md:gap-14 gap-8 md:py-16 py-8
-            ${reverse ? "md:[&>*:first-child]:order-2" : ""}
+            className={`grid grid-cols-1 items-center gap-10 py-10 md:grid-cols-2 md:gap-16 md:py-20
+                ${reverse ? "md:[&>*:first-child]:order-2" : ""}
             `}
         >
-            {/* Video */}
-            <div className="relative w-full">
-                {/* Glow */}
-                <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
-                {/* Window */}
-                <div className="relative overflow-hidden rounded-xl border border-background/10 bg-background/40 backdrop-blur-xl shadow-[0_0_40px_rgba(109,40,217,0.12)] cursor-pointer">
-                    {/* Browser Top */}
-                    <div className="flex items-center gap-2 px-4 py-2 border-b border-foreground/10 bg-foreground/5">
-                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-red-500" />
-                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-yellow-500" />
-                        <div className="md:w-3 w-1.5 md:h-3 h-1.5 rounded-full bg-green-500" />
+            {/* Preview */}
+
+            <div className="relative">
+
+                <div className="absolute inset-0 rounded-3xl bg-purple-600/15 blur-3xl" />
+
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-background/60 shadow-2xl backdrop-blur-xl">
+
+                    {/* Browser Header */}
+
+                    <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+
+                        <div className="h-3 w-3 rounded-full bg-red-500" />
+                        <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                        <div className="h-3 w-3 rounded-full bg-green-500" />
+
                     </div>
-                    {/* Video */}
+
                     <video
                         src={video}
                         autoPlay
-                        muted
                         loop
+                        muted
                         playsInline
-                        className="w-full max-h-175 object-contain bg-black"
+                        className="w-full rounded-b-2xl bg-black object-contain"
                     />
+
                 </div>
+
             </div>
 
             {/* Content */}
-            <div className="flex flex-col justify-center items-start md:gap-4 gap-2.5">
-                <span className="px-3 py-1 rounded-full border border-purple-500/20 bg-purple-500/10 text-purple-400 xl:text-base md:text-sm text-xs fira-sans-medium">
+
+            <div className="flex flex-col gap-5">
+
+                <span className="inline-flex w-fit rounded-full border border-purple-500/20 bg-purple-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-purple-300">
                     {steps}
                 </span>
-                <div className="flex flex-col">
-                    <h4 className="text-foreground xl:text-xl md:text-lg text-sm leading-tight fira-sans-semibold">
+
+                <div className="space-y-3">
+
+                    <h3 className="text-2xl font-semibold leading-tight text-foreground md:text-3xl">
                         {title}
-                    </h4>
-                    <p className="text-muted-foreground xl:text-lg md:text-base text-sm leading-relaxed max-w-lg fira-sans-regular">
+                    </h3>
+
+                    <p className="max-w-xl text-base leading-8 text-muted-foreground md:text-lg">
                         {desc}
                     </p>
+
                 </div>
+
             </div>
+
         </div>
     );
 }

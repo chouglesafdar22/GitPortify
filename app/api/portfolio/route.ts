@@ -90,12 +90,15 @@ export async function POST(req: Request) {
         let user = await User.findOne({ email: session.user?.email });
 
         if (!user) {
-            user = await User.create({
-                githubId: session.user?.email,
-                name: session.user?.name,
-                email: session.user?.email,
-                image: session.user?.image,
-            });
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "User not found",
+                },
+                {
+                    status: 404
+                }
+            )
         }
 
         // check if username already taken by someone else
@@ -127,6 +130,7 @@ export async function POST(req: Request) {
             {
                 new: true,
                 upsert: true,
+                runValidators: true
             }
         );
 
@@ -142,4 +146,4 @@ export async function POST(req: Request) {
             { status: 500 }
         );
     }
-}
+};

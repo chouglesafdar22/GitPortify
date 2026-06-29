@@ -7,7 +7,6 @@ import Footer from "@/components/dashboard/Footer";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import Unavailabel from "@/components/unavailabel";
 
 export default function SignupPage() {
     const [loading, setLoading] = useState(false);
@@ -22,8 +21,7 @@ export default function SignupPage() {
 
     return (
         <>
-            <Unavailabel />
-            {/* <div className="relative min-h-screen flex items-center justify-center px-5">
+            <div className="relative min-h-screen flex items-center justify-center px-5">
                 <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
                 <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl p-6 space-y-4 shadow-md">
                     <div className="text-center space-y-1">
@@ -53,10 +51,10 @@ export default function SignupPage() {
                         <div className="flex-1 h-px bg-border" />
                     </div>
                     <p className="xl:text-base md:text-sm text-xs text-center fira-sans-light text-muted-foreground">
-                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms&Conditions</Link> and <Link href={"/privacy-policy"} className="hover:text-foreground transition">PrivacyPolicy</Link>
+                        By continuing, you agree to our <Link href={"/terms-and-conditions"} className="hover:text-foreground transition">Terms</Link> and <Link href={"/privacy-policy"} className="hover:text-foreground transition">Privacy</Link>
                     </p>
                 </div>
-            </div> */}
+            </div>
             <Footer />
         </>
     )

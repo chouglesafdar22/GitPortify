@@ -28,17 +28,17 @@ export async function GET(req: Request) {
 
         const repos = await repoRes.json();
 
-        const projects = repos.filter((repo:any)=>!repo.fork)
-        .slice(0, 5)
-        .map((repo: any) => ({
-            id: repo.id,
-            name: repo.name,
-            description: repo.description || "No description",
-            imageUrl: "",
-            tech: repo.language ? [repo.language] : [],
-            githubUrl: repo.html_url,
-            liveUrl: repo.homepage || "",
-        }));
+        const projects = repos.filter((repo: any) => !repo.fork)
+            .slice(0, 5)
+            .map((repo: any) => ({
+                id: repo.id,
+                name: repo.name,
+                description: repo.description || "No description",
+                imageUrl: "",
+                tech: repo.language ? [repo.language] : [],
+                githubUrl: repo.html_url,
+                liveUrl: repo.homepage || "",
+            }));
 
         return NextResponse.json({
             projects,
@@ -49,6 +49,13 @@ export async function GET(req: Request) {
             },
         });
     } catch (error) {
-        return NextResponse.json({ error: "Failed" }, { status: 500 });
+        return NextResponse.json(
+            {
+                error: "Failed"
+            },
+            {
+                status: 500
+            }
+        );
     }
 };

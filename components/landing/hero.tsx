@@ -2,44 +2,48 @@
 import Button from "./Button";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Badge from "./Badge";
+import Image from "next/image";
 
 export default function Hero() {
     return (
-        <section id="home" className="lg:mt-32 md:mt-28 sm:mt-18 mt-14 grid md:grid-cols-2 grid-cols-1 justify-center pt-20 pb-30 md:px-13 px-5 gap-7">
-            <div className="flex flex-col justify-start md:gap-5 gap-3">
-                <Badge />
-                <div className="flex flex-col justify-start items-start gap-2.5">
-                    <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold">Build your developer portfolio in minutes - powered by GitHub</h1>
-                    <p className="text-foreground xl:text-2xl md:text-xl text-lg fira-sans-regular">Import your projects, customize your design, and publish instantly. No setup, no hassle.</p>
-                </div>
-                <div className="flex justify-start items-start">
+        <section
+            id="home"
+            className="lg:mt-32 md:mt-28 sm:mt-18 mt-14 pt-20 pb-30 md:px-13 px-5"
+        >
+            <div className="mx-auto max-w-7xl">
+                {/* Top Content */}
+                <div className="flex flex-col items-center text-center gap-5">
+                    <Badge />
+                    <div className="max-w-4xl flex flex-col gap-3">
+                        <h1 className="text-foreground xl:text-5xl md:text-4xl text-3xl fira-sans-bold">
+                            Build your developer portfolio in minutes - powered by GitHub
+                        </h1>
+                        <p className="text-foreground xl:text-xl md:text-lg text-base fira-sans-regular">
+                            Import your projects, customize your design, and publish instantly.
+                            No setup, no hassle.
+                        </p>
+                    </div>
                     <Button
                         href="/signup"
                         text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}
                         contentClassName="xl:text-xl md:text-lg text-base md:py-4 py-3 md:px-5 px-3.5"
-                        className="w-full"
                     />
                 </div>
-            </div>
-            <div className="flex justify-center items-center">
-                <div className="relative w-full max-w-none">
-                    <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-2xl"></div>
-                    <div className="relative cursor-pointer rounded-xl overflow-hidden border border-background/10 bg-background/40 shadow-xl">
-                        <div className="flex items-center gap-2 px-4 py-2 bg-foreground/5 border-b border-foreground/10">
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-red-500 rounded-full"></div>
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-yellow-500 rounded-full"></div>
-                            <div className="md:w-3 w-1.5 md:h-3 h-1.5 bg-green-500 rounded-full"></div>
-                        </div>
-                        <video
-                            src="https://res.cloudinary.com/dsioiddoz/video/upload/v1778865265/Screen_Recording_2026-05-15_224110_miyqft.mp4"
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full max-h-175 object-contain bg-black"
-                        />
 
+                {/* Dashboard Image */}
+                <div className="mt-16 relative">
+                    <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
+                    <div className="relative overflow-hidden rounded-2xl border border-background/10 shadow-2xl">
+
+                        <Image
+                            src="/images/dashboard-preview.png"
+                            alt="GitPortify Dashboard"
+                            width={600}
+                            height={450}
+                            priority
+                            className="w-full h-auto rounded-2xl border border-background/10 shadow-2xl"
+                        />
                     </div>
                 </div>
             </div>

@@ -9,13 +9,13 @@ export default function Footer() {
             <div className='flex  flex-col items-center justify-center gap-2'>
                 <div className="flex justify-center items-center gap-1.5">
                     <Link href="/privacy-policy" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition text-center">
-                        PrivacyPolicy
+                        Privacy
                     </Link>
 
                     <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light text-center">|</span>
 
                     <Link href="/terms-and-conditions" className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light hover:text-foreground transition text-center">
-                        Terms&Conditions
+                        Terms
                     </Link>
 
                     <span className="text-[9px] md:text-[10px] xl:text-[11px] text-muted-foreground fira-sans-light text-center">|</span>

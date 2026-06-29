@@ -7,7 +7,7 @@ export default function Unavailabel() {
             <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-4xl"></div>
             <div className="relative max-w-sm sm:max-w-md lg:max-w-lg w-full border rounded-2xl flex flex-col justify-center items-center text-center px-10 md:px-20 py-10 md:py-20 shadow-md">
                 <div className="flex flex-col justify-center items-center text-center gap-2.5 px-1">
-                    <h2 className="fira-sans-medium text-foreground xl:text-3xl md:text-2xl text-xl">
+                    <h2 className="fira-sans-medium text-foreground  xl:text-3xl md:text-2xl text-xl">
                         Signup Temporarily Unavailable
                     </h2>
                     <h5 className="fira-sans-regular text-left wrap-break-word text-muted-foreground xl:text-2xl md:text-xl text-lg">

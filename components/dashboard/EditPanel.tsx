@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import type { TemplateType } from "@/types/template";
+import ProjectSelectionModal from "./ProjectModal";
 
 interface Props {
     bio: string;
@@ -18,6 +19,7 @@ interface Props {
     setName: (value: string) => void;
     template: TemplateType;
     projects: any[];
+    setProjects:React.Dispatch<React.SetStateAction<any[]>>;
     setTemplate: (value: TemplateType) => void;
     onAddProject: () => void;
     onRemoveProject: (id: number) => void;
@@ -55,6 +57,8 @@ interface Props {
     onUpdateTechSkillGroup: (id: number, field: string, value: string) => void;
     onAddSkill: (id: number, skill: string) => void;
     onRemoveSkill: (id: number, skill: string) => void;
+
+    githubProjects:any[];
 }
 
 export default function EditPanel({
@@ -69,6 +73,7 @@ export default function EditPanel({
     template,
     setTemplate,
     projects,
+    setProjects,
     onAddProject,
     onRemoveProject,
     onUpdateProject,
@@ -94,12 +99,14 @@ export default function EditPanel({
     onUpdateTechSkillGroup,
     onAddSkill,
     onRemoveSkill,
+    githubProjects
 }: Props) {
 
     const [projectId, setProjectId] = useState<number | null>(null);
     const [educationId, setEducationId] = useState<number | null>(null);
     const [experienceId, setExperienceId] = useState<number | null>(null);
     const [techSkillId, setTechSkillId] = useState<number | null>(null);
+    const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
     const handleAvatarUpload = async (file: File) => {
         const formData = new FormData();
@@ -152,7 +159,7 @@ export default function EditPanel({
                         <option value="github-pro">GitHub Pro</option>
                         <option value="product-landing">Product Landing</option>
                         <option value="terminal-dev">Terminal Dev</option>
-                         <option value="neo-dev">Neo Dev</option>
+                        <option value="neo-dev">Neo Dev</option>
                     </select>
                 </div>
 
@@ -166,7 +173,7 @@ export default function EditPanel({
                             const file = e.target.files?.[0];
                             if (file) handleAvatarUpload(file);
                         }}
-                        className="cursor-pointer text-gray-500 text-sm border p-1.5 rounded-md fira-sans-regular"
+                        className="cursor-pointer text-gray-500 text-xs border p-1 rounded-md fira-sans-regular"
                     />
                 </div>
 
@@ -210,6 +217,17 @@ export default function EditPanel({
                 {/* Projects */}
                 <div className="space-y-3 pt-6 border-t">
                     <Label className="fira-sans-medium">Projects</Label>
+                    <Button
+                        variant={"outline"}
+                        onClick={() => setIsProjectModalOpen(true)}
+                        className="w-full text-sm border rounded-md py-2 hover:bg-muted cursor-pointer fira-sans-regular"
+                    >
+                        <span>Select GitHub Projects</span>
+                        <span className="rounded-md bg-muted flex justify-center items-center px-1.5 py-1 text-xs">
+                            {projects.length}/{githubProjects.length}
+                        </span>
+                    </Button>
+
                     <Button
                         variant={"outline"}
                         onClick={onAddProject}
@@ -321,7 +339,7 @@ export default function EditPanel({
                         + Add Education
                     </Button>
                     <div className="space-y-2">
-                        {education.map((edu,index) => {
+                        {education.map((edu, index) => {
                             const isOpen = educationId === edu.id;
                             return (
                                 <div key={`${edu.id}-${index}`} className="border rounded-md">
@@ -397,7 +415,7 @@ export default function EditPanel({
                         + Add Experience
                     </Button>
                     <div className="space-y-2">
-                        {experiences.map((exp,index) => {
+                        {experiences.map((exp, index) => {
                             const isOpen = experienceId === exp.id;
                             return (
                                 <div key={`${exp.id}-${index}`} className="border rounded-md">
@@ -512,7 +530,7 @@ export default function EditPanel({
                         + Add Skill Group
                     </Button>
                     <div className="space-y-2">
-                        {techSkills.map((group,index) => {
+                        {techSkills.map((group, index) => {
                             const isOpen = techSkillId === group.id;
                             return (
                                 <div key={`${group.id}-${index}`} className="border rounded-md">
@@ -605,11 +623,20 @@ export default function EditPanel({
 
                 <Button
                     onClick={onSave}
+                    variant={"secondary"}
                     className="w-full text-base cursor-pointer fira-sans-regular"
                 >
                     Save
                 </Button>
             </aside>
+
+            <ProjectSelectionModal
+                isOpen={isProjectModalOpen}
+                onClose={() => setIsProjectModalOpen(false)}
+                githubProjects={githubProjects}
+                projects={projects}
+                setProjects={setProjects}
+            />
         </>
     );
-}
+};

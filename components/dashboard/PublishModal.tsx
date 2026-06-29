@@ -103,13 +103,6 @@ export default function PublishModal({
                             >
                                 Share
                             </Button>
-                            {/* <Button
-                                variant="ghost"
-                                onClick={onClose}
-                                className="cursor-pointer"
-                            >
-                                Close
-                            </Button> */}
                         </div>
                         <Link
                             href={portfolioUrl}

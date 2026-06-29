@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import PreviewPanel from "./PreviewPanel";
 import EditPanel from "./EditPanel";
 import Footer from "./Footer";
-import { Button } from "@/components/ui/button";
 import type { TemplateType } from "@/types/template";
 import PublishModal from "./PublishModal";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
+import Button from "../landing/Button";
 
 export default function DashboardClient() {
     const { data: session } = useSession();
@@ -33,6 +33,8 @@ export default function DashboardClient() {
     const [loading, setLoading] = useState(true);
     const [publishLoading, setPublishLoading] = useState(false);
 
+    const [githubProjects, setGithubProjects] = useState<any[]>([]);
+
     const fetchGithubProjects = async () => {
         if (!session?.accessToken) {
             console.log("no access Token");
@@ -44,9 +46,8 @@ export default function DashboardClient() {
             const data = await res.json();
 
             if (data.projects) {
-                setProjects(data.projects);
-                localStorage.setItem("gitportify-projects", JSON.stringify(data.projects));
-            }
+                setGithubProjects(data.projects);
+            };
 
             if (data.user) {
                 setName(data.user.name || "");
@@ -55,7 +56,7 @@ export default function DashboardClient() {
                 localStorage.setItem("gitportify-name", data.user.name || "");
                 localStorage.setItem("gitportify-bio", data.user.bio || "");
                 localStorage.setItem("gitportify-avatar", data.user.avatar || "");
-            }
+            };
         } catch (err) {
             console.error("GitHub fetch failed", err);
         }
@@ -65,7 +66,11 @@ export default function DashboardClient() {
         try {
             const response = await fetch("/api/portfolio");
             const data = await response.json();
-            const portfolio=data.portfolio
+            const portfolio = data.portfolio
+
+            if (!portfolio) {
+                return;
+            }
 
             if (portfolio.education) {
                 setEducation(portfolio.education);
@@ -116,12 +121,36 @@ export default function DashboardClient() {
         }
     };
 
+    const PortfolioProjects = async () => {
+        try {
+            const response = await fetch("/api/portfolio");
+            const data = await response.json();
+            const portfolio = data.portfolio
+
+            if (!portfolio) {
+                return;
+            }
+
+            if (portfolio.projects) {
+                setProjects(portfolio.projects);
+                localStorage.setItem("gitportify-projects", JSON.stringify(portfolio.projects));
+            }
+        } catch (err) {
+            console.error("GitHub fetch failed", err);
+        }
+    };
+
     useEffect(() => {
         if (!session) return;
 
         const init = async () => {
+
             const savedProjects = localStorage.getItem("gitportify-projects");
-            if (savedProjects) setProjects(JSON.parse(savedProjects));
+            if (savedProjects) {
+                setProjects(JSON.parse(savedProjects));
+            } else {
+                await PortfolioProjects();
+            }
 
             const savedEducation = localStorage.getItem("gitportify-education");
             if (savedEducation) setEducation(JSON.parse(savedEducation));
@@ -298,13 +327,20 @@ export default function DashboardClient() {
 
     // ─── Publish ────────────────────────────────────────────
     const handlePublish = async () => {
+
         if (!username.trim()) {
             toast.error("Please enter username");
             return;
         }
 
+        if (!handleSave) {
+            toast.error("Please Save First");
+            return;
+        }
+
         try {
             setPublishLoading(true);
+
             const res = await fetch("/api/portfolio", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -333,6 +369,7 @@ export default function DashboardClient() {
             setPublishedUrl(url);
             setIsPublishModal(true);
             toast.success("Portfolio published 🚀");
+
         } catch (err) {
             toast.error("Something went wrong");
         } finally {
@@ -343,14 +380,12 @@ export default function DashboardClient() {
     return (
         <>
             <div className="flex flex-col lg:flex-row relative h-fit">
-                <div className="fixed lg:absolute top-5 right-5 z-40">
+                <div className="fixed lg:absolute top-5 right-6 z-40">
                     <Button
-                        variant={"secondary"}
                         onClick={handlePublish}
-                        className="text-xs border px-4 py-2 fira-sans-medium rounded-md cursor-pointer"
-                    >
-                        {publishLoading ? "Publishing..." : "Publish"}
-                    </Button>
+                        contentClassName="text-xs md:text-sm xl:text-base border px-3 py-1.5 fira-sans-medium rounded-md cursor-pointer"
+                        text={publishLoading ? "Publishing..." : "Publish"}
+                    />
                 </div>
 
                 <PreviewPanel
@@ -382,6 +417,7 @@ export default function DashboardClient() {
                         setStatus("dirty");
                     }}
                     projects={projects}
+                    setProjects={setProjects}
                     onAddProject={handleAddProject}
                     onRemoveProject={handleRemoveProject}
                     onUpdateProject={handleUpdateProject}
@@ -407,6 +443,7 @@ export default function DashboardClient() {
                     onUpdateContact={handleUpdateContact}
                     username={username}
                     setUsername={(value) => { setUsername(value); setStatus("dirty"); }}
+                    githubProjects={githubProjects}
                 />
             </div>
 
@@ -420,4 +457,4 @@ export default function DashboardClient() {
             />
         </>
     );
-}
+};

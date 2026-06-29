@@ -5,13 +5,14 @@ import Footer from "@/components/dashboard/Footer";
 import { useTheme } from "next-themes";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function SettingPage() {
     const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState("");
     const { theme, setTheme } = useTheme();
     const [url, setUrl] = useState("");
+    const { data: session } = useSession();
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -26,8 +27,6 @@ export default function SettingPage() {
             | "light"
             | "dark"
             | null;
-
-        if (savedUsername) setUsername(savedUsername);
         if (savedTheme) setTheme(savedTheme);
     }, []);
 
@@ -36,6 +35,47 @@ export default function SettingPage() {
         if (!confirmLogout) return;
         setLoading(true);
         await signOut({ callbackUrl: "/signup" });
+    };
+
+    const handleDeleteAccount = async () => {
+        const confirmDelete = window.confirm(
+            "Are you sure you want to permanently delete your GitPortify account? This action cannot be undone."
+        );
+
+        if (!confirmDelete) return;
+
+        setLoading(true);
+
+        try {
+            const response = await fetch("/api/account/delete", {
+                method: "DELETE",
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                toast.error(data.error || "Failed to delete account.");
+                return;
+            }
+
+            // Remove only GitPortify data
+            Object.keys(localStorage).forEach((key) => {
+                if (key.startsWith("gitportify-")) {
+                    localStorage.removeItem(key);
+                }
+            });
+
+            toast.success("Account deleted successfully.");
+
+            await signOut({
+                callbackUrl: "/",
+            });
+
+        } catch (error) {
+            toast.error("Something went wrong.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -52,40 +92,54 @@ export default function SettingPage() {
                 theme="colored"
             />
 
-            <div className="p-7 space-y-10 h-dvh max-w-md sm:max-w-xl lg:max-w-3xl w-full">
+            <div className="p-7 space-y-10 h-full max-w-md sm:max-w-xl lg:max-w-3xl w-full">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-16 fira-sans-semibold">
                     Settings
                 </h1>
-                <div className="space-y-2 border rounded-xl p-4">
+                <div className="border rounded-xl p-6 space-y-6">
                     <h3 className="text-lg sm:text-xl lg:text-2xl fira-sans-medium">
                         Profile
                     </h3>
-                    <div className="space-y-2">
-                        <label
-                            className="text-sm sm:text-base lg:text-xl fira-sans-regular text-muted-foreground"
-                        >
-                            Username
-                        </label>
-                        <input
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            placeholder="your-name"
-                            className="w-full border rounded-md px-3 py-2 bg-background fira-sans-regular text-sm"
+                    <div className="grid grid-cols-[90px_1fr] gap-5 items-center">
+                        {/* Avatar */}
+                        <img
+                            src={session?.user?.image || "/default-avatar.png"}
+                            alt={session?.user?.name || ""}
+                            className="h-20 w-20 rounded-full object-cover border"
                         />
-                        <p className="text-xs text-muted-foreground fira-sans-light">
-                            Your Portfolio URL: {url}
-                        </p>
+                        {/* Name */}
+                        <div>
+                            <h4 className="text-xl fira-sans-semibold">
+                                {session?.user?.name}
+                            </h4>
+                            <p className="text-muted-foreground text-sm">
+                                {username}
+                            </p>
+                        </div>
                     </div>
-                    <Button
-                        className="cursor-pointer text-sm fira-sans-regular"
-                        variant={"secondary"}
-                        onClick={() => {
-                            localStorage.setItem("gitportify-username", username);
-                            toast.success("Username Saved");
-                        }}
-                    >
-                        Save Username
-                    </Button>
+
+                    <div className="grid gap-5">
+                        <div>
+                            <p className="text-sm text-muted-foreground">
+                                Portfolio Username
+                            </p>
+                            <div className="mt-1 rounded-md border px-3 py-2 text-sm">
+                                {username || "Add username from Dashboard"}
+                            </div>
+                        </div>
+
+                        <div>
+                            <p className="text-sm text-muted-foreground">
+                                Portfolio URL
+                            </p>
+                            <div className="mt-1 rounded-md border px-3 py-2 text-sm break-all">
+                                {username
+                                    ? `${window.location.origin}/portfolio/${username}`
+                                    : "Not available yet"}
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div className="space-y-2 border rounded-xl p-4">
@@ -112,19 +166,48 @@ export default function SettingPage() {
                     </div>
                 </div>
 
-                <div className="space-y-2 border border-red-500/40 rounded-xl p-4">
+                <div className="space-y-3 border border-red-500/40 rounded-xl p-4">
+
                     <h3 className="text-lg sm:text-xl lg:text-2xl text-red-500 fira-sans-medium">
                         Danger Zone
                     </h3>
-                    <p className="text-sm fira-sans-regular text-muted-foreground">
-                        This will Logout your account from GitPortify
-                    </p>
-                    <button
-                        onClick={handleLogout}
-                        className="text-sm cursor-pointer px-4 py-2 rounded-md border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition fira-sans-regular"
-                    >
-                        {loading ? "Logout..." : "Logout"}
-                    </button>
+
+                    {/* Logout */}
+
+                    <div className="space-y-2">
+
+                        <p className="text-sm fira-sans-regular text-muted-foreground">
+                            Logout your account from GitPortify on this device.
+                        </p>
+
+                        <button
+                            onClick={handleLogout}
+                            className="text-sm cursor-pointer px-4 py-2 rounded-md border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition fira-sans-regular"
+                        >
+                            {loading ? "Logging out..." : "Logout"}
+                        </button>
+
+                    </div>
+
+                    <hr className="border-red-500/20" />
+
+                    {/* Delete Account */}
+
+                    <div className="space-y-2">
+
+                        <p className="text-sm fira-sans-regular text-muted-foreground">
+                            Permanently delete your GitPortify account, portfolio, settings, and all associated data. This action cannot be undone.
+                        </p>
+
+                        <button
+                            onClick={handleDeleteAccount}
+                            className="text-sm cursor-pointer px-4 py-2 rounded-md border border-red-500 bg-red-500 text-white hover:bg-red-600 transition fira-sans-regular"
+                        >
+                            {loading ? "Deleting..." : "Delete Account"}
+                        </button>
+
+                    </div>
+
                 </div>
             </div>
             <Footer />

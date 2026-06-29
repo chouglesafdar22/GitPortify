@@ -1,24 +1,28 @@
 "use client";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import Button from "./Button";
+import Image from "next/image";
+
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 z-40 w-full flex justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
+        <nav className="fixed top-0 z-40 w-full flex justify-evenly items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
-                <div className="flex justify-center gap-0.5 items-center">
-                    <span className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight">
-                        {"</"}
-                    </span>
-                    <h1 className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
-                        gitportify
+                <div className="flex items-center gap-1.5 justify-center">
+                    <Image
+                        src="/logo/Gitportify - Logo(dark).png"
+                        alt="GitPortify Logo"
+                        width={44}
+                        height={44}
+                        className="rounded-3xl object-center"
+                        priority
+                    />
+
+                    <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
+                        GitPortify
                     </h1>
-                    <span className="text-foreground xl:text-4xl md:text-3xl text-2xl fira-sans-bold tracking-tight">
-                        {">"}
-                    </span>
                 </div>
             </a>
             <div className="hidden fira-sans-regular md:flex justify-center items-center gap-6 xl:text-lg md:text-base text-sm text-foreground">
@@ -35,12 +39,6 @@ export default function Navbar() {
                     FAQ
                 </a>
             </div>
-            <Button
-                href="/signup"
-                text="SignUp"
-                className="hidden md:flex"
-                contentClassName="xl:text-lg md:text-base text-sm"
-            />
 
             <button
                 onClick={() => setOpen(!open)}
@@ -89,14 +87,6 @@ export default function Navbar() {
                     >
                         FAQ
                     </a>
-
-                    <Button
-                        href="/signup"
-                        text="SignUp"
-                        className="w-full"
-                        contentClassName="w-full text-base"
-                    />
-
                 </div>
             </div>
         </nav>

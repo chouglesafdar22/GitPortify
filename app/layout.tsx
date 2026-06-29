@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "GitPortify - Developer Portfolio Builder Platform Powered by GitHub",
-  description: "Build and publish modern developer portfolios instantly using GitHub.",
+  description: "Build your developer portfolio in minutes - powered by GitHub",
   keywords: [
     "developer portfolio",
     "portfolio builder",
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "developer portfolio SaaS",
     "Next.js portfolio",
     "portfolio templates",
+    "nextjs templates",
   ],
   robots: {
     index: true,

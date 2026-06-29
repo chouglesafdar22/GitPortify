@@ -37,20 +37,7 @@ export default function Sidebar() {
             <aside className={`fixed top-0 left-0 h-screen w-54 sm:w-56 lg:w-60 border-r flex flex-col z-40 py-6 lg:px-3 px-0.5 gap-7 transition-transform duration-300 ease-in-out bg-background
                 ${open ? "translate-x-0 " : "-translate-x-full"}
                 `}>
-                <div className="flex justify-between items-center w-full px-0.5">
-                    <div className="flex flex-col cursor-pointer leading-none select-none">
-                        <div className="flex justify-center gap-0.5 items-center">
-                            <span className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight">
-                                {"</"}
-                            </span>
-                            <h1 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
-                                gitportify
-                            </h1>
-                            <span className="text-foreground xl:text-xl md:text-lg text-base fira-sans-semibold tracking-tight">
-                                {">"}
-                            </span>
-                        </div>
-                    </div>
+                <div className="flex justify-end items-center w-full px-0.5">
                     <span
                         onClick={() => setOpen(false)}
                         className="hover:bg-muted p-1 rounded text-lg mdtext-xl xl:text-2xl fira-sans-medium text-foreground cursor-w-resize text-center"
