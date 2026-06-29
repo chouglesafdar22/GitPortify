@@ -32,7 +32,7 @@ export default function Hero() {
                 </div>
 
                 {/* Dashboard Image */}
-                <div className="mt-10 relative">
+                <div className="mt-10 relative -mx-2 sm:mx-0">
                     <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
                     <div className="relative overflow-hidden rounded-xl border border-background/10 shadow-2xl">
                         <Image
