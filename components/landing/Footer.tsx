@@ -15,7 +15,7 @@ export default function Footer() {
                                 alt="GitPortify Logo"
                                 width={44}
                                 height={44}
-                                className="rounded-3xl object-center"
+                                className="rounded-2xl object-center"
                                 priority
                             />
 
