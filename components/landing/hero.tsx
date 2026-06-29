@@ -41,7 +41,7 @@ export default function Hero() {
                             width={1200}
                             height={800}
                             priority
-                            className="w-full h-auto rounded-2xl border border-background/10 shadow-2xl"
+                            className="w-full h-full rounded-2xl border border-background/10 shadow-2xl"
                         />
                     </div>
                 </div>
