@@ -22,6 +22,7 @@ export default function SettingPage() {
 
     useEffect(() => {
         const savedUsername = localStorage.getItem("gitportify-username");
+        if (savedUsername) setUsername(savedUsername);
         const savedTheme = localStorage.getItem("gitportify-theme") as
             | "system"
             | "light"
