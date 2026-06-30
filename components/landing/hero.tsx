@@ -41,7 +41,7 @@ export default function Hero() {
                             width={1200}
                             height={800}
                             priority
-                            className="w-full h-auto rounded-xl"
+                            className="w-full h-full rounded-xl"
                         />
                     </div>
                 </div>

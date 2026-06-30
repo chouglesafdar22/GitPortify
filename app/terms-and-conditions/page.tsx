@@ -107,11 +107,11 @@ export default function TermsAndConditionsPage() {
                         </h2>
 
                         <p className="text-muted-foreground fira-sans-regular">
-                            GitPortify, including its branding, design, software,
-                            and features, is protected by applicable intellectual
-                            property laws. You may not copy, modify, distribute,
-                            or reproduce any part of the platform without prior
-                            written permission.
+                            GitPortify, including its branding, design, features,
+                            and source code (unless otherwise stated), is the
+                            intellectual property of GitPortify. You may not copy,
+                            distribute, or modify any part of the platform without
+                            prior written permission.
                         </p>
                     </div>
 
@@ -124,10 +124,15 @@ export default function TermsAndConditionsPage() {
 
                         <p className="text-muted-foreground fira-sans-regular">
                             GitPortify is provided on an "as is" and "as available"
-                            basis. We do not guarantee uninterrupted service and
-                            are not liable for any direct, indirect, incidental,
-                            or consequential damages arising from the use of the
-                            platform.
+                            basis. While we strive to provide a reliable service,
+                            we do not guarantee uninterrupted availability or that
+                            the platform will be free from errors.
+                        </p>
+
+                        <p className="mt-2 text-muted-foreground fira-sans-regular">
+                            GitPortify shall not be liable for any direct,
+                            indirect, incidental, or consequential damages arising
+                            from your use of the platform.
                         </p>
                     </div>
 
@@ -140,27 +145,21 @@ export default function TermsAndConditionsPage() {
 
                         <p className="text-muted-foreground fira-sans-regular">
                             We may update these Terms & Conditions from time to
-                            time. Continued use of GitPortify after changes become
-                            effective constitutes your acceptance of the updated
-                            terms.
+                            time to reflect new features, legal requirements, or
+                            improvements to the platform.
+                        </p>
+
+                        <p className="mt-2 text-muted-foreground fira-sans-regular">
+                            Continued use of GitPortify after changes become
+                            effective constitutes acceptance of the revised terms.
                         </p>
                     </div>
 
                     {/* 8 */}
-                    <div>
-                        <h2 className="mb-2 text-base md:text-lg fira-sans-medium">
-                            8. Governing Law
-                        </h2>
-                        <p className="text-muted-foreground fira-sans-regular">
-                            These Terms & Conditions shall be governed and interpreted in accordance with the applicable laws of your jurisdiction. Any disputes arising from the use of GitPortify shall be subject to the appropriate legal authorities.
-                        </p>
-                    </div>
-
-                    {/* 9 */}
 
                     <div>
                         <h2 className="mb-2 text-base md:text-lg fira-sans-medium">
-                            9. Contact
+                            8. Contact
                         </h2>
 
                         <p className="text-muted-foreground fira-sans-regular">
@@ -175,9 +174,8 @@ export default function TermsAndConditionsPage() {
                     </div>
 
                     <p className="fira-sans-medium">
-                        Thank you for using GitPortify.
+                        Thank you for choosing GitPortify.
                     </p>
-
                 </div>
 
                 {/* Footer */}

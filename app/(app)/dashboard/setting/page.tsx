@@ -47,7 +47,7 @@ export default function SettingPage() {
         setLoading(true);
 
         try {
-            const response = await fetch("/api/account/delete", {
+            const response = await fetch("/api/accounts/delete", {
                 method: "DELETE",
             });
 

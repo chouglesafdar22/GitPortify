@@ -35,6 +35,8 @@ export default function DashboardClient() {
 
     const [githubProjects, setGithubProjects] = useState<any[]>([]);
 
+    const [isSaved, setIsSaved] = useState(false);
+
     const fetchGithubProjects = async () => {
         if (!session?.accessToken) {
             console.log("no access Token");
@@ -312,6 +314,16 @@ export default function DashboardClient() {
     };
 
     const handleSave = () => {
+
+        const isContactLinksValid = Object.values(contactLinks).every(
+            (value) => value.trim() !== ""
+        );
+
+        if (!avatar || !name || !bio || !template || !username.trim() || projects.length === 0 || techSkills.length === 0 || !isContactLinksValid) {
+            toast.error("Please complete all required fields before publishing.");
+            return;
+        }
+
         localStorage.setItem("gitportify-bio", bio);
         localStorage.setItem("gitportify-name", name);
         localStorage.setItem("gitportify-avatar", avatar);
@@ -323,18 +335,14 @@ export default function DashboardClient() {
         localStorage.setItem("gitportify-techSkills", JSON.stringify(techSkills));
         localStorage.setItem("gitportify-contactLinks", JSON.stringify(contactLinks));
         setStatus("saved");
+        setIsSaved(true);
     };
 
     // ─── Publish ────────────────────────────────────────────
     const handlePublish = async () => {
 
-        if (!username.trim()) {
-            toast.error("Please enter username");
-            return;
-        }
-
-        if (!handleSave) {
-            toast.error("Please Save First");
+        if (!isSaved) {
+            toast.error("Please save your portfolio first.");
             return;
         }
 

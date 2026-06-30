@@ -33,9 +33,9 @@ export default function StepCard({
 
                     <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
 
-                        <div className="h-3 w-3 rounded-full bg-red-500" />
-                        <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                        <div className="h-3 w-3 rounded-full bg-green-500" />
+                        <div className="md:h-3 h-1.5 md:w-3 w-1.5 rounded-full bg-red-500" />
+                        <div className="md:h-3 h-1.5 md:w-3 w-1.5 rounded-full bg-yellow-500" />
+                        <div className="md:h-3 h-1.5 md:w-3 w-1.5 rounded-full bg-green-500" />
 
                     </div>
 
@@ -45,7 +45,7 @@ export default function StepCard({
                         loop
                         muted
                         playsInline
-                        className="w-full rounded-b-2xl bg-black object-contain"
+                        className="w-full h-full rounded-b-2xl bg-black object-contain"
                     />
 
                 </div>

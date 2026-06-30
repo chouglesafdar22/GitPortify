@@ -3,7 +3,7 @@ import TemplateCard from "./TemplateCard";
 
 export default function Template() {
     return (
-        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-10 px-3 md:py-10 py-5 gap-10 pb-30">
+        <section id="templates" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-10 px-3 md:py-10 py-5 gap-12 pb-30">
             <div className="flex flex-col justify-center items-center gap-5">
                 <h2 className="text-foreground xl:text-3xl md:text-2xl text-xl text-center fira-sans-semibold">
                     Templates

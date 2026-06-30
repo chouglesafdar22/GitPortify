@@ -67,6 +67,7 @@ export default function Footer() {
                     <h3 className="text-white xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Pages</h3>
                     <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
                         <li><Link href="/signup" className="hover:text-white">SignUp</Link></li>
+                        <li><Link href="/about" className="hover:text-white">About</Link></li>
                         <li><Link href="/feedback" className="hover:text-white">Feedback</Link></li>
                     </ul>
                 </div>
@@ -83,7 +84,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2.5 mt-6">
                 <div className='h-0.5 bg-muted-foreground rounded'></div>
                 <div className="xl:text-[15px] md:text-[13px] text-[11px] text-muted-foreground text-left fira-sans-light">
-                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Developed By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>SC</Link>
+                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved. Developed By <Link className="hover:text-foreground hover:underline" href={"https://gitportify.vercel.app/portfolio/safdar"}>chouglesafdar</Link>
                 </div>
             </div>
         </footer>
