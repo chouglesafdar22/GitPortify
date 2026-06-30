@@ -320,7 +320,7 @@ export default function DashboardClient() {
         );
 
         if (!avatar || !name || !bio || !template || !username.trim() || projects.length === 0 || techSkills.length === 0 || !isContactLinksValid) {
-            toast.error("Please complete all required fields before publishing.");
+            toast.error("Please complete all required fields before saving.");
             return;
         }
 
