@@ -28,8 +28,7 @@ export async function GET(req: Request) {
 
         const repos = await repoRes.json();
 
-        const projects = repos.filter((repo: any) => !repo.fork)
-            .slice(0, 5)
+        const projects = repos
             .map((repo: any) => ({
                 id: repo.id,
                 name: repo.name,
