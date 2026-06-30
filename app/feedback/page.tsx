@@ -73,17 +73,10 @@ export default function FeedbackPage() {
                             </span>
                         </div>
                         <h1 className="flex justify-center items-center gap-2 text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
-                            Help us improve <div className="flex justify-center gap-0.5 items-center">
-                                <span className=" tracking-tight">
-                                    {"</"}
-                                </span>
-                                <h1 className=" tracking-tight lowercase drop-shadow-[0_8px_18px_rgba(0,0,0,0.45)]">
-                                    gitportify
-                                </h1>
-                                <span className=" tracking-tight">
-                                    {">"}
-                                </span>
-                            </div>
+                            Help us improve
+                            <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
+                                GitPortify
+                            </h1>
                         </h1>
                         <p className="max-w-xl text-muted-foreground xl:text-xl md:text-lg text-base fira-sans-regular leading-relaxed">
                             Share your experience, report bugs, or suggest new features.
