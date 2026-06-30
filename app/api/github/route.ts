@@ -18,7 +18,7 @@ export async function GET(req: Request) {
         const user = await userRes.json();
 
         const repoRes = await fetch(
-            `https://api.github.com/users/${user.login}/repos?sort=updated&per_page=5`,
+            `https://api.github.com/users/${user.login}/repos?sort=updated&per_page=100`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
