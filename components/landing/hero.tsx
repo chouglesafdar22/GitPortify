@@ -34,7 +34,7 @@ export default function Hero() {
                 {/* Dashboard Image */}
                 <div className="mt-10 relative -mx-2 sm:mx-0 h-full">
                     <div className="absolute inset-0 bg-purple-600/20 blur-3xl rounded-3xl" />
-                    <div className="relative overflow-hidden rounded-xl h-full border border-background/10 shadow-2xl">
+                    <div className="relative overflow-hidden rounded-xl h-full border border-background/10 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(109,40,217,0.18)]">
                         <Image
                             src="/images/dashboard-preview.png"
                             alt="GitPortify Dashboard"
