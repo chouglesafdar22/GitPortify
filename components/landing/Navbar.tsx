@@ -10,12 +10,12 @@ export default function Navbar() {
     return (
         <nav className="fixed top-0 z-40 w-full flex md:justify-evenly justify-between items-center md:py-6 py-3 md:px-20 px-6 bg-background/30 backdrop-blur-md">
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
-                <div className="flex items-center gap-1.5 justify-center">
+                <div className="flex items-center md:gap-1.5 gap-1 justify-center">
                     <Image
                         src="/logo/GitPortify-Logo(dark).png"
                         alt="GitPortify Logo"
-                        width={44}
-                        height={44}
+                        width={42}
+                        height={42}
                         className="rounded-2xl object-center"
                         priority
                     />
