@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <footer className="w-full bg-background/25 px-5 md:px-10 md:py-6 py-5 gap-50">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-7 gap-4">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-5">
                 <div className="space-y-2 justify-start items-start">
                     <div className="flex cursor-pointer leading-none select-none">
                         <div className="flex items-center md:gap-1.5 gap-1 justify-center">
@@ -24,7 +24,7 @@ export default function Footer() {
                             </h1>
                         </div>
                     </div>
-                    <p className="xl:text-lg md:text-base text-sm fira-sans-medium text-muted-foreground max-w-xs">
+                    <p className="xl:text-lg md:text-base text-[15px] fira-sans-medium text-muted-foreground max-w-xs">
                         Develop your portfolio in minutes — powered by GitHub
                     </p>
                     <div className="flex justify-start items-center gap-2.5">
@@ -49,49 +49,49 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 justify-center items-start gap-2.5">
-                <div>
-                    <h3 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Links</h3>
-                    <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
-                        <li><Link href="#home" className="hover:text-foreground">Home</Link></li>
-                        <li><Link href="#templates" className="hover:text-foreground">Templates</Link></li>
-                        <li><Link href="#features" className="hover:text-foreground">Features</Link></li>
-                        <li><Link href="#how-it-works" className="hover:text-foreground">How It Works</Link></li>
-                        <li><Link href="#faq" className="hover:text-foreground">FAQ</Link></li>
-                    </ul>
-                </div>
+                <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 justify-center items-start xl:gap-0 gap-3">
+                    <div>
+                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Links</h3>
+                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
+                            <li><Link href="#home" className="hover:text-foreground">Home</Link></li>
+                            <li><Link href="#templates" className="hover:text-foreground">Templates</Link></li>
+                            <li><Link href="#features" className="hover:text-foreground">Features</Link></li>
+                            <li><Link href="#how-it-works" className="hover:text-foreground">How It Works</Link></li>
+                            <li><Link href="#faq" className="hover:text-foreground">FAQ</Link></li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <h3 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Pages</h3>
-                    <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
-                        <li><Link href="/signup" className="hover:text-foreground">SignUp</Link></li>
-                        <li><Link href="/about" className="hover:text-foreground">About</Link></li>
-                        <li><Link href="/feedback" className="hover:text-foreground">Feedback</Link></li>
-                    </ul>
-                </div>
+                    <div>
+                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Pages</h3>
+                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
+                            <li><Link href="/signup" className="hover:text-foreground">SignUp</Link></li>
+                            <li><Link href="/about" className="hover:text-foreground">About</Link></li>
+                            <li><Link href="/feedback" className="hover:text-foreground">Feedback</Link></li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <h3 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Legal</h3>
-                    <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
-                        <li><Link href="/privacy-policy" className="hover:text-foreground">Privacy</Link></li>
-                        <li><Link href="/terms-and-conditions" className="hover:text-foreground">Terms</Link></li>
-                    </ul>
-                </div>
+                    <div>
+                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Legal</h3>
+                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
+                            <li><Link href="/privacy-policy" className="hover:text-foreground">Privacy</Link></li>
+                            <li><Link href="/terms-and-conditions" className="hover:text-foreground">Terms</Link></li>
+                        </ul>
+                    </div>
 
-                <div>
-                    <h3 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-medium mb-1.5">Contact</h3>
-                    <ul className="space-y-1.5 xl:text-base md:text-sm text-xs fira-sans-regular text-muted-foreground">
-                        <li><Link href="mailto:gitportify@gmail.com" className="hover:text-foreground">gitportify@gmail.com</Link></li>
-                    </ul>
-                </div>
-                
+                    <div>
+                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Contact</h3>
+                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
+                            <li><Link href="mailto:gitportify@gmail.com" className="hover:text-foreground">gitportify@gmail.com</Link></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto flex flex-col justify-center gap-2.5 mt-6">
-                <div className='h-0.5 bg-muted-foreground rounded'></div>
-                <div className="xl:text-[15px] md:text-[13px] text-[11px] text-muted-foreground text-left fira-sans-light">
-                    &copy;{new Date().getFullYear()} GitPortify, All rights reserved.
+            <div className="max-w-7xl mx-auto flex flex-col justify-center item-center gap-2.5 mt-6">
+                <div className='h-0.5 bg-muted-foreground rounded w-full'></div>
+                <div className="xl:text-[16px] md:text-[14px] text-[12px] text-muted-foreground text-center fira-sans-light">
+                   CopyRight &copy; {new Date().getFullYear()} GitPortify All Rights Reserved.
                 </div>
             </div>
         </footer>

@@ -25,13 +25,13 @@ export default function StepCard({
 
             <div className="relative">
 
-                <div className="absolute inset-0 rounded-3xl bg-purple-600/15 blur-3xl" />
+                <div className="absolute inset-0 rounded-xl bg-purple-600/15 blur-3xl" />
 
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-background/60 shadow-2xl backdrop-blur-xl">
 
                     {/* Browser Header */}
 
-                    <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
+                    <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-1.5">
 
                         <div className="md:h-3 h-1.5 md:w-3 w-1.5 rounded-full bg-red-500" />
                         <div className="md:h-3 h-1.5 md:w-3 w-1.5 rounded-full bg-yellow-500" />
@@ -45,7 +45,7 @@ export default function StepCard({
                         loop
                         muted
                         playsInline
-                        className="w-full h-full rounded-b-2xl bg-black object-contain"
+                        className="w-full h-full rounded-b-xl bg-black object-contain"
                     />
 
                 </div>
