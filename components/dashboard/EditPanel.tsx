@@ -19,7 +19,7 @@ interface Props {
     setName: (value: string) => void;
     template: TemplateType;
     projects: any[];
-    setProjects:React.Dispatch<React.SetStateAction<any[]>>;
+    setProjects: React.Dispatch<React.SetStateAction<any[]>>;
     setTemplate: (value: TemplateType) => void;
     onAddProject: () => void;
     onRemoveProject: (id: number) => void;
@@ -58,7 +58,7 @@ interface Props {
     onAddSkill: (id: number, skill: string) => void;
     onRemoveSkill: (id: number, skill: string) => void;
 
-    githubProjects:any[];
+    githubProjects: any[];
 }
 
 export default function EditPanel({
@@ -147,6 +147,20 @@ export default function EditPanel({
                 {status === "saved" && (
                     <p className="text-xs text-green-500 fira-sans-light">✓ Saved</p>
                 )}
+
+                {/* <div className="space-y-2 gap-1.5">
+                    <Label className="fira-sans-medium">Type</Label>
+                    <select
+                        value={template}
+                        onChange={(e) => setTemplate(e.target.value as TemplateType)}
+                        className="w-full border rounded-md cursor-pointer px-3 py-2 text-sm bg-background fira-sans-regular"
+                    >
+                        <option>Website</option>
+                        <option>Resume</option>
+                        <option>Cover letter</option>
+                    </select>
+                </div> */}
+
 
                 {/* Template */}
                 <div className="space-y-2 gap-1.5">
@@ -356,7 +370,7 @@ export default function EditPanel({
                                                 value={edu.degree}
                                                 onChange={(e) => onUpdateEducation(edu.id, "degree", e.target.value)}
                                                 placeholder="Degree / Certificate"
-                                                className="w-full border rounded-md px-2 py-1 text-xsfira-sans-light"
+                                                className="w-full border rounded-md px-2 py-1 text-xs fira-sans-light"
                                             />
                                             <input
                                                 value={edu.institution}

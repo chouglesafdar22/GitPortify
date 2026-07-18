@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { TbLayoutDashboard, TbTemplate, TbSettings } from "react-icons/tb";
+import { TbLayoutDashboard, TbTemplate, TbSettings, TbUserEdit } from "react-icons/tb";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "../ui/button";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
@@ -10,7 +10,7 @@ import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 const navLinks = [
     { name: "Dashboard", icon: <TbLayoutDashboard size={20} />, href: "/dashboard" },
     { name: "Templates", icon: <TbTemplate size={20} />, href: "/dashboard/template" },
-    { name: "Setting", icon: <TbSettings size={20} />, href: "/dashboard/setting" }
+    { name: "Profile", icon: <TbUserEdit size={20} />, href: "/dashboard/profile" }
 ];
 
 export default function Sidebar() {

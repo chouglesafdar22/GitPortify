@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import Footer from "@/components/dashboard/Footer";
 import { useTheme } from "next-themes";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,6 +9,7 @@ import { signOut, useSession } from "next-auth/react";
 export default function SettingPage() {
     const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState("");
+    const [avatar, setAvatar] = useState("");
     const { theme, setTheme } = useTheme();
     const [url, setUrl] = useState("");
     const { data: session } = useSession();
@@ -21,6 +21,8 @@ export default function SettingPage() {
     }, [username]);
 
     useEffect(() => {
+        const savedAvatar = localStorage.getItem("gitportify-avatar");
+        if (savedAvatar) setAvatar(savedAvatar);
         const savedUsername = localStorage.getItem("gitportify-username");
         if (savedUsername) setUsername(savedUsername);
         const savedTheme = localStorage.getItem("gitportify-theme") as
@@ -95,7 +97,7 @@ export default function SettingPage() {
 
             <div className="p-7 space-y-10 h-full max-w-md sm:max-w-xl lg:max-w-3xl w-full">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-16 fira-sans-semibold">
-                    Settings
+                   Profile
                 </h1>
                 <div className="border rounded-xl p-6 space-y-6">
                     <h3 className="text-lg sm:text-xl lg:text-2xl fira-sans-medium">
@@ -113,9 +115,6 @@ export default function SettingPage() {
                             <h4 className="text-xl fira-sans-semibold">
                                 {session?.user?.name}
                             </h4>
-                            <p className="text-muted-foreground text-sm">
-                                {username}
-                            </p>
                         </div>
                     </div>
 

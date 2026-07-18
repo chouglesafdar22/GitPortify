@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Settings | GitPortify",
+    title: "Profile | GitPortify",
     description: "Update your profile, username, and preferences",
     robots: {
     index: true,
