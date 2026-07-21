@@ -30,7 +30,7 @@ export default function GuideBarButton({
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
                             transition={{ type: "spring", duration: 0.3 }}
-                            className={`${reverse ? "flex-row-reverse" : ""} flex flex-row md:p-2.5 p-1.5 md:gap-2.5 gap-1.5 rounded-full text-white xl:text-lg md:text-base text-sm bg-[#51149C] hover:bg-[#6D28D9] justify-center items-center text-center cursor-pointer w-fit fira-sans-medium ${contentClassName}`}
+                            className={`${reverse ? "flex-row-reverse" : ""} flex flex-row p-2.5 md:gap-2.5 gap-1.5 rounded-full text-white xl:text-lg md:text-base text-sm bg-[#51149C] hover:bg-[#6D28D9] justify-center items-center text-center cursor-pointer w-fit fira-sans-medium ${contentClassName}`}
                         >
                             {l.icon && <span>{l.icon}</span>}
                         </motion.div>
