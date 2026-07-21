@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
+import GuideBarButton from "@/components/layout/GuideBarButton";
 
 export default function SettingPage() {
     const [loading, setLoading] = useState(false);
@@ -94,10 +95,14 @@ export default function SettingPage() {
                 draggable
                 theme="colored"
             />
+            
+            <div className="fixed bottom-5 right-6 z-40">
+                <GuideBarButton />
+            </div>
 
             <div className="p-7 space-y-10 h-full max-w-md sm:max-w-xl lg:max-w-3xl w-full">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-16 fira-sans-semibold">
-                   Profile
+                    Profile
                 </h1>
                 <div className="border rounded-xl p-6 space-y-6">
                     <h3 className="text-lg sm:text-xl lg:text-2xl fira-sans-medium">

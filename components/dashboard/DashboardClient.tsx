@@ -8,6 +8,7 @@ import PublishModal from "./PublishModal";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
 import Button from "../landing/Button";
+import GuideBarButton from "../layout/GuideBarButton";
 
 export default function DashboardClient() {
     const { data: session } = useSession();
@@ -394,6 +395,10 @@ export default function DashboardClient() {
                         contentClassName="text-xs md:text-sm xl:text-base border px-3 py-1.5 fira-sans-medium rounded-md cursor-pointer"
                         text={publishLoading ? "Publishing..." : "Publish"}
                     />
+                </div>
+
+                <div className="fixed bottom-5 left-6 z-40">
+                    <GuideBarButton />
                 </div>
 
                 <PreviewPanel

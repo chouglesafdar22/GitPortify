@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface ButtonProps {
-    text: string;
+    text?: string;
     icon?: React.ReactNode;
     onClick?: () => void;
     href?: string;
@@ -28,7 +28,7 @@ export default function Button({
             transition={{ type: "spring", duration: 0.3 }}
             className={`${reverse ? "flex-row-reverse" : ""} flex flex-row md:py-2.5 py-1.5 md:px-4 px-3 md:gap-2.5 gap-1.5 rounded-2xl text-white bg-[#51149C] hover:bg-[#6D28D9] justify-center items-center text-center cursor-pointer w-fit fira-sans-medium ${contentClassName}`}
         >
-            <span>{text}</span>
+            {text && <span>{text}</span>}
             {icon && <span>{icon}</span>}
         </motion.div>
     );

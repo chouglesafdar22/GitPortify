@@ -1,10 +1,14 @@
 "use client";
 import Footer from "@/components/dashboard/Footer";
 import TemplateCard from "@/components/landing/TemplateCard";
+import GuideBarButton from "@/components/layout/GuideBarButton";
 
 export default function TemplatesPage() {
     return (
         <>
+            <div className="fixed bottom-5 right-6 z-40">
+                <GuideBarButton />
+            </div>
             <div className="p-7 space-y-10 h-full animate-in fade-in duration-500">
                 <h1 className="text-lg sm:text-xl lg:text-2xl px-16 fira-sans-semibold">
                     Templates
