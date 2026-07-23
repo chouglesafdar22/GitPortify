@@ -80,13 +80,13 @@ export default function CTASection() {
                                 href="/signup"
                                 text="Create Portfolio Free"
                                 icon={<FaLongArrowAltRight />}
-                                contentClassName="xl:text-lg md:text-base text-sm md:py-3 py-2 md:px-5 px-3.5"
+                                contentClassName="xl:text-xl md:text-lg text-base md:py-4 py-3 md:px-5 px-3.5"
                             />
 
                             <SecondaryBtn
                                 href="#templates"
                                 text="Explore Templates"
-                                contentClassName="xl:text-lg md:text-base text-sm md:py-3 py-2 md:px-5 px-3.5"
+                                contentClassName="xl:text-xl md:text-lg text-base md:py-4 py-3 md:px-5 px-3.5"
                             />
 
                         </div>
