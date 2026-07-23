@@ -47,3 +47,39 @@ export default function Button({
         </button>
     );
 };
+
+export function SecondaryBtn({
+    text,
+    icon,
+    onClick,
+    href,
+    contentClassName = "",
+    reverse,
+    className = "",
+}: ButtonProps) {
+    const content = (
+        <motion.div
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", duration: 0.3 }}
+            className={`${reverse ? "flex-row-reverse" : ""} flex flex-row md:py-2.5 py-1.5 md:px-4 px-3 md:gap-2.5 gap-1.5 rounded-2xl text-foreground hover:bg-muted border border-foreground justify-center items-center text-center cursor-pointer w-fit fira-sans-medium ${contentClassName}`}
+        >
+            {text && <span>{text}</span>}
+            {icon && <span>{icon}</span>}
+        </motion.div>
+    );
+
+    if (href) {
+        return (
+            <Link href={href} className={`${className}`}>
+                {content}
+            </Link>
+        );
+    }
+
+    return (
+        <button onClick={onClick} className={`${className}`}>
+            {content}
+        </button>
+    );
+}
