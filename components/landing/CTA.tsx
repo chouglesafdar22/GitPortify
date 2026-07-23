@@ -34,7 +34,7 @@ export default function CTASection() {
                         </h2>
 
                         {/* Description */}
-                        <p className="mx-auto mt-5 max-w-2xl xl:text-lg md:text-base text-sm fira-sans-medium leading-8 text-muted-foreground">
+                        <p className="mx-auto mt-5 max-w-2xl xl:text-lg md:text-base text-sm fira-sans-medium text-muted-foreground">
                             Build your portfolio today using your GitHub profile. Soon, generate professional resumes and cover letters from the same developer profile.
                         </p>
 
