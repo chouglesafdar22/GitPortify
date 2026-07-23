@@ -41,7 +41,7 @@ export default function CTASection() {
                         {/* Roadmap */}
                         <div className="mt-10 flex flex-col justify-center items-center md:flex-row md:gap-5 gap-2.5">
 
-                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-foreground/5 p-5">
+                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-background/5 p-5 hover:-translate-y-1 hover:border-purple-500/30 hover:shadow-[0_0_40px_rgba(109,40,217,0.18)] cursor-pointer">
                                 <BsGlobe2 className="mb-2.5 mx-auto fira-sans-medium xl:text-2xl md:text-xl text-lg text-foreground" />
                                 <h3 className="fira-sans-medium text-foreground">
                                     Portfolio Website
@@ -51,7 +51,7 @@ export default function CTASection() {
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-background/5 p-5">
+                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-foreground/5 p-5">
                                 <FiFileText className="mb-2.5 mx-auto fira-sans-medium xl:text-2xl md:text-xl text-lg text-foreground" />
                                 <h3 className="fira-sans-medium text-foreground">
                                     Resume Builder
@@ -61,7 +61,7 @@ export default function CTASection() {
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-background/5 p-5">
+                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-foreground/5 p-5">
                                 <MdOutlineMail className="mb-2.5 mx-auto fira-sans-medium xl:text-2xl md:text-xl text-lg text-foreground" />
                                 <h3 className="fira-sans-medium text-foreground">
                                     Cover Letter
