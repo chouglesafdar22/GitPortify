@@ -19,7 +19,7 @@ export default function CTASection() {
                     <div className="relative z-10 mx-auto max-w-4xl text-center">
 
                         {/* Badge */}
-                        <div className="mb-10 inline-flex items-center gap-2 rounded-full border fira-sans-light border-purple-500/20 bg-purple-500/10 px-4 py-2 md:text-sm text-xs text-muted-foreground">
+                        <div className="mb-10 inline-flex items-center gap-2 rounded-full border fira-sans-light border-purple-500/20 bg-purple-500/10 px-4 py-2 md:text-sm text-xs text-purple-400">
                             <IoSparklesSharp />
                             More Than a Portfolio Builder
                         </div>
