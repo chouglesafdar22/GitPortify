@@ -9,7 +9,7 @@ import Button, { SecondaryBtn } from "./Button";
 
 export default function CTASection() {
     return (
-        <section className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 md:px-14 px-1 md:py-10 py-5 pb-5">
+        <section className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 md:px-14 px-1 md:py-10 py-5 pb-5 mb-8">
             <div className="mx-auto max-w-5xl">
                 <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-linear-to-b from-background to-background/25 p-2.5 md:p-10">
 
