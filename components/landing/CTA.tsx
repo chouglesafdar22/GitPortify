@@ -26,10 +26,10 @@ export default function CTASection() {
 
                         {/* Heading */}
                         <h2 className="xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight text-foreground">
-                            One Developer Profile.
+                            Build your developer portfolio in minutes
                             <br />
                             <span className="text-indigo-400">
-                                Multiple Ways to Showcase It.
+                                Powered by GitHub
                             </span>
                         </h2>
 
@@ -101,4 +101,4 @@ export default function CTASection() {
             </div>
         </section>
     );
-}
+};
