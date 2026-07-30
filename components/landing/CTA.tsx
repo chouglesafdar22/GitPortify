@@ -51,7 +51,7 @@ export default function CTASection() {
                                 </p>
                             </div>
 
-                            <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-foreground/5 p-5">
+                            {/* <div className="rounded-2xl flex flex-col justify-center items-center h-40 w-50 border border-foreground/20 bg-foreground/5 p-5">
                                 <FiFileText className="mb-2.5 mx-auto fira-sans-medium xl:text-2xl md:text-xl text-lg text-foreground" />
                                 <h3 className="fira-sans-medium text-foreground">
                                     Resume Builder
@@ -69,7 +69,7 @@ export default function CTASection() {
                                 <p className="mt-1 text-sm fira-sans-regular text-muted-foreground">
                                     Coming Soon
                                 </p>
-                            </div>
+                            </div> */}
 
                         </div>
 
