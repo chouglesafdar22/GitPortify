@@ -10,7 +10,7 @@ import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 const navLinks = [
     { name: "Dashboard", icon: <TbLayoutDashboard size={20} />, href: "/dashboard" },
     { name: "Templates", icon: <TbTemplate size={20} />, href: "/dashboard/template" },
-    { name: "Profile", icon: <TbUserEdit size={20} />, href: "/dashboard/profile" }
+    { name: "Profile", icon: <TbUserEdit size={20} />, href: "/dashboard/profile" },
 ];
 
 export default function Sidebar() {

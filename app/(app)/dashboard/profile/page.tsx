@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { signOut, useSession } from "next-auth/react";
 import GuideBarButton from "@/components/layout/GuideBarButton";
 
-export default function SettingPage() {
+export default function ProfilePage() {
     const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState("");
     const [avatar, setAvatar] = useState("");

@@ -42,7 +42,7 @@ export default function Navbar() {
 
             <button
                 onClick={() => setOpen(!open)}
-                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground text-3xl"
+                className="md:hidden flex justify-center items-center fira-sans-medium text-foreground text-xl"
             >
                 {open ? <HiX /> : <HiMenu />}
             </button>

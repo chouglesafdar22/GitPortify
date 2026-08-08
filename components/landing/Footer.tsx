@@ -29,7 +29,7 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 justify-center items-start gap-6">
+                <div className="grid xl:grid-cols-5 md:grid-cols-4 grid-cols-3 justify-center items-start gap-6">
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Navigation</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
