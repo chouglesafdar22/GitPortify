@@ -15,7 +15,7 @@ export default function Template() {
             <div className="w-full">
                 {/* Scroll Container */}
                 <div
-                    className="flex gap-6 overflow-x-auto xl:justify-center justify-start items-center scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 overflow-x-auto justify-start items-center scrollbar-hide snap-x snap-mandatory pb-3 px-1 cursor-grab active:cursor-grabbing"
                 >
                     <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                         <TemplateCard
