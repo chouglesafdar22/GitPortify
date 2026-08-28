@@ -23,7 +23,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/minimal-resume.png"}
                                 title="Minimal-Resume"
                                 description="A clean, resume-style portfolio built to get interviews"
-                                href="/preview/website/demo-github-pro"
+                                href="/preview/website/minimal-resume"
                             />
                         </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
@@ -31,7 +31,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/glassfolio.png"}
                                 title="Glassfolio"
                                 description="A glassmorphism developer portfolio with floating glass cards"
-                                href="/preview/website/demo-github-pro"
+                                href="/preview/website/glassfolio"
                             />
                         </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
@@ -39,7 +39,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/neo-dev.png"}
                                 title="Neo-Dev"
                                 description="A modern glassmorphism-inspired developer portfolio"
-                                href="/preview/website/demo-neo-dev"
+                                href="/preview/website/neo-dev"
                             />
                         </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
@@ -47,7 +47,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/terminal-dev.png"}
                                 title="Terminal-Dev"
                                 description="Terminal style hacker portfolio page"
-                                href="/preview/website/demo-terminal-dev"
+                                href="/preview/website/terminal-dev"
                             />
                         </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
@@ -55,7 +55,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/product-landing.png"}
                                 title="Product-Landing"
                                 description="Modern landing page style portfolio"
-                                href="/preview/website/demo-product-landing"
+                                href="/preview/website/product-landing"
                             />
                         </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
@@ -63,7 +63,7 @@ export default function TemplatesPage() {
                                 image={"/templates/website/github-pro.png"}
                                 title="Github-Pro"
                                 description="Clean developer portfolio inspired by GitHub"
-                                href="/preview/website/demo-github-pro"
+                                href="/preview/website/github-pro"
                             />
                         </div>
                     </div>
