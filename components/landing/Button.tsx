@@ -35,7 +35,7 @@ export default function PrimaryBtn({
 
     if (href) {
         return (
-            <Link href={href} className={`${className}`}>
+            <Link href={href} target="_blank" rel="noopener noreferrer" className={`${className}`}>
                 {content}
             </Link>
         );
@@ -71,7 +71,7 @@ export function SecondaryBtn({
 
     if (href) {
         return (
-            <Link href={href}  target="_blank" rel="noopener noreferrer" className={`${className}`}>
+            <Link href={href} target="_blank" rel="noopener noreferrer" className={`${className}`}>
                 {content}
             </Link>
         );

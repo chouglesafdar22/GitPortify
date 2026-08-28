@@ -47,24 +47,24 @@ export default function Footer() {
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Pages</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="/signup" className="hover:text-foreground">SignUp</Link></li>
-                            <li><Link href="/about" className="hover:text-foreground">About</Link></li>
-                            <li><Link href="/feedback" className="hover:text-foreground">Feedback</Link></li>
+                            <li><Link href="/signup" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">SignUp</Link></li>
+                            {/* <li><Link href="/about" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">About</Link></li> */}
+                            <li><Link href="/feedback" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Feedback</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Connects</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="https://www.linkedin.com/in/safdar-chougle" className="flex justify-start items-center gap-1 hover:text-foreground">
+                            <li><Link href="https://www.linkedin.com/in/safdar-chougle" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
                                 <FaLinkedin />
                                 <span>LinkedIn</span>
                             </Link></li>
-                            <li><Link href="https://youtube.com/playlist?list=PLUGVMxgOgh0ZCEuF-jZTkkZrKYt4GdFoE&si=4528IXkm_TFuGRbq" className="flex justify-start items-center gap-1 hover:text-foreground">
+                            <li><Link href="https://youtube.com/playlist?list=PLUGVMxgOgh0ZCEuF-jZTkkZrKYt4GdFoE&si=4528IXkm_TFuGRbq" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
                                 <FaYoutube />
                                 <span>Youtube</span>
                             </Link></li>
-                            <li><Link href="https://www.instagram.com/chouglesafdar22?igsh=cnY5cG0yY3gzZngz" className="flex justify-start items-center gap-1 hover:text-foreground">
+                            <li><Link href="https://www.instagram.com/chouglesafdar22?igsh=cnY5cG0yY3gzZngz" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
                                 <FaInstagram />
                                 <span>Instagram</span>
                             </Link></li>
@@ -74,8 +74,8 @@ export default function Footer() {
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Legal</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="/privacy-policy" className="hover:text-foreground">Privacy</Link></li>
-                            <li><Link href="/terms-and-conditions" className="hover:text-foreground">Terms</Link></li>
+                            <li><Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Privacy</Link></li>
+                            <li><Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Terms</Link></li>
                         </ul>
                     </div>
 
