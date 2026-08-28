@@ -178,7 +178,7 @@ export default function DashboardClient() {
                 return;
             }
 
-            const url = `${window.location.origin}/portfolio/${username}`;
+            const url = `${window.location.origin}/p/${username}`;
             setPublishedUrl(url);
             setIsPublishModal(true);
             toast.success("Portfolio published 🚀");

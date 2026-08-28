@@ -396,7 +396,7 @@ export default function ProfilePage() {
                                         className="border rounded-md px-3 py-2 text-sm bg-background fira-sans-regular"
                                     />
                                     <p className="text-[10px] text-muted-foreground fira-sans-light">
-                                        Your portfolio will be available at /portfolio/{username}
+                                        Your portfolio will be available at /p/{username}
                                     </p>
                                 </div>
 
