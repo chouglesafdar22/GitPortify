@@ -3,6 +3,8 @@ export type TemplateType =
     | "product-landing"
     | "terminal-dev"
     | "neo-dev"
+    | "glassfolio"
+    | "minimal-resume"
 
 export interface Template {
     id: TemplateType;
@@ -35,5 +37,17 @@ export const templates: Template[] = [
         name: "Neo-Dev",
         description: "A modern glassmorphism-inspired developer portfolio",
         preview: "/templates/neo-dev.png"
-    }
+    },
+    {
+        id: "glassfolio",
+        name: "Glassfolio",
+        description: "A modern glassmorphism-inspired developer portfolio",
+        preview: "/templates/neo-dev.png"
+    },
+     {
+        id: "minimal-resume",
+        name: "Minimal Resume",
+        description: "A modern glassmorphism-inspired developer portfolio",
+        preview: "/templates/neo-dev.png"
+    },
 ]

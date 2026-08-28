@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Button from "./Button";
+import PrimaryBtn from "./Button";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 interface TemplateCardProps {
@@ -71,7 +71,7 @@ export default function TemplateCard({
 
                 </div>
 
-                <Button
+                <PrimaryBtn
                     href={href}
                     text="Preview Template"
                     icon={<FaLongArrowAltRight />}

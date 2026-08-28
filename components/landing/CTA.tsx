@@ -5,7 +5,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import { FiFileText } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Button, { SecondaryBtn } from "./Button";
+import PrimaryBtn, { SecondaryBtn } from "./Button";
 
 export default function CTASection() {
     return (
@@ -76,7 +76,7 @@ export default function CTASection() {
                         {/* Buttons */}
                         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                            <Button
+                            <PrimaryBtn
                                 href="/signup"
                                 text="Create Portfolio Free"
                                 icon={<FaLongArrowAltRight />}

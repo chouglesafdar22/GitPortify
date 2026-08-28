@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import Button from "@/components/landing/Button";
+import PrimaryBtn from "@/components/landing/Button";
 import { IoLogoGithub } from "react-icons/io";
 import { signIn } from "next-auth/react";
 import Footer from "@/components/dashboard/Footer";
@@ -33,7 +33,7 @@ export default function SignupPage() {
                         </h5>
                     </div>
                     <div className="flex justify-center items-center w-full">
-                        <Button
+                        <PrimaryBtn
                             icon={!loading && <IoLogoGithub />}
                             text={loading ? "Continuing with GitHub..." : "Continue with GitHub"}
                             onClick={() => {

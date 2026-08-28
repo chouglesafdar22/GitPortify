@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 
 interface FaqProps {

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import TemplateRenderer from "@/components/templates/TemplateRenderer";
 import PreviewPanel from "@/components/dashboard/PreviewPanel";
 import { useParams } from "next/navigation";
+import NotFoundPortfolio from "@/components/portfolio/notfoundPortfolio";
 
 export default function PortfolioPage() {
     const params = useParams();
@@ -16,29 +17,34 @@ export default function PortfolioPage() {
 
         const fetchPortfolio = async () => {
             try {
-                const res = await fetch(`/api/portfolio/${encodeURIComponent(username)}`);
+                const res = await fetch(`/api/website/${encodeURIComponent(username)}`);
                 const result = await res.json();
+
+                console.log("API", result)
 
                 if (!res.ok) {
                     console.error("Error:", result.error);
                     return;
                 }
 
-                setData(result.portfolio);
+                setData(result.website);
             } catch (err) {
                 console.error("fetch error:", err)
+            } finally {
+                setLoading(false);
             }
         };
 
         if (username) fetchPortfolio();
-
-        setLoading(false);
-
     }, [username]);
+
+    useEffect(() => {
+        console.log("Updated data:", data);
+    }, [data]);
 
     if (!mounted) return null;
 
-    if (!data) {
+    if (loading) {
         return (
             <PreviewPanel
                 bio=""
@@ -59,6 +65,12 @@ export default function PortfolioPage() {
             />
         );
     };
+
+    if (!data) {
+        return (
+            <NotFoundPortfolio />
+        )
+    }
 
     return (
         <TemplateRenderer

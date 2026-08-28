@@ -3,7 +3,9 @@ import GithubProTemplate from "./GithubProTemplate";
 import ProductLandingTemplate from "./ProductLandingTemplate";
 import TerminalDevTemplate from "./TerminalDevTemplate";
 import NeoDevTemplate from "./NeoDevTemplate";
+import GlassfolioTemplate from "./GlassfolioTemplate";
 import type { TemplateType } from "@/types/template";
+import MinimalResumeTemplate from "./MinimalResumeTemplate";
 
 interface TemplateRendererProps {
     template: TemplateType;
@@ -64,6 +66,12 @@ export default function TemplateRenderer(props: TemplateRendererProps) {
 
         case "neo-dev":
             return <NeoDevTemplate {...props} />;
+
+        case "glassfolio":
+            return <GlassfolioTemplate {...props} />;
+
+         case "minimal-resume":
+            return <MinimalResumeTemplate {...props} />;
 
         default:
             return <GithubProTemplate {...props} />;

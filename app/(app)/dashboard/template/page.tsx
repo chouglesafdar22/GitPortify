@@ -18,6 +18,14 @@ export default function TemplatesPage() {
                     <div
                         className="flex flex-wrap gap-5 justify-center items-center pb-2.5 px-1 cursor-grab active:cursor-grabbing"
                     >
+                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
+                            <TemplateCard
+                                image={"/templates/github-pro.png"}
+                                title="Glassfolio"
+                                description="Clean developer portfolio inspired by GitHub"
+                                href="/preview/demo-github-pro"
+                            />
+                        </div>
                         <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                             <TemplateCard
                                 image={"/templates/neo-dev.png"}

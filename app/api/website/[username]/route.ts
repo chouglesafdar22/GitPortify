@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/mongodb";
-import Portfolio from "@/app/models/Portfolio";
+import Website from "@/app/models/Website";
 
 export async function GET(req: Request) {
     try {
@@ -11,18 +11,18 @@ export async function GET(req: Request) {
 
         const username = pathname.split("/").pop();
 
-        const portfolio = await Portfolio.findOne({
+        const website = await Website.findOne({
             username: username
         }).lean();
 
-        if (!portfolio) {
+        if (!website) {
             return NextResponse.json(
                 { error: "Portfolio not found" },
                 { status: 404 }
             )
         };
 
-        return NextResponse.json({ portfolio });
+        return NextResponse.json({ website });
     } catch (error) {
         console.error("Console error for fetching portfolio:", error);
         return NextResponse.json(

@@ -1,5 +1,5 @@
 "use client";
-import Button from "./Button";
+import PrimaryBtn from "./Button";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import Badge from "./Badge";
 import Image from "next/image";
@@ -23,7 +23,7 @@ export default function Hero() {
                             No setup, no hassle.
                         </p>
                     </div>
-                    <Button
+                    <PrimaryBtn
                         href="/signup"
                         text="Create Portfolio Free"
                         icon={<FaLongArrowAltRight />}

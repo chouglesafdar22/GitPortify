@@ -12,7 +12,7 @@ interface ButtonProps {
     className?: string;
 };
 
-export default function Button({
+export default function PrimaryBtn({
     text,
     icon,
     onClick,

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/mongodb";
-import Portfolio from "@/app/models/Portfolio";
+import Website from "@/app/models/Website";
 import User from "@/app/models/User";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/lib/auth";
@@ -26,11 +26,11 @@ export async function GET(req: Request) {
             );
         };
 
-        const portfolio = await Portfolio.findOne({
+        const website = await Website.findOne({
             userId: user._id,
         });
 
-        if (!portfolio) {
+        if (!website) {
             return NextResponse.json(
                 {
                     success: true,
@@ -43,18 +43,18 @@ export async function GET(req: Request) {
         return NextResponse.json(
             {
                 success: true,
-                portfolio,
+                website,
             },
             { status: 200 }
         );
 
     } catch (error) {
-        console.error("GET Portfolio Error:", error);
+        console.error("GET Website Error:", error);
 
         return NextResponse.json(
             {
                 success: false,
-                message: "Failed to fetch portfolio",
+                message: "Failed to fetch portfolio website",
             },
             { status: 500 }
         );
@@ -78,6 +78,7 @@ export async function POST(req: Request) {
             name,
             bio,
             avatar,
+            template,
             projects,
             techSkills,
             experiences,
@@ -101,7 +102,7 @@ export async function POST(req: Request) {
         }
 
         // check if username already taken by someone else
-        const existingUsername = await Portfolio.findOne({ username });
+        const existingUsername = await Website.findOne({ username });
 
         if (existingUsername && existingUsername.userId.toString() !== user._id.toString()) {
             return NextResponse.json(
@@ -111,13 +112,14 @@ export async function POST(req: Request) {
         };
 
         // UPSERT (update or create)
-        const portfolio = await Portfolio.findOneAndUpdate(
+        const website = await Website.findOneAndUpdate(
             { userId: user._id },
             {
                 username,
                 name,
                 bio,
                 avatar,
+                template,
                 projects,
                 techSkills,
                 experiences,
@@ -134,7 +136,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json({
             success: true,
-            portfolio,
+            website,
         });
 
     } catch (error) {

@@ -1,22 +1,25 @@
 "use client";
 import Link from "next/link";
 import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-background/25 px-5 md:px-10 md:py-8 py-7 gap-50">
+        <footer className="w-full bg-background/25 px-5 md:px-10 md:py-8 py-7 gap-50 mt-2.5">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-7">
                 <div className="space-y-2 justify-start items-start">
                     <div className="flex cursor-pointer leading-none select-none">
                         <div className="flex items-center md:gap-1.5 gap-1 justify-center">
                             <Image
-                                src="/logo/GitPortify-Logo(dark).png"
+                                src="/logo/GitPortify - Logo.png"
                                 alt="GitPortify Logo"
-                                width={42}
-                                height={42}
-                                className="rounded-2xl object-center"
+                                width={24}
+                                height={24}
+                                className="object-contain rounded-xl xl:w-10 md:w-9 w-8 xl:h-10 md:h-9 h-8"
                                 priority
+                                loading='eager'
+                                unoptimized
                             />
 
                             <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
@@ -29,7 +32,7 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <div className="grid xl:grid-cols-5 md:grid-cols-4 grid-cols-3 justify-center items-start gap-6">
+                <div className="grid xl:grid-cols-5 md:grid-cols-4 grid-cols-3 justify-center items-start gap-10">
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Navigation</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
@@ -79,7 +82,10 @@ export default function Footer() {
                     <div>
                         <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Contact</h3>
                         <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="mailto:gitportify@gmail.com" className="hover:text-foreground">gitportify@gmail.com</Link></li>
+                            <li><Link href="mailto:gitportify@gmail.com" className="flex justify-start items-center gap-1 hover:text-foreground">
+                                <MdEmail />
+                                <span>Email</span>
+                            </Link></li>
                         </ul>
                     </div>
 

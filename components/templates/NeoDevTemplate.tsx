@@ -332,7 +332,7 @@ export default function NeoDevTemplate({
                         {projects.map((project) => (
                             <motion.div
                                 whileHover={{ y: -5 }}
-                                key={project.id}
+                                key={project.name}
                                 className="group rounded-3xl border border-purple-400/20 bg-white/3 overflow-hidden hover:border-purple-500/30 transition-all"
                             >
 

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const PortfolioSchema = new mongoose.Schema({
+const WebsiteSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 
     username: {
@@ -24,10 +24,10 @@ const PortfolioSchema = new mongoose.Schema({
         required: true
     },
 
-    // template: {
-    //     type: String,
-    //     required: true
-    // },
+    template: {
+        type: String,
+        required: true
+    },
 
     projects: [
         {
@@ -83,5 +83,5 @@ const PortfolioSchema = new mongoose.Schema({
     },
 });
 
-export default mongoose.models.Portfolio ||
-    mongoose.model("Portfolio", PortfolioSchema);
+export default mongoose.models.Website ||
+    mongoose.model("Website", WebsiteSchema);

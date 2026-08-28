@@ -12,15 +12,17 @@ export default function Navbar() {
             <a href="#home" className="flex flex-col justify-center cursor-pointer leading-none select-none">
                 <div className="flex items-center md:gap-1.5 gap-1 justify-center">
                     <Image
-                        src="/logo/GitPortify-Logo(dark).png"
+                        src="/logo/GitPortify - Logo.png"
                         alt="GitPortify Logo"
-                        width={42}
-                        height={42}
-                        className="rounded-2xl object-center"
+                        width={24}
+                        height={24}
+                        className="object-contain rounded-xl xl:w-10 md:w-9 w-8 xl:h-10 md:h-9 h-8"
                         priority
+                        loading='eager'
+                        unoptimized
                     />
 
-                    <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
+                    <h1 className="hidden md:block text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
                         GitPortify
                     </h1>
                 </div>
