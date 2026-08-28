@@ -27,5 +27,15 @@ export const templateConfigs: Record<
         showNavbar: false,
         showContactLinks: true,
         allowThemeToggle: true
+    },
+    "glassfolio":{
+        showNavbar: false,
+        showContactLinks: false,
+        allowThemeToggle:false
+    },
+    "minimal-resume":{
+        showNavbar:false,
+        showContactLinks:false,
+        allowThemeToggle:false
     }
 };
