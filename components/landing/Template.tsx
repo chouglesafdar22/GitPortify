@@ -20,6 +20,7 @@ export default function Template() {
                     <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                         <TemplateCard
                             image={"/templates/website/minimal-resume.png"}
+                            isNew
                             title="Minimal-Resume"
                             description="A clean, resume-style portfolio built to get interviews"
                             href="/preview/website/minimal-resume"
@@ -28,6 +29,7 @@ export default function Template() {
                     <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                         <TemplateCard
                             image={"/templates/website/glassfolio.png"}
+                            isNew
                             title="Glassfolio"
                             description="A glassmorphism developer portfolio with floating glass cards"
                             href="/preview/website/glassfolio"

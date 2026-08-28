@@ -9,6 +9,7 @@ interface TemplateCardProps {
     description: string;
     href: string;
     featured?: boolean;
+    isNew?: boolean;
 }
 
 export default function TemplateCard({
@@ -16,6 +17,7 @@ export default function TemplateCard({
     title,
     description,
     href,
+    isNew = false,
     featured = false,
 }: TemplateCardProps) {
     return (
@@ -32,13 +34,20 @@ export default function TemplateCard({
             {/* Preview Image */}
             <div className="relative overflow-hidden border-b border-white/10">
 
-                <div className="absolute top-4 left-4 z-10 flex items-center gap-1 rounded-full border border-green-500/20 bg-black/60 px-2 py-1 backdrop-blur-md">
+                {isNew && (
+                    <div className="absolute top-4 left-4 z-10 flex items-center gap-1 rounded-full border border-green-500/20 bg-black/60 px-2 py-1 backdrop-blur-md">
+                        <div className="h-2 w-2 rounded-full bg-green-500" />
+                        <span className="text-[10px] text-green-400 fira-sans-regular">
+                            New
+                        </span>
+                    </div>
+                )}
+                <div className={`absolute top-4 ${isNew ? "left-20" : "left-4"} z-10 flex items-center gap-1 rounded-full border border-green-500/20 bg-black/60 px-2 py-1 backdrop-blur-md`}>
                     <div className="h-2 w-2 rounded-full bg-green-500" />
                     <span className="text-[10px] text-green-400 fira-sans-regular">
                         Live Preview
                     </span>
                 </div>
-
                 <Image
                     src={image}
                     alt={title}
@@ -82,4 +91,4 @@ export default function TemplateCard({
             </div>
         </div>
     );
-}
+};
