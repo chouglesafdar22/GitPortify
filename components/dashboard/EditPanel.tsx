@@ -124,10 +124,10 @@ export default function EditPanel({
                     >
                         <option value="minimal-resume">Minimal Resume (New)</option>
                         <option value="glassfolio">Glassfolio (New)</option>
-                        <option value="github-pro">GitHub Pro</option>
-                        <option value="product-landing">Product Landing</option>
-                        <option value="terminal-dev">Terminal Dev</option>
                         <option value="neo-dev">Neo Dev</option>
+                        <option value="terminal-dev">Terminal Dev</option>
+                        <option value="product-landing">Product Landing</option>
+                        <option value="github-pro">GitHub Pro</option>
                     </select>
                 </div>
 
