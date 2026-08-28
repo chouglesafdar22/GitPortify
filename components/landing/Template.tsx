@@ -60,7 +60,7 @@ export default function Template() {
                     <div className="min-w-72.5 sm:min-w-[320px] max-w-[320px] snap-start">
                         <TemplateCard
                             image={"/templates/website/github-pro.png"}
-                            title="Glassfolio"
+                            title="Github-Pro"
                             description="Clean developer portfolio inspired by GitHub"
                             href="/preview/website/demo-github-pro"
                         />
