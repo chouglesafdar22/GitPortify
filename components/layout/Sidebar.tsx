@@ -6,9 +6,11 @@ import { TbLayoutDashboard, TbTemplate, TbSettings, TbUserEdit } from "react-ico
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "../ui/button";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
+import { RiFileEditLine } from "react-icons/ri";
 
 const navLinks = [
     { name: "Dashboard", icon: <TbLayoutDashboard size={20} />, href: "/dashboard" },
+    { name: "Portfolio", icon: <RiFileEditLine size={20} />, href: "/dashboard/portfolio" },
     { name: "Profile", icon: <TbUserEdit size={20} />, href: "/dashboard/profile" },
     { name: "Templates", icon: <TbTemplate size={20} />, href: "/dashboard/template" },
     { name: "Setting", icon: <TbSettings size={20} />, href: "/dashboard/setting" },
