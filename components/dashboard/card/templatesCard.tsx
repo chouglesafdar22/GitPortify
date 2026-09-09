@@ -73,7 +73,7 @@ export default function TemplatesCard({
     return (
         <DashboardCard
             title="Templates"
-            onEdit={() => router.push("/dashboard/templates")}
+            onEdit={() => router.push("/dashboard/template")}
         >
             <div className="space-y-3">
                 <div className="flex items-center justify-between">
