@@ -125,7 +125,7 @@ export default function PortfolioCard({
                             </p>
                         </div>
 
-                        {username && (
+                        {/* {username && (
                             <button
                                 type="button"
                                 onClick={handleOpenPortfolio}
@@ -141,7 +141,7 @@ export default function PortfolioCard({
                                 View
                                 <ExternalLink className="h-3.5 w-3.5" />
                             </button>
-                        )}
+                        )} */}
                     </div>
                 </div>
             </DashboardCard>

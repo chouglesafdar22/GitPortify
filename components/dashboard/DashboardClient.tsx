@@ -67,7 +67,7 @@ export default function DashboardClient() {
     return (
         <>
             <div className="p-3.5 w-full h-full flex justify-center items-start">
-                <div className="grid grid-cols-1 gap-10 p-3 items-start md:grid-cols-2
+                <div className="grid grid-cols-1 gap-5 p-3 items-start md:grid-cols-2
                 "
                 >
                     <PortfolioCard username={username} />
