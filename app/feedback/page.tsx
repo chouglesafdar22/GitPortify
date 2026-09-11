@@ -74,9 +74,9 @@ export default function FeedbackPage() {
                         </div>
                         <h1 className="flex justify-center items-center gap-2 text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold leading-tight">
                             Help us improve
-                            <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
+                            <span className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
                                 GitPortify
-                            </h1>
+                            </span>
                         </h1>
                         <p className="max-w-xl text-muted-foreground xl:text-xl md:text-lg text-base fira-sans-regular leading-relaxed">
                             Share your experience, report bugs, or suggest new features.
@@ -101,7 +101,7 @@ export default function FeedbackPage() {
                                 />
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label className="xl:text-lg md:text-base text-smtext-foreground fira-sans-medium">
+                                <label className="xl:text-lg md:text-base text-sm text-foreground fira-sans-medium">
                                     Feedback Type
                                 </label>
                                 <select
@@ -111,10 +111,10 @@ export default function FeedbackPage() {
                                     <option value="general" className="bg-background">
                                         General Feedback
                                     </option>
-                                    <option value="bug" className="bg-background">
+                                    <option value="bug report" className="bg-background">
                                         Bug Report
                                     </option>
-                                    <option value="feature" className="bg-background">
+                                    <option value="feature request" className="bg-background">
                                         Feature Request
                                     </option>
                                 </select>
@@ -126,7 +126,8 @@ export default function FeedbackPage() {
                                 <input
                                     name="email"
                                     type="email"
-                                    placeholder="Enter your email (optional)"
+                                    required
+                                    placeholder="Enter your email"
                                     className="w-full rounded-2xl border border-foreground/10 bg-background/30 px-4 py-3 xl:text-base md:text-sm text-xs text-foreground outline-none transition-all duration-300 hover:border-purple-500/20 focus:border-purple-500/40"
                                 />
                             </div>
@@ -172,4 +173,4 @@ export default function FeedbackPage() {
             <Footer />
         </>
     )
-}
+};
