@@ -64,7 +64,11 @@ Type: ${type}
 Feedback:
 ${feedback}
 
-Submitted: ${newFeedback.createdAt}
+Submitted: ${new Date(newFeedback.createdAt).toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    dateStyle: "medium",
+    timeStyle: "medium",
+})}
                 `,
             });
 
