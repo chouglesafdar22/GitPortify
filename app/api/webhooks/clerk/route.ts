@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { verifyWebhook } from "@clerk/nextjs/webhooks";
+import { verifyWebhook } from "@clerk/backend/webhooks";
 
 export async function POST(request: NextRequest) {
     let event;
