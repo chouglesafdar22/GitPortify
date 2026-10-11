@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { verifyWebhook } from "@clerk/backend/webhooks";
 import { clerkClient } from "@clerk/nextjs/server";
@@ -5,9 +6,6 @@ import { connectDB } from "@/app/lib/mongodb";
 import { sendGitPortifyEmail } from "@/app/lib/email";
 import { welcomeEmail, signInEmail } from "@/app/lib/email-templates";
 import WebhookEvent from "@/app/models/WebhookEvents";
-
-// A newly created account's first session should not trigger a sign-in email.
-const NEW_ACCOUNT_WINDOW_MS = 2 * 60 * 1000;
 
 export async function POST(request: NextRequest) {
     let event;
@@ -37,7 +35,6 @@ export async function POST(request: NextRequest) {
     try {
         await connectDB();
 
-        // Prevent the same Clerk event from sending an email twice.
         try {
             await WebhookEvent.create({
                 eventId,
@@ -62,15 +59,18 @@ export async function POST(request: NextRequest) {
         }
 
         let userId: string;
-        let sessionCreatedAt: number | null = null;
 
-        if (event.type === "user.created") {
-            userId = event.data.id;
-        } else if (event.type === "session.created") {
-            userId = event.data.user_id;
-            sessionCreatedAt = event.data.created_at;
-        } else {
-            return new Response("Event ignored", { status: 200 });
+        switch (event.type) {
+            case "user.created":
+                userId = event.data.id;
+                break;
+
+            case "session.created":
+                userId = event.data.user_id;
+                break;
+
+            default:
+                return new Response("Event ignored", { status: 200 });
         }
 
         const client = await clerkClient();
@@ -90,21 +90,22 @@ export async function POST(request: NextRequest) {
             "there";
 
         if (event.type === "user.created") {
-            // New account: send the welcome email only.
             await sendGitPortifyEmail({
                 to: emailAddress,
                 subject: "Welcome to GitPortify!",
                 html: welcomeEmail(name),
             });
         } else {
-            // Skip the sign-in email for a session created alongside
-            // a newly registered account.
-            const isNewAccount =
-                sessionCreatedAt !== null &&
-                Math.abs(sessionCreatedAt - user.createdAt) <=
-                NEW_ACCOUNT_WINDOW_MS;
+            // Clerk timestamps are milliseconds since the Unix epoch.
+            // A session created at essentially the same time as the
+            // account is the initial signup session.
+            const sessionCreatedAt = event.data.created_at;
+            const accountCreatedAt = user.createdAt;
 
-            if (isNewAccount) {
+            const isInitialSignupSession =
+                Math.abs(sessionCreatedAt - accountCreatedAt) < 60_000;
+
+            if (isInitialSignupSession) {
                 await WebhookEvent.updateOne(
                     { eventId },
                     {
@@ -116,12 +117,11 @@ export async function POST(request: NextRequest) {
                 );
 
                 return new Response(
-                    "New-account session: sign-in email skipped",
+                    "Initial signup session: sign-in email skipped",
                     { status: 200 }
                 );
             }
 
-            // Existing account: send the sign-in confirmation.
             await sendGitPortifyEmail({
                 to: emailAddress,
                 subject: "New sign-in to your GitPortify account",
@@ -158,3 +158,4 @@ export async function POST(request: NextRequest) {
         return new Response("Webhook email delivery failed", { status: 500 });
     }
 }
+
