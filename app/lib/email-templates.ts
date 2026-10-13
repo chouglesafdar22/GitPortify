@@ -102,7 +102,7 @@ function websiteButton(label: string, url: string) {
 export function welcomeEmail(name: string) {
     const safeName = escapeHtml(name);
 
-    return ` emailLayout(
+    return emailLayout(`
         <h1 style="margin:0 0 18px;font-size:26px;line-height:34px;color:#18181b;">
             Welcome to GitPortify!
         </h1>
@@ -116,14 +116,14 @@ export function welcomeEmail(name: string) {
         <p style="margin:0;font-size:14px;line-height:24px;color:#71717a;">
             We're glad you're here. Happy building!
         </p>
-    )`;
+    `);
 }
 
 export function websitePublishedEmail(name: string, url: string) {
     const safeName = escapeHtml(name);
     const safeUrl = escapeHtml(url);
 
-    return ` emailLayout(
+    return emailLayout(`
         <h1 style="margin:0 0 18px;font-size:26px;line-height:34px;color:#18181b;">
             Your portfolio website is live!
         </h1>
@@ -143,14 +143,14 @@ export function websitePublishedEmail(name: string, url: string) {
         <p style="margin:20px 0 0;font-size:14px;line-height:24px;color:#71717a;">
             Thank you for choosing GitPortify. We wish you continued success in showcasing your work!
         </p>
-    )`;
+    `);
 }
 
 export function websiteUpdatedEmail(name: string, url: string) {
     const safeName = escapeHtml(name);
     const safeUrl = escapeHtml(url);
 
-    return ` emailLayout(
+    return emailLayout(`
         <h1 style="margin:0 0 18px;font-size:26px;line-height:34px;color:#18181b;">
             Your portfolio website has been updated
         </h1>
@@ -170,13 +170,13 @@ export function websiteUpdatedEmail(name: string, url: string) {
         <p style="margin:20px 0 0;font-size:14px;line-height:24px;color:#71717a;">
             Thank you for choosing GitPortify. We wish you continued success with your portfolio!
         </p>
-    )`;
+    `);
 }
 
 export function signInEmail(name: string) {
     const safeName = escapeHtml(name);
 
-    return ` emailLayout(
+    return emailLayout(`
         <h1 style="margin:0 0 18px;font-size:26px;line-height:34px;color:#18181b;">
             Sign-in successful
         </h1>
@@ -190,5 +190,5 @@ export function signInEmail(name: string) {
         <p style="margin:0;font-size:14px;line-height:24px;color:#71717a;">
             If you don't recognize this activity, review your account security and secure your account if necessary. Clerk may also send a separate security notification for a new device.
         </p>
-    )`;
+    `);
 }
