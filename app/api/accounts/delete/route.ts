@@ -1,26 +1,24 @@
 import { NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/lib/auth";
+import { clerkClient } from "@clerk/nextjs/server";
+import { getCurrentUserId } from "@/app/lib/auth";
 import { connectDB } from "@/app/lib/mongodb";
 import User from "@/app/models/User";
 import Portfolio from "@/app/models/Portfolio";
 
 export async function DELETE() {
     try {
-        await connectDB();
+        const clerkId = await getCurrentUserId();
 
-        const session = await getServerSession(authOptions);
-
-        if (!session?.user?.email) {
+        if (!clerkId) {
             return NextResponse.json(
                 { error: "Unauthorized" },
                 { status: 401 }
             );
         }
 
-        const user = await User.findOne({
-            email: session.user.email,
-        });
+        await connectDB();
+
+        const user = await User.findOne({ clerkId });
 
         if (!user) {
             return NextResponse.json(
@@ -29,28 +27,25 @@ export async function DELETE() {
             );
         }
 
-        // Delete Portfolio
-        await Portfolio.deleteOne({
-            userId: user._id,
-        });
+        // Delete the Clerk account first.
+        const client = await clerkClient();
+        await client.users.deleteUser(clerkId);
 
-        // Delete User
-        await User.deleteOne({
-            _id: user._id,
-        });
+        // Remove associated MongoDB records.
+        await Portfolio.deleteOne({ userId: user._id });
+        await User.deleteOne({ _id: user._id });
 
         return NextResponse.json({
             success: true,
             message: "Account deleted successfully.",
         });
-
     } catch (error) {
         console.error("Delete Account Error:", error);
 
         return NextResponse.json(
             {
                 success: false,
-                message: "Something went wrong.",
+                message: "Something went wrong while deleting the account.",
             },
             { status: 500 }
         );

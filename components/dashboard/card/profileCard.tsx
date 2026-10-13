@@ -9,6 +9,7 @@ interface ProfileCardProps {
     username?: string;
     avatar?: string;
     bio?: string;
+    isLoading?:boolean;
 }
 
 export default function ProfileCard({
@@ -16,8 +17,40 @@ export default function ProfileCard({
     username,
     avatar,
     bio,
+    isLoading=false
 }: ProfileCardProps) {
     const router = useRouter();
+
+    if (isLoading) {
+        return (
+            <DashboardCard
+                title="Profile"
+                onEdit={() => router.push("/dashboard/profile")}
+                className="min-h-52"
+            >
+                <div
+                    className="flex h-full animate-pulse items-start gap-4"
+                    role="status"
+                    aria-label="Loading profile"
+                >
+                    {/* Avatar skeleton */}
+                    <div className="h-16 w-16 shrink-0 rounded-xl border border-foreground/10 bg-foreground/10" />
+
+                    {/* Profile information skeleton */}
+                    <div className="min-w-0 flex-1">
+                        <div className="h-5 w-32 max-w-full rounded bg-foreground/10" />
+
+                        <div className="mt-2 h-4 w-24 rounded bg-foreground/10" />
+
+                        <div className="mt-4 space-y-2">
+                            <div className="h-3 w-full rounded bg-foreground/10" />
+                            <div className="h-3 w-4/5 rounded bg-foreground/10" />
+                        </div>
+                    </div>
+                </div>
+            </DashboardCard>
+        );
+    }
 
     return (
         <DashboardCard
@@ -62,4 +95,4 @@ export default function ProfileCard({
             </div>
         </DashboardCard>
     );
-}
+};

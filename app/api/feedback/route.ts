@@ -91,7 +91,7 @@ We appreciate your contribution to GitPortify and will take your feedback into c
 
 Thanks again for helping us make GitPortify better.
 
-— GitPortify Team
+GitPortify
                 `,
             });
         } catch (emailError) {

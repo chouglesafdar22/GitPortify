@@ -147,7 +147,7 @@ export default function EditPanel({
                         Name
                     </p>
                     <div className="mt-1 rounded-md fira-sans-regular border px-3 py-2 text-sm">
-                        {name}
+                        {name || "Add name from Profile Page"}
                     </div>
                 </div>
 
@@ -158,11 +158,11 @@ export default function EditPanel({
                             Username
                         </p>
                         <div className="mt-1 rounded-md fira-sans-regular border px-3 py-2 text-sm">
-                            {username || "Add username from Dashboard"}
+                            {username || "Add username from Profile Page"}
                         </div>
                     </div>
                     <p className="text-[10px] text-muted-foreground fira-sans-light">
-                        Your portfolio will be available at /portfolio/{username}
+                        Your portfolio will be available at /p/{username}
                     </p>
                 </div>
 
@@ -173,7 +173,7 @@ export default function EditPanel({
                             Bio
                         </p>
                         <div className="mt-1 rounded-md fira-sans-regular border px-3 py-2 text-sm">
-                            {bio}
+                            {bio || "Add bio from Profile page"}
                         </div>
                     </div>
                 </div>

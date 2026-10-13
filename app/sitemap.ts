@@ -11,10 +11,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: "https://gitportify.vercel.app/signup"
         },
         {
-            url: "https://gitportify.vercel.app/privacy-policy"
+            url: "https://gitportify.vercel.app/signin"
         },
         {
-            url: "https://gitportify.vercel.app/terms-and-conditions"
+            url: "https://gitportify.vercel.app/templates"
+        },
+        {
+            url: "https://gitportify.vercel.app/legal/privacy-policy"
+        },
+        {
+            url: "https://gitportify.vercel.app/legal/terms-and-conditions"
         },
     ];
 };

@@ -2,61 +2,68 @@
 import { useState } from "react";
 import FaqCard from "./FaqCard";
 
-export default function Faq() {
-    const [activeIndex, setActiveIndex] = useState(0);
+const faqs = [
+    {
+        que: "Is GitPortify free to use?",
+        ans: "GitPortify is currently free to use. You can create and customize your developer portfolio without a subscription."
+    },
+    {
+        que: "Does GitPortify support GitHub and GitLab?",
+        ans: "Yes. GitPortify supports both GitHub and GitLab, allowing you to build a portfolio using your developer profile and projects."
+    },
+    {
+        que: "Do I need coding skills to create a portfolio?",
+        ans: "No coding is required for the portfolio creation workflow. You can customize your portfolio using GitPortify's available tools and templates."
+    },
+    {
+        que: "Do I need to arrange my own hosting?",
+        ans: "No separate hosting setup is required. You can publish your portfolio through GitPortify and share its public link."
+    },
+    {
+        que: "Can I edit my portfolio after publishing?",
+        ans: "Yes. You can update your portfolio after publishing. The changes become visible according to the publishing workflow."
+    },
+    {
+        que: "Can I choose and change portfolio templates?",
+        ans: "You can choose from the available portfolio templates. Template-switching behavior depends on the options currently supported by GitPortify."
+    }
+];
 
-    const faqs = [
-        {
-            que: "GitPortify is 100% Free?",
-            ans: "Yes, GitPortify is completely free to use. You can build, customize, and publish your portfolio without any cost."
-        },
-        {
-            que: "GitPortify Required Coding?",
-            ans: "No, GitPortify requires no coding. You can create and customize your portfolio easily using a simple interface."
-        },
-        {
-            que: "Does GitPortify require hosting?",
-            ans: "No, you don’t need to set up hosting. Your portfolio is instantly published with a shareable link."
-        },
-        {
-            que: "Is GitPortify fast and minimal?",
-            ans: "Yes, GitPortify is designed to be lightweight, fast-loading, and distraction-free for the best user experience."
-        },
-        {
-            que: "Can I edit my portfolio after publishing?",
-            ans: "Yes, you can update your portfolio anytime and changes will reflect instantly."
-        },
-        {
-            que: "Does GitPortify use my GitHub data securely?",
-            ans: "Yes, we only access necessary data and never store sensitive information."
-        },
-        {
-            que: "Can I choose different templates?",
-            ans: "Yes, you can switch between multiple modern templates anytime."
-        },
-        {
-            que: "Is GitPortify suitable for beginners?",
-            ans: "Absolutely, it’s designed for both beginners and experienced developers."
-        }
-    ];
+export default function Faq() {
+    const [activeIndex, setActiveIndex] = useState(-1);
 
     return (
-        <section id="faq" className="lg:mt-7 md:mt-6 sm:mt-5 mt-4 flex flex-col justify-center items-center md:px-14 px-1 md:py-10 py-5 gap-10 pb-5">
-            <div className="flex flex-col justify-center items-center gap-5">
-                <h2 className="text-foreground xl:text-3xl md:text-2xl text-xl text-center fira-sans-semibold">FAQ</h2>
-                <h3 className="text-foreground xl:text-2xl md:text-xl text-lg text-center fira-sans-medium">Frequently Asked Questions</h3>
+        <section
+            id="faq"
+            className="flex flex-col items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
+        >
+            <div className="flex flex-col items-center gap-3">
+                <p className="fira-sans-medium text-sm uppercase tracking-[0.2em] text-violet-500 md:text-base xl:text-lg">
+                    FAQ
+                </p>
+
+                <h2 className="fira-sans-semibold text-center text-2xl text-foreground md:text-3xl xl:text-4xl">
+                    Everything you need to know.
+                </h2>
+
+                <p className="fira-sans-regular max-w-xl text-center text-sm leading-7 text-muted-foreground md:text-base xl:text-xl">
+                    Quick answers to help you get started with GitPortify.
+                </p>
             </div>
-            <div className="flex flex-col justify-center items-center md:px-16 px-3 md:py-14 py-5 md:gap-7 gap-5">
+
+            <div className="flex w-full max-w-3xl flex-col gap-5">
                 {faqs.map((faq, index) => (
                     <FaqCard
-                        key={index}
+                        key={faq.que}
                         que={faq.que}
                         ans={faq.ans}
                         isOpen={activeIndex === index}
-                        onClick={() => setActiveIndex(activeIndex === index ? -1 : index)}
+                        onClick={() =>
+                            setActiveIndex(activeIndex === index ? -1 : index)
+                        }
                     />
                 ))}
             </div>
         </section>
-    )
+    );
 }

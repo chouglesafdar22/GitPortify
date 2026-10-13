@@ -1,6 +1,5 @@
 "use client";
 import Button from "@/components/landing/Button";
-import { useSession } from "next-auth/react";
 
 export default function NotFoundPortfolio() {
 

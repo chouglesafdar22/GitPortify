@@ -2,21 +2,28 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/mongodb";
 import Website from "@/app/models/Website";
 import User from "@/app/models/User";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/lib/auth";
+import { getCurrentUserId } from "@/app/lib/auth";
+import { sendGitPortifyEmail } from "@/app/lib/email";
+import {
+    websitePublishedEmail,
+    websiteUpdatedEmail,
+} from "@/app/lib/email-templates";
 
 export async function GET(req: Request) {
     try {
         await connectDB();
 
-        const session = await getServerSession(authOptions);
+        const clerkId = await getCurrentUserId();
 
-        if (!session) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        };
+        if (!clerkId) {
+            return NextResponse.json(
+                { error: "Unauthorized" },
+                { status: 401 }
+            );
+        }
 
         const user = await User.findOne({
-            email: session.user?.email,
+            clerkId,
         });
 
         if (!user) {
@@ -24,7 +31,7 @@ export async function GET(req: Request) {
                 { error: "User not found" },
                 { status: 404 }
             );
-        };
+        }
 
         const website = await Website.findOne({
             userId: user._id,
@@ -59,16 +66,19 @@ export async function GET(req: Request) {
             { status: 500 }
         );
     }
-}
+};
 
 export async function POST(req: Request) {
     try {
         await connectDB();
 
-        const session = await getServerSession(authOptions);
+        const clerkId = await getCurrentUserId();
 
-        if (!session) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        if (!clerkId) {
+            return NextResponse.json(
+                { error: "Unauthorized" },
+                { status: 401 }
+            );
         }
 
         const body = await req.json();
@@ -86,8 +96,9 @@ export async function POST(req: Request) {
             contactLinks,
         } = body;
 
-        //find user
-        let user = await User.findOne({ email: session.user?.email });
+        const user = await User.findOne({
+            clerkId,
+        });
 
         if (!user) {
             return NextResponse.json(
@@ -96,9 +107,9 @@ export async function POST(req: Request) {
                     error: "User not found",
                 },
                 {
-                    status: 404
+                    status: 404,
                 }
-            )
+            );
         }
 
         // check if username already taken by someone else
@@ -110,6 +121,10 @@ export async function POST(req: Request) {
                 { status: 400 }
             );
         };
+
+        const existingWebsite = await Website.findOne({
+            userId: user._id,
+        });
 
         // UPSERT (update or create)
         const website = await Website.findOneAndUpdate(
@@ -134,13 +149,38 @@ export async function POST(req: Request) {
             }
         );
 
+        try {
+            if (user.email) {
+                const websiteUrl =
+                    `https://gitportify.vercel.app/w/${website.username}`;
+
+                const emailName = user.name || "GitPortify User";
+
+                const isUpdate = Boolean(existingWebsite);
+
+                await sendGitPortifyEmail({
+                    to: user.email,
+                    subject: isUpdate
+                        ? "Your GitPortify website has been updated"
+                        : "Your GitPortify website is live!",
+                    html: isUpdate
+                        ? websiteUpdatedEmail(emailName, websiteUrl)
+                        : websitePublishedEmail(emailName, websiteUrl),
+                });
+            }
+        } catch (emailError) {
+            console.error(
+                "Website notification email failed:",
+                emailError
+            );
+        }
+
         return NextResponse.json({
             success: true,
             website,
         });
-
     } catch (error) {
-        console.error(error);
+        console.error("POST Website Error:", error);
         return NextResponse.json(
             { error: "Something went wrong" },
             { status: 500 }

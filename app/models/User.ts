@@ -2,16 +2,34 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
     {
-        githubId: {
+        clerkId: {
             type: String,
             required: true,
             unique: true,
+            index: true,
+        },
+
+        provider: {
+            type: String,
+            enum: ["github", "gitlab"],
+            required: true,
+        },
+
+        providerId: {
+            type: String,
+            required: true,
         },
 
         name: {
             type: String,
             required: true,
             trim: true,
+        },
+
+        username:{
+            type:String,
+            required:true,
+            trim:true
         },
 
         email: {
@@ -30,6 +48,11 @@ const UserSchema = new mongoose.Schema(
     {
         timestamps: true,
     }
+);
+
+UserSchema.index(
+    { provider: 1, providerId: 1 },
+    { unique: true }
 );
 
 export default mongoose.models.User ||

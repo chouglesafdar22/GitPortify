@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Templates | GitPortify",
   description: "Choose and customize your portfolio templates",
+  robots: {
+        index: false,
+        follow: false,
+    },
 };
 
 export default function TemplatesLayout({

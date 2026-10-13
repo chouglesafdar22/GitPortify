@@ -1,105 +1,207 @@
 "use client";
 import Link from "next/link";
-import { FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import Image from "next/image";
+import {
+    FaLinkedin,
+    FaYoutube,
+    FaInstagram,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa6";
+
+const navigationLinks = [
+    { label: "Home", href: "#home" },
+    { label: "Templates", href: "#templates" },
+    { label: "Features", href: "#features" },
+    { label: "FAQ", href: "#faq" },
+];
+
+const pageLinks = [
+    { label: "Sign up", href: "/signup" },
+    { label: "Sign in", href: "/signin" },
+    { label: "Templates", href: "/templates" },
+    { label: "Feedback", href: "/support/feedback" },
+];
+
+const socialLinks = [
+    {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/safdar-chougle",
+        icon: FaLinkedin,
+    },
+    {
+        label: "YouTube",
+        href: "https://youtube.com/playlist?list=PLUGVMxgOgh0ZCEuF-jZTkkZrKYt4GdFoE&si=4528IXkm_TFuGRbq",
+        icon: FaYoutube,
+    },
+    {
+        label: "Instagram",
+        href: "https://www.instagram.com/chouglesafdar22?igsh=cnY5cG0yY3gzZngz",
+        icon: FaInstagram,
+    },
+];
+
+const legalLinks = [
+    { label: "Privacy Policy", href: "/legal/privacy-policy" },
+    { label: "Terms & Conditions", href: "/legal/terms-and-conditions" },
+];
+
+const linkClass =
+    "text-sm leading-6 text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-background/25 px-5 md:px-10 md:py-8 py-7 gap-50 mt-2.5">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-7">
-                <div className="space-y-2 justify-start items-start">
-                    <div className="flex cursor-pointer leading-none select-none">
-                        <div className="flex items-center md:gap-1.5 gap-1 justify-center">
+        <footer className="relative mt-8 border-t border-foreground/10 bg-background/50">
+            <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-14 lg:px-10">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-10">
+                    {/* Brand */}
+                    <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+                        <Link
+                            href="#home"
+                            aria-label="GitPortify home"
+                            className="inline-flex items-center gap-2.5 rounded-lg"
+                        >
                             <Image
                                 src="/logo/GitPortify - Logo.png"
-                                alt="GitPortify Logo"
-                                width={24}
-                                height={24}
-                                className="object-contain rounded-xl xl:w-10 md:w-9 w-8 xl:h-10 md:h-9 h-8"
-                                priority
-                                loading='eager'
-                                unoptimized
+                                alt=""
+                                width={40}
+                                height={40}
+                                sizes="40px"
+                                className="h-9 w-9 rounded-xl object-contain sm:h-10 sm:w-10"
                             />
 
-                            <h1 className="text-foreground xl:text-3xl md:text-2xl text-xl fira-sans-bold tracking-tight">
+                            <span className="fira-sans-bold text-xl tracking-tight text-foreground md:text-2xl xl:text-3xl">
                                 GitPortify
-                            </h1>
-                        </div>
+                            </span>
+                        </Link>
+
+                        <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground md:text-base xl:text-lg fira-sans-regular">
+                            Turn your GitHub or GitLab profile into a
+                            professional developer portfolio.
+                        </p>
+
+                        <Link
+                            href="/signup"
+                            className="mt-5 inline-flex items-center gap-2 rounded-lg border border-violet-500/20 bg-violet-500/10 px-4 py-2.5 text-sm font-medium text-violet-400 transition-all duration-200 hover:border-violet-500/40 hover:bg-violet-500/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+                        >
+                            Create your portfolio
+                            <FaArrowRight />
+                        </Link>
                     </div>
-                    <p className="xl:text-lg md:text-base text-[15px] fira-sans-medium text-muted-foreground max-w-xs">
-                        Develop your portfolio in minutes — powered by GitHub
+
+                    {/* Navigation */}
+                    <FooterColumn title="Explore">
+                        {navigationLinks.map((link) => (
+                            <FooterLink
+                                key={link.label}
+                                href={link.href}
+                            >
+                                {link.label}
+                            </FooterLink>
+                        ))}
+                    </FooterColumn>
+
+                    {/* Account */}
+                    <FooterColumn title="Pages">
+                        {pageLinks.map((link) => (
+                            <FooterLink
+                                key={link.label}
+                                href={link.href}
+                            >
+                                {link.label}
+                            </FooterLink>
+                        ))}
+                    </FooterColumn>
+
+                    {/* Social */}
+                    <FooterColumn title="Connect">
+                        {socialLinks.map(({ label, href, icon: Icon }) => (
+                            <li key={label}>
+                                <Link
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`inline-flex items-center gap-2 ${linkClass}`}
+                                >
+                                    <Icon size={15} aria-hidden="true" />
+                                    {label}
+                                </Link>
+                            </li>
+                        ))}
+                        <li>
+                            <Link
+                                href="mailto:gitportify@gmail.com"
+                                className={`inline-flex items-center gap-2 ${linkClass}`}
+                            >
+                                <MdEmail size={17} aria-hidden="true" />
+                                Email
+                            </Link>
+                        </li>
+                    </FooterColumn>
+
+                    {/* Legal */}
+                    <FooterColumn title="Legal">
+                        {legalLinks.map((link) => (
+                            <FooterLink
+                                key={link.label}
+                                href={link.href}
+                            >
+                                {link.label}
+                            </FooterLink>
+                        ))}
+                    </FooterColumn>
+                </div>
+
+                {/* Bottom bar */}
+                <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-6 text-center sm:mt-14 sm:flex-row sm:text-left fira-sans-light">
+                    <p className="text-xs leading-6 text-muted-foreground sm:text-sm">
+                        © {new Date().getFullYear()} GitPortify. All rights
+                        reserved.
                     </p>
-                </div>
 
-                <div className="grid xl:grid-cols-5 md:grid-cols-4 grid-cols-3 justify-center items-start gap-10">
-                    <div>
-                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Navigation</h3>
-                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="#home" className="hover:text-foreground">Home</Link></li>
-                            <li><Link href="#templates" className="hover:text-foreground">Templates</Link></li>
-                            <li><Link href="#features" className="hover:text-foreground">Features</Link></li>
-                            <li><Link href="#how-it-works" className="hover:text-foreground">How It Works</Link></li>
-                            <li><Link href="#faq" className="hover:text-foreground">FAQ</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Pages</h3>
-                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="/signup" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">SignUp</Link></li>
-                            {/* <li><Link href="/about" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">About</Link></li> */}
-                            <li><Link href="/feedback" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Feedback</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Connects</h3>
-                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="https://www.linkedin.com/in/safdar-chougle" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
-                                <FaLinkedin />
-                                <span>LinkedIn</span>
-                            </Link></li>
-                            <li><Link href="https://youtube.com/playlist?list=PLUGVMxgOgh0ZCEuF-jZTkkZrKYt4GdFoE&si=4528IXkm_TFuGRbq" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
-                                <FaYoutube />
-                                <span>Youtube</span>
-                            </Link></li>
-                            <li><Link href="https://www.instagram.com/chouglesafdar22?igsh=cnY5cG0yY3gzZngz" target="_blank" rel="noopener noreferrer" className="flex justify-start items-center gap-1 hover:text-foreground">
-                                <FaInstagram />
-                                <span>Instagram</span>
-                            </Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Legal</h3>
-                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Privacy</Link></li>
-                            <li><Link href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Terms</Link></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 className="text-foreground xl:text-xl md:text-lg text-[17px] fira-sans-medium mb-1.5">Contact</h3>
-                        <ul className="space-y-1.5 xl:text-base md:text-sm text-[13px] fira-sans-regular text-muted-foreground">
-                            <li><Link href="mailto:gitportify@gmail.com" className="flex justify-start items-center gap-1 hover:text-foreground">
-                                <MdEmail />
-                                <span>Email</span>
-                            </Link></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            <div className="max-w-7xl mx-auto flex flex-col justify-center item-center gap-2.5 mt-6">
-                <div className='h-0.5 bg-muted-foreground rounded w-full'></div>
-                <div className="xl:text-[16px] md:text-[14px] text-[12px] text-muted-foreground text-center fira-sans-light">
-                    CopyRight &copy; {new Date().getFullYear()} GitPortify All Rights Reserved.
+                    <p className="text-xs text-muted-foreground sm:text-sm">
+                        Built for developers, wherever they code.
+                    </p>
                 </div>
             </div>
         </footer>
     );
-};
+}
+
+function FooterColumn({
+    title,
+    children,
+}: {
+    title: string;
+    children: React.ReactNode;
+}) {
+    return (
+        <div>
+            <h2 className="fira-sans-medium mb-3.5 text-sm text-foreground md:text-base xl:text-lg">
+                {title}
+            </h2>
+
+            <ul className="flex flex-col fira-sans-regular text-sm md:text-base xl:text-lg items-start gap-2">
+                {children}
+            </ul>
+        </div>
+    );
+}
+
+function FooterLink({
+    href,
+    children,
+}: {
+    href: string;
+    children: React.ReactNode;
+}) {
+    return (
+        <li>
+            <Link href={href} className={linkClass}>
+                {children}
+            </Link>
+        </li>
+    );
+}
 
 // Developed By <Link className="hover:text-foreground hover:underline" href={"https://safdarchougle.vercel.app"}>chouglesafdar</Link>

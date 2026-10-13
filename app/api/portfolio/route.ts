@@ -2,21 +2,23 @@ import { NextResponse } from "next/server";
 import { connectDB } from "@/app/lib/mongodb";
 import Portfolio from "@/app/models/Portfolio";
 import User from "@/app/models/User";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/lib/auth";
+import { getCurrentUserId } from "@/app/lib/auth";
 
 export async function GET(req: Request) {
     try {
         await connectDB();
 
-        const session = await getServerSession(authOptions);
+        const clerkId = await getCurrentUserId();
 
-        if (!session) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-        };
+        if (!clerkId) {
+            return NextResponse.json(
+                { error: "Unauthorized" },
+                { status: 401 }
+            );
+        }
 
         const user = await User.findOne({
-            email: session.user?.email,
+            clerkId,
         });
 
         if (!user) {
@@ -65,10 +67,13 @@ export async function POST(req: Request) {
     try {
         await connectDB();
 
-        const session = await getServerSession(authOptions);
+        const clerkId = await getCurrentUserId();
 
-        if (!session) {
-            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        if (!clerkId) {
+            return NextResponse.json(
+                { error: "Unauthorized" },
+                { status: 401 }
+            );
         }
 
         const body = await req.json();
@@ -85,8 +90,9 @@ export async function POST(req: Request) {
             contactLinks,
         } = body;
 
-        //find user
-        let user = await User.findOne({ email: session.user?.email });
+        const user = await User.findOne({
+            clerkId,
+        });
 
         if (!user) {
             return NextResponse.json(

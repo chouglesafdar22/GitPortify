@@ -10,29 +10,34 @@ interface FaqProps {
 
 export default function FaqCard({ que, ans, isOpen, onClick }: FaqProps) {
     return (
-        <div className="md:w-2xl w-xs rounded-2xl flex flex-col justify-center items-start md:px-6 px-3 md:py-5 py-4 gap-2 bg-foreground/5 border border-foreground/10 backdrop-blur-xl">
-            <div
-                className="w-full flex justify-between items-center text-left cursor-pointer"
+        <div className="w-full rounded-2xl border border-foreground/10 bg-foreground/5 px-4 py-4 backdrop-blur-xl transition-colors duration-300 hover:border-violet-500/30 sm:px-6 sm:py-5 cursor-pointer">
+            <button
+                type="button"
+                className="flex w-full items-center justify-between gap-4 text-left"
                 onClick={onClick}
                 aria-expanded={isOpen}
             >
-                <h4 className="text-foreground xl:text-xl md:text-lg text-base fira-sans-medium">{que}</h4>
-                <span
-                    className="text-foreground xl:text-2xl md:text-xl text-lg text-center fira-sans-medium">
+                <h3 className="fira-sans-medium text-base text-foreground md:text-lg xl:text-xl">
+                    {que}
+                </h3>
+
+                <span className="shrink-0 text-2xl fira-sans-regular text-foreground">
                     {isOpen ? <CiCircleMinus /> : <CiCirclePlus />}
                 </span>
-            </div>
+            </button>
+
             <div
-                className={`grid transition-all duration-300 ease-in-out overflow-hidden 
-                    ${isOpen
-                        ? "grid-rows-[1fr] opacity-100 mt-2"
-                        : "grid-rows-[0fr] opacity-0"
+                className={`grid overflow-hidden transition-all duration-300 ease-in-out ${isOpen
+                    ? "mt-3 grid-rows-[1fr] opacity-100"
+                    : "mt-0 grid-rows-[0fr] opacity-0"
                     }`}
             >
                 <div className="overflow-hidden">
-                    <p className="text-muted-foreground xl:text-lg md:text-base text-sm text-left fira-sans-regular">{ans}</p>
+                    <p className="fira-sans-regular text-sm leading-7 text-muted-foreground md:text-base xl:text-lg">
+                        {ans}
+                    </p>
                 </div>
             </div>
         </div>
-    )
-};
+    );
+}

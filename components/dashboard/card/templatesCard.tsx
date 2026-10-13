@@ -164,4 +164,4 @@ export default function TemplatesCard({
             </div>
         </DashboardCard>
     );
-}
+};

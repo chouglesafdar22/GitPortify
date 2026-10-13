@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Copy, Check, ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
 import DashboardCard from "./dashboardCard";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 interface PortfolioCardProps {
     username?: string;
+    isLoading?:boolean;
 }
 
 export default function PortfolioCard({
     username,
+    isLoading=false
 }: PortfolioCardProps) {
     const router = useRouter();
     const [copied, setCopied] = useState(false);
@@ -22,21 +22,18 @@ export default function PortfolioCard({
 
     const handleCopy = async () => {
         if (!portfolioUrl) {
-            toast.error("Create your portfolio username first.");
+            console.error("Create your portfolio username first.");
             return;
         }
 
         try {
             await navigator.clipboard.writeText(portfolioUrl);
-
             setCopied(true);
-            toast.success("Portfolio URL copied");
-
             setTimeout(() => {
                 setCopied(false);
             }, 2000);
         } catch {
-            toast.error("Failed to copy portfolio URL");
+            console.error("Failed to copy portfolio URL");
         }
     };
 
@@ -49,9 +46,43 @@ export default function PortfolioCard({
         window.open(portfolioUrl, "_blank", "noopener,noreferrer");
     };
 
+    if (isLoading) {
+        return (
+            <DashboardCard
+                title="Portfolio"
+                onEdit={() => router.push("/dashboard/portfolio")}
+                className="min-h-52"
+            >
+                <div
+                    className="flex h-full animate-pulse flex-col justify-between gap-6"
+                    aria-label="Loading portfolio"
+                    role="status"
+                >
+                    {/* Website skeleton */}
+                    <div>
+                        <div className="mb-3 h-4 w-16 rounded bg-foreground/10" />
+
+                        <div className="flex items-center gap-2">
+                            <div className="h-4 min-w-0 flex-1 rounded bg-foreground/10" />
+                            <div className="h-8 w-8 shrink-0 rounded-md bg-foreground/10" />
+                        </div>
+                    </div>
+
+                    {/* Username / status skeleton */}
+                    <div className="flex items-center justify-between gap-4">
+                        <div className="min-w-0 flex-1">
+                            <div className="h-3 w-16 rounded bg-foreground/10" />
+                            <div className="mt-2 h-4 w-28 rounded bg-foreground/10" />
+                        </div>
+                    </div>
+                </div>
+            </DashboardCard>
+        );
+    }
+
     return (
         <>
-            
+
             <DashboardCard
                 title="Portfolio"
                 onEdit={() => router.push("/dashboard/portfolio")}
@@ -124,27 +155,9 @@ export default function PortfolioCard({
                                 {username ? `@${username}` : "Not set"}
                             </p>
                         </div>
-
-                        {/* {username && (
-                            <button
-                                type="button"
-                                onClick={handleOpenPortfolio}
-                                className="
-                                flex shrink-0 items-center gap-1.5
-                                text-xs
-                                text-muted-foreground
-                                transition-colors
-                                hover:text-purple-400
-                                cursor-pointer
-                            "
-                            >
-                                View
-                                <ExternalLink className="h-3.5 w-3.5" />
-                            </button>
-                        )} */}
                     </div>
                 </div>
             </DashboardCard>
         </>
     );
-}
+};

@@ -24,7 +24,7 @@ export default function Sidebar() {
         <>
             <Button
                 variant={"secondary"}
-                className={`fixed top-5 left-5 z-40 cursor-w-resize text-foreground text-lg mdtext-xl xl:text-2xl fira-sans-medium p-0 ${open ? "hidden" : ""}`}
+                className={`fixed top-5 left-5 z-50 cursor-w-resize text-foreground text-lg md:text-xl xl:text-2xl fira-sans-medium p-0 ${open ? "hidden" : ""}`}
                 onClick={() => setOpen(prev => !prev)}
             >
                 <GoSidebarCollapse />
@@ -76,6 +76,14 @@ export default function Sidebar() {
                         )
                     })}
                 </nav>
+                <Link
+                    onClick={() => setOpen(false)}
+                    href={"/dashboard/setting/versions"}
+                    className="flex justify-center items-center mt-auto px-3 pt-4 border-t border-foreground/10">
+                    <p className="text-xs text-muted-foreground fira-sans-regular">
+                        GitPortify <span className="text-violet-400 underline-offset-4 fira-sans-medium transition-colors hover:text-violet-300 hover:underline">v1.0.0</span>
+                    </p>
+                </Link>
             </aside>
         </>
     )

@@ -2,11 +2,10 @@
 import { useState, useEffect } from "react";
 import PreviewPanel from "@/components/dashboard/PreviewPanel";
 import EditPanel from "@/components/dashboard/EditPanel";
-import Footer from "@/components/dashboard/Footer";
 import type { TemplateType } from "@/types/template";
 import PublishModal from "@/components/dashboard/PublishModal";
 import { toast } from "react-toastify";
-import { useSession } from "next-auth/react";
+import { useUser } from "@clerk/nextjs";
 import Button from "@/components/landing/Button";
 import GuideBarButton from "@/components/layout/GuideBarButton";
 
@@ -27,7 +26,7 @@ export default function DashboardClient() {
         linkedin: "",
         website: "",
     });
-    const { data: session } = useSession();
+   const { isLoaded, isSignedIn } = useUser();
     const [selectedProjects, setSelectedProjects] = useState<any[]>([]);
     const [selectedExp, setSelectedExp] = useState<any[]>([]);
     const [selectedTS, setSelectedTS] = useState<any[]>([]);
@@ -133,16 +132,26 @@ export default function DashboardClient() {
     };
 
     useEffect(() => {
-        if (!session) return;
+    if (!isLoaded) return;
 
-        const init = async () => {
-            fetchPortfolio();
-            fetchWebsite();
+    if (!isSignedIn) {
+        setLoading(false);
+        return;
+    }
+
+    const init = async () => {
+        try {
+            await Promise.all([
+                fetchPortfolio(),
+                fetchWebsite(),
+            ]);
+        } finally {
             setLoading(false);
-        };
+        }
+    };
 
-        init();
-    }, [session]);
+    init();
+}, [isLoaded, isSignedIn]);
 
     // ─── Publish ────────────────────────────────────────────
     const handlePublish = async () => {
@@ -244,8 +253,6 @@ export default function DashboardClient() {
                     username={username}
                 />
             </div>
-
-            <Footer />
 
             <PublishModal
                 isOpen={isPublishModalOpen}

@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Templates | GitPortify",
+  description: "Choose and customize your portfolio templates",
+  robots: {
+        index: true,
+        follow: true,
+    },
+};
+
+export default function TemplatesLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return children;
+}

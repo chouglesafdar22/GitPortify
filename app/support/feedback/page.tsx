@@ -3,7 +3,6 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaPaperPlane } from "react-icons/fa";
-import Footer from "@/components/dashboard/Footer";
 
 export default function FeedbackPage() {
     const [loading, setLoading] = useState(false);
@@ -170,7 +169,6 @@ export default function FeedbackPage() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     )
 };
