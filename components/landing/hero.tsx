@@ -94,7 +94,7 @@ export default function Hero() {
                         </div>
 
                         <Image
-                            src="/images/dashboard-preview.png"
+                            src="/images/published-developer-portfolio.png"
                             alt="Example of a published developer portfolio created with GitPortify"
                             width={1200}
                             height={800}

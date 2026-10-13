@@ -256,7 +256,7 @@ export default function SettingPage() {
                                         </p>
 
                                         <span className="rounded-full border border-violet-500/25 bg-violet-500/10 px-2 py-0.5 text-[10px] fira-sans-medium text-violet-400 fira-sans-medium">
-                                            v1.0.0
+                                            v1.0.1
                                         </span>
                                     </div>
 

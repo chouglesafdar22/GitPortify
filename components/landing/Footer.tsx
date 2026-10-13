@@ -26,17 +26,17 @@ const pageLinks = [
 const socialLinks = [
     {
         label: "LinkedIn",
-        href: "https://www.linkedin.com/in/safdar-chougle",
+        href: "https://www.linkedin.com/company/gitportify",
         icon: FaLinkedin,
     },
     {
         label: "YouTube",
-        href: "https://youtube.com/playlist?list=PLUGVMxgOgh0ZCEuF-jZTkkZrKYt4GdFoE&si=4528IXkm_TFuGRbq",
+        href: "https://www.youtube.com/@gitportifyapp",
         icon: FaYoutube,
     },
     {
         label: "Instagram",
-        href: "https://www.instagram.com/chouglesafdar22?igsh=cnY5cG0yY3gzZngz",
+        href: "https://www.instagram.com/gitportify.app/",
         icon: FaInstagram,
     },
 ];

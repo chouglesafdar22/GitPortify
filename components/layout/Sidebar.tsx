@@ -81,7 +81,7 @@ export default function Sidebar() {
                     href={"/dashboard/setting/versions"}
                     className="flex justify-center items-center mt-auto px-3 pt-4 border-t border-foreground/10">
                     <p className="text-xs text-muted-foreground fira-sans-regular">
-                        GitPortify <span className="text-violet-400 underline-offset-4 fira-sans-medium transition-colors hover:text-violet-300 hover:underline">v1.0.0</span>
+                        GitPortify <span className="text-violet-400 underline-offset-4 fira-sans-medium transition-colors hover:text-violet-300 hover:underline">v1.0.1</span>
                     </p>
                 </Link>
             </aside>

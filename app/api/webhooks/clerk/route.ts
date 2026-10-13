@@ -1,4 +1,3 @@
-
 import { NextRequest } from "next/server";
 import { verifyWebhook } from "@clerk/backend/webhooks";
 import { clerkClient } from "@clerk/nextjs/server";

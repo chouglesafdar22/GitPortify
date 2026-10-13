@@ -161,8 +161,8 @@ export async function POST(req: Request) {
                 await sendGitPortifyEmail({
                     to: user.email,
                     subject: isUpdate
-                        ? "Your GitPortify website has been updated"
-                        : "Your GitPortify website is live!",
+                        ? "Your GitPortify portfolio website has been updated"
+                        : "Your GitPortify portfolio website is live!",
                     html: isUpdate
                         ? websiteUpdatedEmail(emailName, websiteUrl)
                         : websitePublishedEmail(emailName, websiteUrl),

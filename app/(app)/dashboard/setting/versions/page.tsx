@@ -5,9 +5,25 @@ import VersionCard from "@/components/dashboard/setting/VersionCard";
 
 const releases = [
     {
-        version: "v1.0.0",
+        version: "v1.0.1",
         releaseDate: "13 October 2026",
         isLatest: true,
+        newFeatures: [],
+        improvementsAndFixes: [
+            "Fixed Clerk sign-up and sign-in issues in the production environment.",
+            "Improved authentication reliability and production configuration.",
+            "Refined transactional email templates with consistent branding and more professional wording.",
+            "Improved portfolio publication and update email notifications.",
+        ],
+        comingSoon: [
+            "Portfolio Analytics — Track portfolio views, visitor activity, and engagement through an analytics dashboard.",
+            "Additional portfolio templates and design improvements.",
+        ],
+    },
+    {
+        version: "v1.0.0",
+        releaseDate: "13 October 2026",
+        isLatest: false,
         newFeatures: [
             "Introduced Clerk authentication for account signup and sign-in.",
             "Added GitLab support alongside GitHub.",

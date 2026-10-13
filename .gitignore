@@ -40,3 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/videos/
+
+# Local test scripts
+/scripts/
+
+# Excluded email sign-in route
+/app/api/emails/sign-in/
