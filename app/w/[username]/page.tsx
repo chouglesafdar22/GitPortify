@@ -9,7 +9,7 @@ export default function PortfolioPage() {
     const params = useParams();
     const username = params?.username as string;
     const [data, setData] = useState<any>(null);
-    const [githubUsername, setgithubUsername] = useState("");
+    const [githubUsername, setGithubUsername] = useState("");
     const [mounted, setMounted] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -18,13 +18,6 @@ export default function PortfolioPage() {
 
         const fetchPortfolio = async () => {
             try {
-
-                // const [websiteResponse, userResponse] =
-                //     await Promise.all([
-                //         await fetch(`/api/website/${encodeURIComponent(username)}`);
-                // await fetch("/api/provider")
-                // ]);
-
                 const res = await fetch(`/api/website/${encodeURIComponent(username)}`);
                 const result = await res.json();
                 
@@ -37,7 +30,7 @@ export default function PortfolioPage() {
                 const usernameResult=await usernameRes.json();
 
                 setData(result.website);
-                setgithubUsername(usernameResult.username);
+                setGithubUsername(usernameResult.username);
             } catch (err) {
                 console.error("fetch error:", err)
             } finally {
@@ -87,7 +80,7 @@ export default function PortfolioPage() {
             key={data.template}
             template={data.template}
             name={data.name}
-            username={githubUsername}
+            githubUsername={githubUsername}
             bio={data.bio}
             avatar={data.avatar}
             projects={data.projects}

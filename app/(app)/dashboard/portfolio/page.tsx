@@ -26,7 +26,7 @@ export default function DashboardClient() {
         linkedin: "",
         website: "",
     });
-   const { isLoaded, isSignedIn } = useUser();
+    const { isLoaded, isSignedIn } = useUser();
     const [selectedProjects, setSelectedProjects] = useState<any[]>([]);
     const [selectedExp, setSelectedExp] = useState<any[]>([]);
     const [selectedTS, setSelectedTS] = useState<any[]>([]);
@@ -40,6 +40,7 @@ export default function DashboardClient() {
     const [publishLoading, setPublishLoading] = useState(false);
     const [publishedUrl, setPublishedUrl] = useState("");
     const [isPublishModalOpen, setIsPublishModal] = useState(false);
+    const [githubUsername, setGithubUsername] = useState("")
 
     const fetchPortfolio = async () => {
         try {
@@ -131,27 +132,39 @@ export default function DashboardClient() {
         }
     };
 
-    useEffect(() => {
-    if (!isLoaded) return;
+    const fetchUsername = async () => {
+        try {
+            const usernameRes = await fetch("/api/provider");
+            const usernameResult = await usernameRes.json();
 
-    if (!isSignedIn) {
-        setLoading(false);
-        return;
+            setGithubUsername(usernameResult.username);
+        } catch (err) {
+            console.error("fetch error:", err)
+        }
     }
 
-    const init = async () => {
-        try {
-            await Promise.all([
-                fetchPortfolio(),
-                fetchWebsite(),
-            ]);
-        } finally {
-            setLoading(false);
-        }
-    };
+    useEffect(() => {
+        if (!isLoaded) return;
 
-    init();
-}, [isLoaded, isSignedIn]);
+        if (!isSignedIn) {
+            setLoading(false);
+            return;
+        }
+
+        const init = async () => {
+            try {
+                await Promise.all([
+                    fetchPortfolio(),
+                    fetchWebsite(),
+                    fetchUsername(),
+                ]);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        init();
+    }, [isLoaded, isSignedIn]);
 
     // ─── Publish ────────────────────────────────────────────
     const handlePublish = async () => {

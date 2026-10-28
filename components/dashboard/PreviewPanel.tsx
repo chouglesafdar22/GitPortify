@@ -7,6 +7,7 @@ interface Props {
     avatar: string;
     name: string;
     template: TemplateType;
+    githubUsername?:string;
     projects: {
         id: number;
         name: string;
@@ -52,6 +53,7 @@ interface Props {
 export default function PreviewPanel({
     bio,
     avatar,
+    githubUsername,
     name,
     template,
     projects,
@@ -107,6 +109,7 @@ export default function PreviewPanel({
                     <TemplateRenderer
                         key={template}
                         template={template}
+                        githubUsername={githubUsername}
                         name={name}
                         bio={bio}
                         avatar={avatar}
