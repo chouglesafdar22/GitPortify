@@ -6,7 +6,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { Moon, Sun, Menu, X } from "lucide-react";
-import Footer from "../portfolio/Footer";
+import Footer from "../portfolio/website/Footer";
 
 interface Props {
     name: string;

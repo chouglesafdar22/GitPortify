@@ -6,7 +6,7 @@ import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
 import { Menu, X, Circle } from "lucide-react";
-import Footer from "../portfolio/Footer";
+import Footer from "../portfolio/website/Footer";
 
 interface Props {
     name: string;
@@ -14,8 +14,7 @@ interface Props {
     role?: string;
     bio: string;
     availabilityStatus?: string; // e.g. "Available for work" — omit to hide the badge
-    githubUsername?: string;
-
+    username?: string;
     projects: {
         id: number;
         name: string;
@@ -88,7 +87,7 @@ export default function GlassfolioTemplate({
     role,
     bio,
     availabilityStatus = "Available for work",
-    githubUsername,
+    username,
     projects,
     techSkills,
     experiences,
@@ -399,14 +398,14 @@ export default function GlassfolioTemplate({
                 <div id="activity" className="space-y-5">
                     <div className="flex items-center justify-between gap-3">
                         <h2 className="text-lg lg:text-2xl font-semibold">GitHub Activity</h2>
-                        {githubUsername && (
+                        {username && (
                             <Link
-                                href={`https://github.com/${githubUsername}`}
+                                href={`https://github.com/${username}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-xs text-zinc-400 hover:text-[#A78BFA] transition-colors flex items-center gap-1"
                             >
-                                @{githubUsername} <MdArrowOutward size={12} />
+                                @{username} <MdArrowOutward size={12} />
                             </Link>
                         )}
                     </div>

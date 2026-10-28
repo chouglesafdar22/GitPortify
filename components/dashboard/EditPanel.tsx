@@ -137,7 +137,7 @@ export default function EditPanel({
                         Avatar
                     </p>
                     <div className="mt-1 rounded-md no-scrollbar fira-sans-regular border px-3 py-2 text-sm overflow-hidden overflow-x-scroll">
-                        {avatar}
+                        {avatar || "Add avatar from Profile Page"}
                     </div>
                 </div>
 
@@ -162,7 +162,7 @@ export default function EditPanel({
                         </div>
                     </div>
                     <p className="text-[10px] text-muted-foreground fira-sans-light">
-                        Your portfolio will be available at /p/{username}
+                        Your portfolio will be available at /w/{username}
                     </p>
                 </div>
 

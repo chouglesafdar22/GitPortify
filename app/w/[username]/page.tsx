@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import TemplateRenderer from "@/components/templates/TemplateRenderer";
 import PreviewPanel from "@/components/dashboard/PreviewPanel";
 import { useParams } from "next/navigation";
-import NotFoundPortfolio from "@/components/portfolio/notfoundPortfolio";
+import NotFoundPortfolio from "@/components/portfolio/website/notfoundPortfolio";
 
 export default function PortfolioPage() {
     const params = useParams();
     const username = params?.username as string;
     const [data, setData] = useState<any>(null);
+    const [githubUsername, setgithubUsername] = useState("");
     const [mounted, setMounted] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -17,17 +18,26 @@ export default function PortfolioPage() {
 
         const fetchPortfolio = async () => {
             try {
+
+                // const [websiteResponse, userResponse] =
+                //     await Promise.all([
+                //         await fetch(`/api/website/${encodeURIComponent(username)}`);
+                // await fetch("/api/provider")
+                // ]);
+
                 const res = await fetch(`/api/website/${encodeURIComponent(username)}`);
                 const result = await res.json();
-
-                console.log("API", result)
-
+                
                 if (!res.ok) {
                     console.error("Error:", result.error);
                     return;
                 }
 
+                const usernameRes=await fetch("/api/provider");
+                const usernameResult=await usernameRes.json();
+
                 setData(result.website);
+                setgithubUsername(usernameResult.username);
             } catch (err) {
                 console.error("fetch error:", err)
             } finally {
@@ -77,6 +87,7 @@ export default function PortfolioPage() {
             key={data.template}
             template={data.template}
             name={data.name}
+            username={githubUsername}
             bio={data.bio}
             avatar={data.avatar}
             projects={data.projects}

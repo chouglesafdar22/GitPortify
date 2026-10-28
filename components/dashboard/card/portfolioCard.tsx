@@ -6,18 +6,20 @@ import DashboardCard from "./dashboardCard";
 
 interface PortfolioCardProps {
     username?: string;
+    webUsername?:string;
     isLoading?:boolean;
 }
 
 export default function PortfolioCard({
     username,
+    webUsername,
     isLoading=false
 }: PortfolioCardProps) {
     const router = useRouter();
     const [copied, setCopied] = useState(false);
 
     const portfolioUrl = username
-        ? `${window.location.origin}/p/${username}`
+        ? `${window.location.origin}/w/${username}`
         : "";
 
     const handleCopy = async () => {
@@ -95,7 +97,7 @@ export default function PortfolioCard({
                             Website
                         </p>
 
-                        {username ? (
+                        {webUsername ? (
                             <div className="flex items-center gap-2">
                                 <button
                                     type="button"
@@ -139,7 +141,7 @@ export default function PortfolioCard({
                             </div>
                         ) : (
                             <p className="text-sm text-muted-foreground">
-                                Create your portfolio username first.
+                                Create your portfolio website first.
                             </p>
                         )}
                     </div>

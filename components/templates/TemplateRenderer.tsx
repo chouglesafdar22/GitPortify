@@ -6,10 +6,12 @@ import NeoDevTemplate from "./NeoDevTemplate";
 import GlassfolioTemplate from "./GlassfolioTemplate";
 import type { TemplateType } from "@/types/template";
 import MinimalResumeTemplate from "./MinimalResumeTemplate";
+import User from "@/app/models/User";
 
 interface TemplateRendererProps {
     template: TemplateType;
     bio: string;
+    username?:string;
     avatar: string;
     name: string;
     projects: {

@@ -15,6 +15,7 @@ export default function DashboardClient() {
     const [name, setName] = useState("");
     const [template, setTemplate] = useState<TemplateType | undefined>();
     const { isLoaded, isSignedIn } = useUser();
+    const [webUsername,setWebUsername]=useState("");
 
     useEffect(() => {
         if (!isLoaded) return;
@@ -56,6 +57,10 @@ export default function DashboardClient() {
                     setName(portfolio.name ?? "");
                 }
 
+                if (website?.username){
+                    setWebUsername(website.username);
+                }
+
                 if (website?.template) {
                     setTemplate(website.template);
                 }
@@ -80,6 +85,7 @@ export default function DashboardClient() {
                 >
                     <PortfolioCard
                         username={username}
+                        webUsername={webUsername}
                         isLoading={loading}
                     />
 

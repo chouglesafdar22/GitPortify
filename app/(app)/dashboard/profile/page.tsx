@@ -553,7 +553,7 @@ export default function ProfilePage() {
                                                                 true
                                                             );
                                                         }}
-                                                        placeholder="your-name"
+                                                        placeholder="Your username"
                                                         className="h-10 min-w-0 flex-1 bg-transparent px-2 text-sm outline-none placeholder:text-muted-foreground/60 fira-sans-regular"
                                                     />
                                                 </div>
@@ -580,7 +580,7 @@ export default function ProfilePage() {
                                             <p className="text-xs text-muted-foreground fira-sans-regular">
                                                 Your portfolio will be available at{" "}
                                                 <span className="text-foreground/70">
-                                                    /p/{username || "username"}
+                                                    /w/{username || "username"}
                                                 </span>
                                             </p>
                                         </div>

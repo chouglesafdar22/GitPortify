@@ -5,7 +5,7 @@ import { MdOutlineMailOutline, MdArrowOutward } from "react-icons/md";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa6";
 import { TbWorld } from "react-icons/tb";
-import Footer from "../portfolio/Footer";
+import Footer from "../portfolio/website/Footer";
 
 /**
  * Design tokens — kept inline via Tailwind arbitrary values so this file is
