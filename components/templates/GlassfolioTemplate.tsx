@@ -14,7 +14,7 @@ interface Props {
     role?: string;
     bio: string;
     availabilityStatus?: string; // e.g. "Available for work" — omit to hide the badge
-    username?: string;
+    githubUsername?: string;
     projects: {
         id: number;
         name: string;
@@ -87,7 +87,7 @@ export default function GlassfolioTemplate({
     role,
     bio,
     availabilityStatus = "Available for work",
-    username,
+    githubUsername,
     projects,
     techSkills,
     experiences,
@@ -398,14 +398,14 @@ export default function GlassfolioTemplate({
                 <div id="activity" className="space-y-5">
                     <div className="flex items-center justify-between gap-3">
                         <h2 className="text-lg lg:text-2xl font-semibold">GitHub Activity</h2>
-                        {username && (
+                        {githubUsername && (
                             <Link
-                                href={`https://github.com/${username}`}
+                                href={`https://github.com/${githubUsername}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-xs text-zinc-400 hover:text-[#A78BFA] transition-colors flex items-center gap-1"
                             >
-                                @{username} <MdArrowOutward size={12} />
+                                @{githubUsername} <MdArrowOutward size={12} />
                             </Link>
                         )}
                     </div>
